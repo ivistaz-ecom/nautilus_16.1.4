@@ -132,7 +132,7 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/Sudha_Kumar.webp",
         name: "Sudha",
-        post: "Technical assistant",
+        post: "Technical Assistant",
       },
       
     ],
