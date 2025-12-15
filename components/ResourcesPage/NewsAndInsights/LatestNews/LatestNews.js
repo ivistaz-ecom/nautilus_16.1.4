@@ -1,12 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 const LatestNews = () => {
   const externalUrl =
-    "https://new.marexmedia.com/2025/10/09/naavik-manthan-2025-anchors-dialogue-on-seafarers-technology-and-maritime-growth/";
+    "https://new.marexmedia.com/2025/10/09/naavik-manthan-2025-anchors-dialogue-on-seafarers-technology-and-maritime-growth/"
   const slug =
-    "its-not-just-about-the-money-seafarers-need-better-treatment-ifindustry-wants-sea-going-workforce";
-  const pdfUrl = "/latest-news/BSN 29 September 2025.pdf";
+    "its-not-just-about-the-money-seafarers-need-better-treatment-ifindustry-wants-sea-going-workforce"
+  const pdfUrl = "/latest-news/BSN-29-September-2025-new.pdf"
 
   return (
     <>
@@ -186,7 +186,7 @@ const LatestNews = () => {
 
       <hr className="border-gray-400 w-full" />
     </>
-  );
-};
+  )
+}
 
-export default LatestNews;
+export default LatestNews

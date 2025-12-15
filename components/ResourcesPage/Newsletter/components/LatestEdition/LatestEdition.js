@@ -3,6 +3,14 @@ import Link from "next/link"
 
 const latestEditionData = [
   {
+    title: "The Year Behind Us. The Course Ahead.",
+    date: "November 2025",
+    description:
+      "This issue brings together key moments from the year—crew initiatives, operational milestones, coastal shipping developments, insights from Naavik Manthan 2025, and reflections that will guide our direction in 2026. Centred on learning, collaboration, and steady progress, it highlights how Nautilus continues strengthening systems, supporting seafarers, and building a resilient pathway for the maritime future.",
+    image: "/resources/nov-newsletter.webp",
+    link: "/NL/2025/November/Newsletter-November-2025.pdf",
+  },
+  {
     title: "For The Sea, For The Future - World Maritime Day",
     date: "September 2025",
     description:

@@ -24,7 +24,7 @@ export const executiveCommitteeList = [
     desc: "",
     imageUrl: "/about-us/member/sridhar-new.png",
   },
-];
+]
 
 export const advisoryCommitteeList = [
   {
@@ -51,7 +51,7 @@ export const advisoryCommitteeList = [
     desc: "Capt. Eshwar is a Master Mariner with dual master's degrees in logistics and law. Before joining Nautilus, he led the oil and gas division at Karaikal Ports. With over 20 years of experience across various facets of shipping, he brings a well-rounded expertise in maritime operations, logistics, and legal compliance. His diverse background enhances Nautilus' capability to manage complex shipping operations and support strategic growth.",
     imageUrl: "/about-us/member/Eshwar.png",
   },
-];
+]
 
 export const crewMemberList = [
   {
@@ -117,21 +117,11 @@ export const crewMemberList = [
         name: "Arjun",
         post: "Asst. Technical Superintendent",
       },
-     
+
       // {
-      //   imageUrl: "/about-us/member/Aravindh.png",
-      //   name: "Aravindh",
-      //   post: "Sr. Purchase Executive",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/Vishali.png",
-      //   name: "Vishali",
-      //   post: "Technical Assistant",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/Prathiksha.png",
-      //   name: "Prathiksha",
-      //   post: "Technical Assistant",
+      //   imageUrl: "/about-us/member/Joe.png",
+      //   name: "Joe",
+      //   post: "Purchase Assistant",
       // },
 
       {
@@ -184,7 +174,7 @@ export const crewMemberList = [
       //   imageUrl: "/about-us/member/Hari.png",
       //   name: "Hari",
       //   post: "Operations Executive",
-      // }, 
+      // },
       // {
       //   imageUrl: "/about-us/member/Muthu.png",
       //   name: "Muthu",
@@ -240,7 +230,7 @@ export const crewMemberList = [
         name: "Sanika",
         post: "Marine Personnel Executive",
       },
-  
+
       {
         imageUrl: "/about-us/member/pp.svg",
         name: "Priyanka",
@@ -297,7 +287,7 @@ export const crewMemberList = [
         imageUrl: "/about-us/member/Hari.png",
         name: "Hari",
         post: "Operations Executive",
-      }, 
+      },
       {
         imageUrl: "/about-us/member/Muthu.png",
         name: "Muthu",
@@ -368,10 +358,8 @@ export const crewMemberList = [
       //   name: "Lakshitha",
       //   post: "Marine Personnel Executive",
       // },
-
     ],
   },
-  
 
   {
     department: "Marine & HSEQ",
@@ -421,7 +409,6 @@ export const crewMemberList = [
         name: "Sumanth",
         post: "Talent Acquisition Executive",
       },
-     
     ],
   },
   {
@@ -479,7 +466,7 @@ export const crewMemberList = [
     department: "Sales & Marketing",
     members: [
       {
-        imageUrl: "/about-us/member/kevin.png",
+        imageUrl: "/about-us/member/kevin_nautilus.webp",
         name: "Kevin",
         post: "Manager - Client Engagement & Business Development",
       },
@@ -490,4 +477,4 @@ export const crewMemberList = [
       },
     ],
   },
-];
+]

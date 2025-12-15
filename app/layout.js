@@ -1,9 +1,9 @@
-import { Merriweather } from "next/font/google";
-import "@/styles/globals.css";
-import Footer from "@/components/Footer/Footer";
-import ScrollButton from "@/components/ScrollButton/ScrollButton";
-import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
-import Script from "next/script";
+import { Merriweather } from "next/font/google"
+import "@/styles/globals.css"
+import Footer from "@/components/Footer/Footer"
+import ScrollButton from "@/components/ScrollButton/ScrollButton"
+import ScrollToTop from "@/components/ScrollToTop/ScrollToTop"
+import Script from "next/script"
 
 //import CookieConsentComponent from "@/components/CookieConsent/CookieConsent"
 //import "vanilla-cookieconsent/dist/cookieconsent.css"
@@ -13,12 +13,12 @@ const merriweather = Merriweather({
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
-});
+})
 
 export const metadata = {
   //metadataBase: new URL("https://www.nautilusshipping.com"),
   robots: "index, follow",
-};
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -68,7 +68,14 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         {/* Apollo Tracking End */}
-       
+
+        {/* Apollo Form Enrichment */}
+        <Script strategy="afterInteractive" id="apollo-form-enrichment">
+          {`
+            (function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\\'\\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){console.warn('[Apollo] Form enrichment timeout after 5s - revealing forms. Check network and console for errors.');cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){console.error('[Apollo] Failed to load form enrichment script');cleanup();};script.onload=function(){try{window.ApolloInbound.formEnrichment.init({appId: '69294cad8f89910019798011',onReady: function(){cleanup();},onError: function(err){console.error('[Apollo] Form enrichment init error:',err);cleanup();}});}catch(err){console.error('[Apollo] Error initializing form enrichment:',err);cleanup();}};document.head.appendChild(script);})();
+          `}
+        </Script>
+        {/* Apollo Form Enrichment End */}
       </head>
 
       <body>
@@ -97,5 +104,5 @@ export default function RootLayout({ children }) {
         {/* <CookieConsentComponent /> */}
       </body>
     </html>
-  );
+  )
 }

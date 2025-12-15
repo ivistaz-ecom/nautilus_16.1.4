@@ -6,8 +6,8 @@ export const eventsListA = [
   },
   {
     title: "At the Shipowners Forum 2025 – Sponsored by Nautilus Shipping",
-    desc: "As a sponsor of the Shipowners Forum, Managing Directors Mr Narayan Rajan and Mr Manikandan joined discussions on regulation, resilience, and decarbonisation—highlighting our commitment to responsible innovation and long-term value creation. From panel discussions to EXPO@SMW, the week offered powerful insights and meaningful connections. Nautilus is proud to be part of shaping what’s next in maritime.",
-    imageUrl: "/resources/events/Shipowners.png",
+    desc: "As a sponsor of the Shipowners Forum, Managing Director Mr Narayan Rajan joined discussions on regulation, resilience, and decarbonisation—highlighting our commitment to responsible innovation and long-term value creation. From panel discussions to EXPO@SMW, the week offered powerful insights and meaningful connections. Nautilus is proud to be part of shaping what’s next in maritime.",
+    imageUrl: "/resources/events/Shipowners03.png",
   },
 ]
 
