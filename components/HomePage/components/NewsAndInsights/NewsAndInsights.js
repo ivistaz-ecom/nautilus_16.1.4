@@ -91,5 +91,4 @@ const NewsAndInsights = () => {
     </section>
   )
 }
-
 export default NewsAndInsights

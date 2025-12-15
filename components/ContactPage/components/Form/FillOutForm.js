@@ -23,7 +23,7 @@ const FillOutForm = () => {
             height={437}
             alt="Contact Us"
             className="w-full"
-          />
+          /> 
         </div>
       </div>
 
