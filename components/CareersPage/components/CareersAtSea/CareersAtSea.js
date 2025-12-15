@@ -73,7 +73,7 @@ const CareersAtSea = () => {
         </div>
       </div>
       <CareersAtSeaItem />
-    </div>
+    </>
   )
 }
 export default CareersAtSea
