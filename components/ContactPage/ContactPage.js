@@ -67,7 +67,7 @@ const ContactPage = () => {
               expanded: false,
             },
           ]}
-          className="w-full mt-5 h-[600px] "
+          className="w-full mt-5 h-[600px]"
         />
       </div> */}
 

@@ -24,7 +24,7 @@ const Heading = () => {
             career opportunities both at sea and ashore, including pathways for
             career advancement. <br /> Join us to embark on a rewarding journey
             where your skills and dedication are truly recognized.
-          </p>
+          </p>        
         </div>
 
         <ParallaxBanner
@@ -48,6 +48,7 @@ const Heading = () => {
               rewarding journey where your skills and dedication are truly
               recognized.
             </p>
+            
           </div>
         </ParallaxBanner>
       </div>

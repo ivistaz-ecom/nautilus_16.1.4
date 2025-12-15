@@ -10,7 +10,7 @@ const WhoWeAre = () => {
           providing skilled professionals for the maritime industry. Over time,
           we expanded to offer comprehensive ship management services, including
           technical management, inspections, and commercial solutions. Today,
-          with six offices strategically located in global maritime hubs,
+          with seven offices strategically located in global maritime hubs,
           Nautilus Shipping delivers tailored solutions that keep your fleet
           running smoothly and efficiently.
         </p>

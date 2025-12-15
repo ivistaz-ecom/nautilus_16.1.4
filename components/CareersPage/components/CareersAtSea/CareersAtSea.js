@@ -14,10 +14,8 @@ const CareersAtSea = () => {
           with DGS regulations.
         </p>
       </div>
-
       <CareersAtSeaItem />
     </div>
   )
 }
-
 export default CareersAtSea
