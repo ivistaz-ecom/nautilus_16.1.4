@@ -1,5 +1,4 @@
 "use client"
-
 import "react-phone-number-input/style.css"
 import PhoneInput from "react-phone-number-input"
 import { Country } from "country-state-city"
@@ -61,6 +60,16 @@ const Form = () => {
 
     try {
       const data = new FormData()
+      
+      // Contact Form 7 required fields
+      data.append("_wpcf7", "10026")
+      data.append("_wpcf7_version", "6.1.4")
+      data.append("_wpcf7_locale", "en_US")
+      data.append("_wpcf7_container_post", "0")
+      // Generate unit tag: wpcf7-f{formId}-p{postId}-o{instanceId}
+      const instanceId = Math.random().toString(36).substring(2, 15)
+      data.append("_wpcf7_unit_tag", `wpcf7-f10026-p0-o${instanceId}`)
+      
       data.append("name", formData.name)
       data.append("email", formData.email)
       data.append("company", formData.company)
