@@ -4,7 +4,7 @@
 import { useState } from "react"
 
 const FAQAccordion = ({ data }) => {
-  const [openIndex, setOpenIndex] = useState(null)
+  const [openIndex, setOpenIndex] = useState(0)
 
   const toggleAccordion = (index) =>
     setOpenIndex((prev) => (prev === index ? null : index))
@@ -48,7 +48,7 @@ const FAQAccordion = ({ data }) => {
                 isOpen ? "max-h-[500px] py-3" : "max-h-0"
               }`}
             >
-              <p className="text-primary tracking-wide md:text-lg">{faq.ans}</p>
+              <p className="text-primary tracking-wide text-sm md:text-base ps-4">{faq.ans}</p>
             </div>
           </div>
         )
