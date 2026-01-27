@@ -17,9 +17,10 @@ const KeyFeaturesItems = ({ keyFeaturesList }) => {
               height={77}
               alt={`icon-${index + 1}`}
             />
-            <p className="transition-transform duration-300 ease-in-out group-hover:-translate-y-3 will-change-transform">
-              {item.desc}
-            </p>
+            <p 
+              className="transition-transform duration-300 ease-in-out group-hover:-translate-y-3 will-change-transform"
+              dangerouslySetInnerHTML={{ __html: item.desc }}
+            />
           </li>
         ))}
       </ul>

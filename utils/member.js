@@ -108,7 +108,7 @@ export const crewMemberList = [
         post: "Technical Manager",
       },
       {
-        imageUrl: "/about-us/member/pp.svg",
+        imageUrl: "/about-us/member/karthick.webp",
         name: "Karthik ",
         post: "Asst. Technical Superintendent",
       },
@@ -220,11 +220,11 @@ export const crewMemberList = [
         name: "Sabitha",
         post: "Marine Personnel Executive",
       },
-      {
-        imageUrl: "/about-us/member/Pradeepa.webp",
-        name: "Pradeepa",
-        post: "Marine Personnel Executive",
-      },
+      // {
+      //   imageUrl: "/about-us/member/Pradeepa.webp",
+      //   name: "Pradeepa",
+      //   post: "Marine Personnel Executive",
+      // },
       {
         imageUrl: "/about-us/member/Sanika.webp",
         name: "Sanika",
@@ -246,11 +246,11 @@ export const crewMemberList = [
         name: "Chirag",
         post: "Marine Personnel Executive",
       },
-      {
-        imageUrl: "/about-us/member/Akansha_Bekare.webp",
-        name: "Akansha",
-        post: "Marine Personnel Executive",
-      },
+      // {
+      //   imageUrl: "/about-us/member/Akansha_Bekare.webp",
+      //   name: "Akansha",
+      //   post: "Marine Personnel Executive",
+      // },
      
     
     ],
@@ -319,7 +319,7 @@ export const crewMemberList = [
         post: "Operations Executive",
       },
       {
-        imageUrl: "/about-us/member/pp.svg",
+        imageUrl: "/about-us/member/Suhas.webp",
         name: "Suhas",
         post: "Operations Executive",
       },

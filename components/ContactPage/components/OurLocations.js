@@ -6,7 +6,7 @@ import React from "react"
 const OurLocations = () => {
   return (
     <div className="">
-      <div className="max-w-screen-xl w-full mx-auto px-4 pt-7 md:pt-14">
+      <div className="max-w-screen-xl w-full mx-auto px-4 ">
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-center">
           Our Locations
         </h1>
