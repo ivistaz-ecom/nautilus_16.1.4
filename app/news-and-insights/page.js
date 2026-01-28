@@ -3,6 +3,7 @@ import Blogs from "@/components/ResourcesPage/NewsAndInsights/Blogs/Blogs"
 import Heading from "@/components/ResourcesPage/NewsAndInsights/Heading"
 import LatestNews from "@/components/ResourcesPage/NewsAndInsights/LatestNews/LatestNews"
 import NextSeo from "@/components/Seo/Seo"
+import HomePageModal from "@/components/HomePage/components/HomePageModal/HomePageModal"
 
 export default function Page() {
   const seoField = {
@@ -16,6 +17,7 @@ export default function Page() {
   return (
     <>
       <NextSeo {...seoField} />
+      {/* <HomePageModal /> */}
       <Header
         logo="/logo.png"
         hamburger="/hamburger-dark.svg"

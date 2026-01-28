@@ -27,10 +27,20 @@ const MenuSection = () => {
       window.Trustpilot.loadFromElement(
         document.querySelector(".trustpilot-widget"),
         true
-        
       )
     }
   }, [])
+
+  // Auto-hide subscription message after 2 seconds
+  useEffect(() => {
+    if (!message) return
+
+    const timer = setTimeout(() => {
+      setMessage("")
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [message])
 
   // const settings = {
   //   vertical: true,
@@ -51,6 +61,13 @@ const MenuSection = () => {
 
     const formData = new FormData()
     formData.append("email", email)
+    formData.append("_wpcf7", "10031")
+    formData.append("_wpcf7_version", "6.1.4")
+    formData.append("_wpcf7_locale", "en_US")
+    formData.append("_wpcf7_container_post", "0")
+    // Generate unit tag: wpcf7-f{formId}-p{postId}-o{instanceId}
+    const instanceId = Math.random().toString(36).substring(2, 15)
+    formData.append("_wpcf7_unit_tag", `wpcf7-f10026-p0-o${instanceId}`)
 
     try {
       const response = await axios.post(

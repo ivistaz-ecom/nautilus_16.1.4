@@ -13,6 +13,7 @@ import Game from "../Game/Game"
 import Careers from "./components/Careers/Careers"
 import NewsAndInsights from "./components/NewsAndInsights/NewsAndInsights"
 import FAQs from "@/components/FAQs/FAQs"
+import HomePageModal from "./components/HomePageModal/HomePageModal"
 
 const faqs = [
   {
@@ -40,6 +41,7 @@ const HomePage = () => {
 
   return (
     <div className="overflow-hidden">
+      {/* <HomePageModal /> */}
       <HeroBanner />
       <For18Years />
       <NautilusPromise />

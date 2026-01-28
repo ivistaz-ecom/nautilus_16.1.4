@@ -1,5 +1,6 @@
 import Newsletter from "@/components/ResourcesPage/Newsletter/Newsletter"
 import NextSeo from "@/components/Seo/Seo"
+import HomePageModal from "@/components/HomePage/components/HomePageModal/HomePageModal"
 
 export default function Page() {
   const seoField = {
@@ -14,6 +15,7 @@ export default function Page() {
   return (
     <>
       <NextSeo {...seoField} />
+      {/* <HomePageModal /> */}
       <Newsletter />
     </>
   )
