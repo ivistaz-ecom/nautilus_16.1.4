@@ -216,7 +216,7 @@ export const ourLocationData = [
     imageUrl: "/contact-us/location/img01.png",
     add: "1st Floor, Maalavika Centre, 144/145, Kodambakkam High Road, Nungambakkam, Chennai - 600034",
     tel: "+91 44 4684 9999",
-    location: "https://maps.app.goo.gl/8XKX5ezuUCcnD3QG6",
+    location: "https://www.google.com/maps/place/Nautilus+Shipping+India+Private+Limited/@13.0531356,80.2456406,17z/data=!3m1!4b1!4m6!3m5!1s0x3a52662f51ff18b3:0xeec4d4ac889ecd22!8m2!3d13.0531356!4d80.2456406!16s%2Fg%2F1vhq23rs!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDEyNS4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     city: "Bengaluru",
