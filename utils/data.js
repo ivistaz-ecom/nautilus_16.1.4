@@ -214,7 +214,7 @@ export const ourLocationData = [
   {
     city: "Chennai",
     imageUrl: "/contact-us/location/img01.png",
-    add: "1st Foor, Maalavika Centre, 144/145, Kodambakkam High Road, Nungambakkam, Chennai - 600034",
+    add: "1st Floor, Maalavika Centre, 144/145, Kodambakkam High Road, Nungambakkam, Chennai - 600034",
     tel: "+91 44 4684 9999",
     location: "https://maps.app.goo.gl/8XKX5ezuUCcnD3QG6",
   },
@@ -251,14 +251,14 @@ export const ourLocationData = [
     imageUrl: "/contact-us/location/img06.png",
     add: "101, Cecil Street, #23-06, Tong Eng Building, Singapore-069533",
     tel: "+65 6224 6151",
-    location: "https://maps.app.goo.gl/BjFR3YDbSjevn7Lu7",
+    location: "https://www.google.com/maps/place/Tong+Eng+Building/@1.2811803,103.8495012,19z/data=!3m1!4b1!4m6!3m5!1s0x31da19004ff6d5d7:0x536346f39ceee3a!8m2!3d1.2811803!4d103.8495012!16s%2Fg%2F11xzfpnf6m?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     city: "Kochi",
     imageUrl: "/contact-us/location/Kochi-img.webp",
     add: "1st floor, SaiPoornashree, #41/139-E, Thevarakavu road, Thripunithura - 682301",
     tel: "+91 99440 10494",
-    location: "https://maps.app.goo.gl/CzWReVcNrv4i23uA6",
+    location: "https://www.google.com/maps/place/Poornasree+Apartments/@9.9470389,76.3442167,21z/data=!4m6!3m5!1s0x3b08739d311bdf9b:0xbc7bd9c0a74ff8ba!8m2!3d9.9471911!4d76.3444246!16s%2Fg%2F11jxy21pt9?entry=tts&g_ep=EgoyMDI2MDEyNS4wIPu8ASoASAFQAw%3D%3D&skid=ef261db7-ba09-4788-b164-67f36d02046f",
   },
 ]
 
