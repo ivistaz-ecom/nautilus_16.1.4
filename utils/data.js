@@ -216,7 +216,7 @@ export const ourLocationData = [
     imageUrl: "/contact-us/location/img01.png",
     add: "1st Floor, Maalavika Centre, 144/145, Kodambakkam High Road, Nungambakkam, Chennai - 600034",
     tel: "+91 44 4684 9999",
-    location: "https://www.google.com/maps/place/Nautilus+Shipping+India+Private+Limited/@13.0531356,80.2456406,17z/data=!3m1!4b1!4m6!3m5!1s0x3a52662f51ff18b3:0xeec4d4ac889ecd22!8m2!3d13.0531356!4d80.2456406!16s%2Fg%2F1vhq23rs!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDEyNS4wIKXMDSoASAFQAw%3D%3D",
+    location: "https://www.google.com/maps/place/Nautilus+Shipping+India+Private+Limited/@19.0603578,53.3844257,5z/data=!3m1!5s0x3a5266437c771527:0x5a400316832d8b37!4m7!3m6!1s0x3a52662f51ff18b3:0xeec4d4ac889ecd22!8m2!3d13.0531356!4d80.2456406!15sChBuYXV0aWx1c3NoaXBwaW5nkgEQc2hpcHBpbmdfc2VydmljZeABAA!16s%2Fg%2F1vhq23rs?entry=tts&g_ep=EgoyMDI2MDEyNi4wIPu8ASoASAFQAw%3D%3D&skid=2ed0e993-0107-403a-9a21-1ad431e4e6be",
   },
   {
     city: "Bengaluru",
@@ -230,14 +230,14 @@ export const ourLocationData = [
     imageUrl: "/contact-us/location/img03.png",
     add: "400-16, Arabian Square Business Center, Fahidi Heights, Al Hamriya, Dubai, UAE",
     tel: "+971 4 2569259",
-    location: "https://maps.app.goo.gl/aUDQwWzLub2fjznr5",
+    location: "https://www.google.com/maps/place/Nautilus+Shipping+LLC/@25.2576862,55.2993515,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f4396c2579583:0x508f288851567412!8m2!3d25.2576862!4d55.2993515!16s%2Fg%2F11wc2txt68?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     city: "Mumbai",
     imageUrl: "/contact-us/location/img04.png",
     add: "607, 6th Floor, Signature Business Park, Postal Colony Road, Chembur, Mumbai - 400071",
     tel: "+91 22 6998 9999",
-    location: "https://maps.app.goo.gl/arX6Mde2tC9TDyWY6",
+    location: "https://www.google.com/maps/place/Nautilus+Shipping+India+Pvt+Ltd/@19.0603578,53.3844257,5z/data=!4m7!3m6!1s0x3be7c6093ac4886d:0x2a581402b6234931!8m2!3d19.0603578!4d72.8961445!15sChBuYXV0aWx1c3NoaXBwaW5nkgEQc2hpcHBpbmdfc2VydmljZeABAA!16s%2Fg%2F11c1pgs03x?entry=tts&g_ep=EgoyMDI2MDEyNi4wIPu8ASoASAFQAw%3D%3D&skid=1e605bf4-d67b-4b9a-8bff-f3062f22941b",
   },
   {
     city: "Port Blair",
