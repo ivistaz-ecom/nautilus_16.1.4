@@ -28,8 +28,8 @@ const Heading = () => {
         </div>
 
         <ParallaxBanner
-          layers={[{ image: "/careers/bg.png", speed: -15 }]}
-          className="hidden sm:block bg-[url('/careers/bg.png')] bg-cover relative"
+          layers={[{ image: "/careers/bg.webp", speed: -15 }]}
+          className="hidden sm:block bg-[url('/careers/bg.webp')] bg-cover relative"
         >
           <div className="bg-black/60 absolute inset-0"></div>
           <div className="max-w-screen-xl mx-auto w-full py-12 sm:py-20 px-4 sm:px-6 relative z-10 text-white space-y-5 sm:space-y-10">

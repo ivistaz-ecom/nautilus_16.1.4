@@ -14,12 +14,13 @@ const Heading = () => {
 
           <ParallaxBanner
             layers={[
-              { image: "/fleet/banner.png", speed: -15, expanded: false },
+              { image: "/fleet/fleet-banner.webp", speed: -15, expanded: false },
             ]}
             className="w-full mt-5 h-72 md:h-[353px] hidden md:block"
           />
           <Image
-            src="/fleet/banner.png"
+
+            src="/fleet/fleet-banner.webp"
             width={1182}
             height={536}
             alt="fleet"

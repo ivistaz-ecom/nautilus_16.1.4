@@ -19,7 +19,7 @@ const ExperienceAPartnership = () => {
         </p>
         <ParallaxBanner
           layers={[
-            { image: "/our-approach/img03.png", speed: -15, expanded: false },
+            { image: "/our-approach/img03.webp", speed: -15, expanded: false },
           ]}
           className="w-full mt-5 h-[500px]"
         />

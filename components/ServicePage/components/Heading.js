@@ -52,11 +52,11 @@ const Heading = ({ data }) => {
         {/* Description Section */}
         <div className="max-w-screen-lg w-full mx-auto pt-5 space-y-3 md:mt-60 md:pe-20">
           <p
-            className="text-base md:text-lg font-light"
+            className="text-base md:text-lg font-light text-justify"
             dangerouslySetInnerHTML={{ __html: data.desc1 }}
           ></p>
           <p
-            className="text-base md:text-lg font-light"
+            className="text-base md:text-lg font-light text-justify"
             dangerouslySetInnerHTML={{ __html: data.desc2 }}
           ></p>
         </div>

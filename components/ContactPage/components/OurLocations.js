@@ -35,7 +35,7 @@ const OurLocations = () => {
                 <Link href={item.location} target="_blank">
                   <div className="flex gap-3 items-start">
                     <Image
-                      src="/contact-us/location.svg"
+                      src="/contact-us/loactions.svg"
                       width={30}
                       height={30}
                       alt="location"
@@ -52,7 +52,7 @@ const OurLocations = () => {
                 >
                   {item.tel && (
                     <Image
-                    src="/contact-us/call.png"
+                    src="/contact-us/calls.svg"
                     width={30}
                     height={30}
                     alt="call"
