@@ -15,7 +15,7 @@ const Game = () => {
         the hidden expenses before they take you by surprise?
       </p>
 
-      <Link href="https://hiddencosts.nautilusshipping.com" target="_blank">
+      <Link href="https://hiddencosts.nautilusshipping.com/?utm_source=website&utm_medium=game&utm_campaign=website" target="_blank">
         <button
           className="group relative py-2 px-6 rounded-lg border border-white/20 bg-white text-primary font-medium shadow-lg hover:bg-secondary hover:text-white transition-all duration-300 ease-in-out hover:scale-95 focus:outline-none focus:ring-2 focus:ring-white"
           aria-label="Play the Hidden Costs Game"

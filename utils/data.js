@@ -211,26 +211,13 @@ export const whereWeServeData = [
 ]
 
 export const ourLocationData = [
+  
   {
     city: "Chennai",
     imageUrl: "/contact-us/location/img01.png",
     add: "1st Floor, Maalavika Centre, 144/145, Kodambakkam High Road, Nungambakkam, Chennai - 600034",
     tel: "+91 44 4684 9999",
     location: "https://www.google.com/maps/place/Nautilus+Shipping+India+Private+Limited/@19.0603578,53.3844257,5z/data=!3m1!5s0x3a5266437c771527:0x5a400316832d8b37!4m7!3m6!1s0x3a52662f51ff18b3:0xeec4d4ac889ecd22!8m2!3d13.0531356!4d80.2456406!15sChBuYXV0aWx1c3NoaXBwaW5nkgEQc2hpcHBpbmdfc2VydmljZeABAA!16s%2Fg%2F1vhq23rs?entry=tts&g_ep=EgoyMDI2MDEyNi4wIPu8ASoASAFQAw%3D%3D&skid=2ed0e993-0107-403a-9a21-1ad431e4e6be",
-  },
-  {
-    city: "Bengaluru",
-    imageUrl: "/contact-us/location/img02.png",
-    add: "Reliaable Phoenix Towers, 4th Floor, 16 & 16/1, Museum Road, Bengaluru – 560025",
-    tel: "+91 80 6998 9999",
-    location: " https://maps.app.goo.gl/e9RKwNQ7xQHpVJS79",
-  },
-  {
-    city: "Dubai",
-    imageUrl: "/contact-us/location/img03.png",
-    add: "400-16, Arabian Square Business Center, Fahidi Heights, Al Hamriya, Dubai, UAE",
-    tel: "+971 4 2569259",
-    location: "https://www.google.com/maps/place/Nautilus+Shipping+LLC/@25.2576862,55.2993515,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f4396c2579583:0x508f288851567412!8m2!3d25.2576862!4d55.2993515!16s%2Fg%2F11wc2txt68?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     city: "Mumbai",
@@ -240,18 +227,18 @@ export const ourLocationData = [
     location: "https://www.google.com/maps/place/Nautilus+Shipping+India+Pvt+Ltd/@19.0603578,53.3844257,5z/data=!4m7!3m6!1s0x3be7c6093ac4886d:0x2a581402b6234931!8m2!3d19.0603578!4d72.8961445!15sChBuYXV0aWx1c3NoaXBwaW5nkgEQc2hpcHBpbmdfc2VydmljZeABAA!16s%2Fg%2F11c1pgs03x?entry=tts&g_ep=EgoyMDI2MDEyNi4wIPu8ASoASAFQAw%3D%3D&skid=1e605bf4-d67b-4b9a-8bff-f3062f22941b",
   },
   {
-    city: "Port Blair",
-    imageUrl: "/contact-us/location/img05.png",
-    add: "4th Cross Road, Near Confidential Dental Clinic, Junglighat, Port Blair, South Andaman – 744103",
-    tel: "+91 99 3208 8859",
-    location: "https://maps.app.goo.gl/Ty1UskNyjqmwtjii9",
+    city: "Dubai",
+    imageUrl: "/contact-us/location/img03.png",
+    add: "400-16, Arabian Square Business Center, Fahidi Heights, Al Hamriya, Dubai, UAE",
+    tel: "+971 4 2569259",
+    location: "https://www.google.com/maps/place/Nautilus+Shipping+LLC/@25.2576862,55.2993515,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f4396c2579583:0x508f288851567412!8m2!3d25.2576862!4d55.2993515!16s%2Fg%2F11wc2txt68?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D",
   },
   {
-    city: "Singapore",
-    imageUrl: "/contact-us/location/img06.png",
-    add: "101, Cecil Street, #23-06, Tong Eng Building, Singapore-069533",
-    tel: "+65 6224 6151",
-    location: "https://www.google.com/maps/place/Tong+Eng+Building/@1.2811803,103.8495012,19z/data=!3m1!4b1!4m6!3m5!1s0x31da19004ff6d5d7:0x536346f39ceee3a!8m2!3d1.2811803!4d103.8495012!16s%2Fg%2F11xzfpnf6m?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D",
+    city: "Bengaluru",
+    imageUrl: "/contact-us/location/img02.png",
+    add: "Reliaable Phoenix Towers, 4th Floor, 16 & 16/1, Museum Road, Bengaluru – 560025",
+    tel: "+91 80 6998 9999",
+    location: " https://maps.app.goo.gl/e9RKwNQ7xQHpVJS79",
   },
   {
     city: "Kochi",
@@ -260,6 +247,23 @@ export const ourLocationData = [
     tel: "+91 99440 10494",
     location: "https://www.google.com/maps/place/Poornasree+Apartments/@9.9470389,76.3442167,21z/data=!4m6!3m5!1s0x3b08739d311bdf9b:0xbc7bd9c0a74ff8ba!8m2!3d9.9471911!4d76.3444246!16s%2Fg%2F11jxy21pt9?entry=tts&g_ep=EgoyMDI2MDEyNS4wIPu8ASoASAFQAw%3D%3D&skid=ef261db7-ba09-4788-b164-67f36d02046f",
   },
+  {
+    city: "Singapore",
+    imageUrl: "/contact-us/location/img06.png",
+    add: "101, Cecil Street, #23-06, Tong Eng Building, Singapore-069533",
+    tel: "+65 6224 6151",
+    location: "https://www.google.com/maps/place/Tong+Eng+Building/@1.2811803,103.8495012,19z/data=!3m1!4b1!4m6!3m5!1s0x31da19004ff6d5d7:0x536346f39ceee3a!8m2!3d1.2811803!4d103.8495012!16s%2Fg%2F11xzfpnf6m?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D",
+  },
+
+  {
+    city: "Port Blair",
+    imageUrl: "/contact-us/location/img05.png",
+    add: "4th Cross Road, Near Confidential Dental Clinic, Junglighat, Port Blair, South Andaman – 744103",
+    tel: "+91 99 3208 8859",
+    location: "https://maps.app.goo.gl/Ty1UskNyjqmwtjii9",
+  },
+ 
+
 ]
 
 export const servicesList = [
@@ -311,14 +315,14 @@ export const latestList = [
   {
     imageUrl: "/service/latest/icon02.svg",
     title: "Blog",
-    desc: "Explore in-depth articles on ship management, crew welfare, sustainability initiatives, and industry best practices.",
+    desc: "Explore in-depth articles on ship management, crew welfare, sustainability initiatives, and industry best practices for maritime excellence.",
     btnText: "Read Our Posts",
     path: "/resources/news-and-insights",
   },
   {
     imageUrl: "/service/latest/icon03.svg",
     title: "Events",
-    desc: "Stay informed about key discussions shaping the future of shipping and fleet management.",
+    desc: "Stay informed about key discussions shaping the future of shipping and fleet management across global industry platforms.",
     btnText: "Learn More",
     path: "/resources/events",
   },
