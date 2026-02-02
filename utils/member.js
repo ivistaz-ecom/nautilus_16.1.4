@@ -231,16 +231,16 @@ export const crewMemberList = [
         post: "Marine Personnel Executive",
       },
 
-      {
-        imageUrl: "/about-us/member/pp.svg",
-        name: "Priyanka",
-        post: "Marine Personnel Executive",
-      },
-      {
-        imageUrl: "/about-us/member/pp.svg",
-        name: "Kartiki",
-        post: "Marine Personnel Executive",
-      },
+      // {
+      //   imageUrl: "/about-us/member/pp.svg",
+      //   name: "Priyanka",
+      //   post: "Marine Personnel Executive",
+      // },
+      // {
+      //   imageUrl: "/about-us/member/pp.svg",
+      //   name: "Kartiki",
+      //   post: "Marine Personnel Executive",
+      // },
       {
         imageUrl: "/about-us/member/Chirag.webp",
         name: "Chirag",

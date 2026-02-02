@@ -11,6 +11,7 @@ const SocialMediaBtn = () => {
         <button
           type="button"
           className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
+          aria-label="Visit our LinkedIn page"
         >
           {linkedInIcon}
         </button>
@@ -19,6 +20,7 @@ const SocialMediaBtn = () => {
         <button
           type="button"
           className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
+          aria-label="Visit our Instagram page"
         >
           {instagramIcon}
         </button>
@@ -30,6 +32,7 @@ const SocialMediaBtn = () => {
         <button
           type="button"
           className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
+          aria-label="Call us"
         >
           {phoneIcon}
         </button>
@@ -38,6 +41,7 @@ const SocialMediaBtn = () => {
         <button
           type="button"
           className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
+          aria-label="Email us"
         >
           {mailIcon}
         </button>

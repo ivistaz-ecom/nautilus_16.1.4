@@ -48,23 +48,24 @@ const BlogInteractive = ({ slug, post }) => {
       {/* Share Buttons */}
       <div className="flex gap-3 absolute md:left-20 md:top-20 left-4 top-4 md:flex-col flex-row">
         <LinkedinShareButton url={blogUrl} title={post.title.rendered}>
-          <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
+          <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on LinkedIn">
             {linkedInIcon}
           </button>
         </LinkedinShareButton>
         <FacebookShareButton url={blogUrl} title={post.title.rendered}>
-          <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
+          <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on Facebook">
             {facebookIcon}
           </button>
         </FacebookShareButton>
         <TwitterShareButton url={blogUrl} title={post.title.rendered}>
-          <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
+          <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on X (Twitter)">
             {xIcon}
           </button>
         </TwitterShareButton>
         <button
           onClick={handleCopyLink}
           className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
+          aria-label="Copy link"
         >
           {linkIcon}
         </button>
