@@ -77,9 +77,12 @@ const MeetOurCrewItems = () => {
                   {item.department}
                 </span>
                 <button
+                  onClick={() => toggleTeam(index)}
                   className={`text-lg sm:text-xl transform transition-transform duration-300 ease-in-out ${
                     openIndex === index ? "rotate-45" : ""
                   }`}
+                  aria-label={openIndex === index ? `Collapse ${item.department} details` : `Expand ${item.department} details`}
+                  aria-expanded={openIndex === index}
                 >
                   {plusIcon}
                 </button>

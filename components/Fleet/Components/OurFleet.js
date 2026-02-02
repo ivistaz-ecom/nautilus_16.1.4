@@ -29,9 +29,12 @@ const OurFleet = () => {
                     {item.title}
                   </span>
                   <button
+                    onClick={() => toggleAccordion(index)}
                     className={`text-lg sm:text-xl transform transition-transform duration-300 ease-in-out ${
                       openIndex === index ? "rotate-45" : "rotate-0"
                     }`}
+                    aria-label={openIndex === index ? `Collapse ${item.title} details` : `Expand ${item.title} details`}
+                    aria-expanded={openIndex === index}
                   >
                     {plusIcon}
                   </button>
