@@ -4,6 +4,7 @@ import Footer from "@/components/Footer/Footer"
 import ScrollButton from "@/components/ScrollButton/ScrollButton"
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop"
 import Script from "next/script"
+import ClarityInit from "@/components/ClarityInit"
 
 //import CookieConsentComponent from "@/components/CookieConsent/CookieConsent"
 //import "vanilla-cookieconsent/dist/cookieconsent.css"
@@ -100,6 +101,7 @@ export default function RootLayout({ children }) {
         </Script>
         {children}
         <Footer />
+        <ClarityInit />
         <ScrollButton />
         {/* <CookieConsentComponent /> */}
       </body>
