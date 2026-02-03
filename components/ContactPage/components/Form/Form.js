@@ -45,7 +45,15 @@ const Form = () => {
     //   newErrors.phone = "Enter a valid phone number"
     // }
     if (!formData.country.trim()) newErrors.country = "Country is required"
-    if (!formData.message.trim()) newErrors.message = "Message cannot be empty"
+    if (!formData.message.trim()) {
+      newErrors.message = "Message cannot be empty"
+    } else if (formData.message.trim().length > 500) {
+      newErrors.message = "Message must be less than 500 characters"
+    } else if (/<|>|<script|<\/script/i.test(formData.message)) {
+      newErrors.message = "HTML tags and angle brackets (< >) are not allowed"
+    } else if (/[{}\\|`~^]/.test(formData.message)) {
+      newErrors.message = "Special characters { } \\ | ` ~ ^ are not allowed"
+    }
     if (!formData.consent) newErrors.consent = "You must agree to the terms"
 
     setErrors(newErrors)
@@ -288,13 +296,19 @@ const Form = () => {
 
   const renderMessageField = () => (
     <div className="flex flex-col gap-2 w-full">
-      <label className="text-gray-500 text-base sm:text-lg">Message</label>
+      <div className="flex justify-between items-center">
+        <label htmlFor="message" className="text-gray-500 text-base sm:text-lg">Message</label>
+        <span className={`text-xs ${formData.message.length > 500 ? 'text-red-500' : 'text-gray-400'}`}>
+          {formData.message.length}/500
+        </span>
+      </div>
 
       <textarea
         name="message"
         id="message"
         cols={50}
         rows={5}
+        maxLength={500}
         className="rounded text-base sm:text-lg bg-white focus:ring-0 border border-white p-2 focus:outline-none"
         value={formData.message}
         onChange={(e) =>
