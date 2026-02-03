@@ -51,7 +51,7 @@ const Form = () => {
       newErrors.message = "Message must be less than 500 characters"
     } else if (/<|>|<script|<\/script/i.test(formData.message)) {
       newErrors.message = "HTML tags and angle brackets (< >) are not allowed"
-    } else if (/[{}\\|`~^]/.test(formData.message)) {
+    } else if (/[{}\\:|`~^]/.test(formData.message)) {
       newErrors.message = "Special characters { } \\ | ` ~ ^ are not allowed"
     }
     if (!formData.consent) newErrors.consent = "You must agree to the terms"
