@@ -9,6 +9,7 @@ export default function Page() {
     path: "/careers",
     metaImage: "/our-approach/img01.png",
     pageType: "WebSite",
+    preloadImage: "/careers/bg.webp",
   }
 
   return (

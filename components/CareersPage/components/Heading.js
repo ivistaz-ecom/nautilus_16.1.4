@@ -1,9 +1,20 @@
 "use client"
 import { ParallaxBanner } from "react-scroll-parallax"
+import Image from "next/image"
 
 const Heading = () => {
   return (
     <div className="pt-28 pb-7 sm:pb-14">
+      {/* Preload LCP background image for early discovery */}
+      <Image
+        src="/careers/bg.webp"
+        alt=""
+        width={1}
+        height={1}
+        priority
+        className="sr-only"
+        aria-hidden="true"
+      />
       <h1 className="text-2xl sm:text-6xl font-light text-center leading-snug sm:leading-tight tracking-wide">
         India’s Fastest Growing <br className="hidden sm:block" /> Ship
         Management Company

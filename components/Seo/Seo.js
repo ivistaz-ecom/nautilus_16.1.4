@@ -1,7 +1,7 @@
 "use client"
 import React from "react"
 
-function NextSeo({ title, description, path, metaImage }) {
+function NextSeo({ title, description, path, metaImage, preloadImage }) {
   // Dynamically get the domain name from window.location (client-side)
   const domainName = typeof window !== "undefined" ? window.location.origin : ""
 
@@ -12,6 +12,15 @@ function NextSeo({ title, description, path, metaImage }) {
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/images/favicon-150x150.png" />
+      {/* Preload LCP image for faster rendering */}
+      {preloadImage && (
+        <link
+          rel="preload"
+          as="image"
+          href={preloadImage}
+          fetchPriority="high"
+        />
+      )}
       <link rel="canonical" href={`${domainName}${path}`} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />

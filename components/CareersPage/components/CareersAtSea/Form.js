@@ -138,8 +138,10 @@ const Form = () => {
 
   const renderNameField = () => (
     <div className="w-full">
+      <label htmlFor="name-atsea" className="sr-only">Name</label>
       <input
         type="text"
+        id="name-atsea"
         placeholder="Name"
         className="border-b border-t-0 border-x-0 text-white bg-transparent w-full border-gray-300 ps-0 p-1.5 text-base focus:ring-0 focus:border-white"
         value={formData.name}
@@ -157,8 +159,10 @@ const Form = () => {
 
   const renderEmailField = () => (
     <div className="w-full">
+      <label htmlFor="email-atsea" className="sr-only">Email</label>
       <input
         type="email"
+        id="email-atsea"
         placeholder="Email"
         className="border-b border-t-0 border-x-0 text-white bg-transparent w-full border-gray-300 ps-0 p-1.5 text-base focus:ring-0 focus:border-white"
         value={formData.email}
@@ -177,7 +181,7 @@ const Form = () => {
   const renderPhoneField = () => {
     return (
       <div className="flex flex-col w-full">
-        {/* <label className="text-gray-500 text-base">Phone Number</label> */}
+        <label htmlFor="phone-atsea" className="sr-only">Phone Number</label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <PhoneInput
             international
@@ -187,6 +191,7 @@ const Form = () => {
               setFormData((prev) => ({ ...prev, phone: value }))
             }
             className="custom-phone-input w-full text-base text-white"
+            id="phone-atsea"
           />
         </div>
         <div className="h-4">
@@ -212,6 +217,7 @@ const Form = () => {
             className="w-full text-white/85 text-base border-none"
             classNamePrefix="react-select"
             placeholder="Select Country"
+            aria-label="Select Country"
             value={
               countryOptions.find((c) => c.value === formData.country) || null
             } // Ensure value is reset
@@ -286,6 +292,7 @@ const Form = () => {
             className="w-full text-white/85 text-base focus:ring-0 border-none focus:outline-none"
             classNamePrefix="react-select"
             placeholder="Select State"
+            aria-label="Select State"
             value={stateOptions.find((s) => s.value === formData.state) || null}
             onChange={(selectedOption) =>
               setFormData((prev) => ({
@@ -360,6 +367,7 @@ const Form = () => {
             className="w-full text-white/85 text-base focus:ring-0 border-none focus:outline-none"
             classNamePrefix="react-select"
             placeholder="Select City"
+            aria-label="Select City"
             value={cityOptions.find((c) => c.value === formData.city) || null} // Ensure .find() is used on an array
             onChange={(selectedOption) =>
               setFormData((prev) => ({
@@ -418,8 +426,10 @@ const Form = () => {
 
   const renderZipCodeField = () => (
     <div className="w-full">
+      <label htmlFor="zipcode-atsea" className="sr-only">Zip Code</label>
       <input
         type="text"
+        id="zipcode-atsea"
         placeholder="Zip Code"
         className="border-b border-t-0 border-x-0 text-white bg-transparent w-full border-gray-300 ps-0 p-1.5 text-base focus:ring-0 focus:border-white"
         value={formData.zipCode}
@@ -438,10 +448,11 @@ const Form = () => {
   const renderVesselField = () => {
     return (
       <div className="flex flex-col w-full">
+        <label htmlFor="vessel-atsea" className="sr-only">Select Vessel</label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="vessel"
-            id="vessel"
+            id="vessel-atsea"
             className="bg-transparent text-white/85 text-base font-light focus:ring-0 border-none focus:outline-none w-full"
             value={formData.vessel}
             onChange={(e) =>
@@ -468,10 +479,11 @@ const Form = () => {
   const renderPositionField = () => {
     return (
       <div className="flex flex-col gap-1 w-full">
+        <label htmlFor="position-atsea" className="sr-only">Select Current/Previous Position</label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="position"
-            id="position"
+            id="position-atsea"
             className="bg-transparent text-white/85 text-base font-light focus:ring-0 border-none focus:outline-none w-full"
             value={formData.position || ""} // Ensure it doesn't become undefined
             onChange={
@@ -501,10 +513,11 @@ const Form = () => {
   const renderNewPositionField = () => {
     return (
       <div className="flex flex-col gap-1 w-full">
+        <label htmlFor="newposition-atsea" className="sr-only">Select New Position to Apply</label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="newPosition"
-            id="newPosition"
+            id="newposition-atsea"
             className="bg-transparent text-white/85 text-base font-light focus:ring-0 border-none focus:outline-none w-full"
             value={formData.newPosition || ""} // Ensure it doesn't become undefined
             onChange={
@@ -619,8 +632,10 @@ const Form = () => {
 
   const renderINDoSNoield = () => (
     <div className="w-full">
+      <label htmlFor="indos-atsea" className="sr-only">INDoS Number</label>
       <input
         type="text"
+        id="indos-atsea"
         placeholder="INDoS No."
         className="border-b border-t-0 border-x-0 text-white bg-transparent w-full border-gray-300 ps-0 p-1.5 text-base focus:ring-0 focus:border-white"
         value={formData.INDoSNo}
@@ -638,12 +653,12 @@ const Form = () => {
 
   return (
     <div className="p-3 sm:py-10 sm:px-4">
-      <h4 className="text-sm font-light text-white">
+      <p className="text-sm font-light text-white">
         All fields are mandatory*
-      </h4>
-      <h3 className="text-xl sm:text-2xl font-light text-white mt-3">
+      </p>
+      <h2 className="text-xl sm:text-2xl font-light text-white mt-3">
         Submit a CV/Resume <span className="text-base">(Offshore Job)</span>
-      </h3>
+      </h2>
       <form className="flex flex-col gap-3 pt-5" onSubmit={handleForm}>
         {renderNameField()}
 
