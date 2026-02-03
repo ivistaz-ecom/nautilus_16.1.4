@@ -117,8 +117,10 @@ const Form = () => {
 
   const renderNameField = () => (
     <div className="w-full">
+      <label htmlFor="name-ashore" className="sr-only">Name</label>
       <input
         type="text"
+        id="name-ashore"
         placeholder="Name"
         className="border-b border-t-0 border-x-0 text-white bg-transparent w-full border-gray-300 ps-0 p-1.5 focus:ring-0 focus:border-white"
         value={formData.name}
@@ -136,8 +138,10 @@ const Form = () => {
 
   const renderEmailField = () => (
     <div className="w-full">
+      <label htmlFor="email-ashore" className="sr-only">Email</label>
       <input
         type="email"
+        id="email-ashore"
         placeholder="Email"
         className="border-b border-t-0 border-x-0 text-white bg-transparent w-full border-gray-300 ps-0 p-1.5 focus:ring-0 focus:border-white"
         value={formData.email}
@@ -156,7 +160,7 @@ const Form = () => {
   const renderPhoneField = () => {
     return (
       <div className="flex flex-col w-full">
-        {/* <label className="text-gray-500">Phone Number</label> */}
+        <label htmlFor="phone-ashore" className="sr-only">Phone Number</label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <PhoneInput
             international
@@ -166,6 +170,7 @@ const Form = () => {
               setFormData((prev) => ({ ...prev, phone: value }))
             }
             className="custom-phone-input w-full text-white"
+            id="phone-ashore"
           />
         </div>
         <div className="h-4">
@@ -191,6 +196,7 @@ const Form = () => {
             className="w-full text-white/85 border-none"
             classNamePrefix="react-select"
             placeholder="Select Country"
+            aria-label="Select Country"
             value={
               countryOptions.find((c) => c.value === formData.country) || null
             } // Ensure value is reset
@@ -265,6 +271,7 @@ const Form = () => {
             className="w-full text-white/85 focus:ring-0 border-none focus:outline-none"
             classNamePrefix="react-select"
             placeholder="Select State"
+            aria-label="Select State"
             value={stateOptions.find((s) => s.value === formData.state) || null}
             onChange={(selectedOption) =>
               setFormData((prev) => ({
@@ -339,6 +346,7 @@ const Form = () => {
             className="w-full text-white/85 focus:ring-0 border-none focus:outline-none"
             classNamePrefix="react-select"
             placeholder="Select City"
+            aria-label="Select City"
             value={cityOptions.find((c) => c.value === formData.city) || null} // Ensure .find() is used on an array
             onChange={(selectedOption) =>
               setFormData((prev) => ({
@@ -397,8 +405,10 @@ const Form = () => {
 
   const renderZipCodeField = () => (
     <div className="w-full">
+      <label htmlFor="zipcode-ashore" className="sr-only">Zip Code</label>
       <input
         type="text"
+        id="zipcode-ashore"
         placeholder="Zip Code"
         className="border-b border-t-0 border-x-0 text-white bg-transparent w-full border-gray-300 ps-0 p-1.5 focus:ring-0 focus:border-white"
         value={formData.zipCode}
@@ -417,10 +427,11 @@ const Form = () => {
   const renderPositionField = () => {
     return (
       <div className="flex flex-col gap-1 w-full">
+        <label htmlFor="position-ashore" className="sr-only">Select Position</label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="position"
-            id="position"
+            id="position-ashore"
             className="bg-transparent text-white/85 font-light focus:ring-0 border-none focus:outline-none w-full"
             value={formData.position || ""}
             onChange={(e) =>

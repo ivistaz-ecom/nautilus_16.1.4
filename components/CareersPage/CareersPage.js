@@ -9,7 +9,7 @@ import Hiring from "./components/Hiring/Hiring"
 
 const CareersPage = () => {
   return (
-    <>
+    <main id="main-content">
       <ParallaxProvider>
         <Header
           logo="/logo.png"
@@ -61,7 +61,7 @@ const CareersPage = () => {
         </div>
         <VisitBlogs />
       </ParallaxProvider>
-    </>
+    </main>
   )
 }
 

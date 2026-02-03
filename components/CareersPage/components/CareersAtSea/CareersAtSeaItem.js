@@ -14,6 +14,8 @@ const CareersAtSeaItem = () => {
           height={776}
           alt="Careers At Sea"
           className="w-full h-full"
+          priority
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </div>
