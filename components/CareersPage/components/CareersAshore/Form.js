@@ -548,15 +548,15 @@ const Form = () => {
   return (
     <div className="p-3 sm:py-10 sm:px-4 h-full flex flex-col justify-center">
       {/* Mandatory Notice */}
-      <h4 className="text-sm font-light text-white">
+      <p className="text-sm font-light text-white">
         All fields are mandatory*
-      </h4>
+      </p>
 
       {/* Form Heading */}
-      <h3 className="text-xl sm:text-2xl font-light text-white mt-4">
+      <h2 className="text-xl sm:text-2xl font-light text-white mt-4">
         Submit a CV/Resume{" "}
         <span className="text-base">(Onshore/Shore Job)</span>
-      </h3>
+      </h2>
 
       {/* Form Section */}
       <form className="flex flex-col gap-5 pt-6 sm:pt-7" onSubmit={handleForm}>
