@@ -40,7 +40,7 @@ const HomePage = () => {
   // }, [])
 
   return (
-    <div className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       {/* <HomePageModal /> */}
       <HeroBanner />
       <For18Years />
@@ -50,7 +50,7 @@ const HomePage = () => {
       <Careers />
       <NewsAndInsights />
       <FAQs data={faqs} />
-    </div>
+    </main>
   )
 }
 

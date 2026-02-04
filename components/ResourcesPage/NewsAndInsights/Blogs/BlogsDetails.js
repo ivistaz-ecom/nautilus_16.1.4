@@ -77,6 +77,22 @@ const BlogsDetails = ({ slug }) => {
     return Math.ceil(wordCount / wpm)
   }
 
+  // Normalize heading levels in blog content to maintain proper hierarchy
+  // Since the page has h1 for title, all headings in content should start from h2
+  const normalizeHeadings = (htmlContent) => {
+    if (!htmlContent) return ""
+    
+    return htmlContent
+      .replace(/<h6/gi, "<h2")
+      .replace(/<\/h6>/gi, "</h2>")
+      .replace(/<h5/gi, "<h2")
+      .replace(/<\/h5>/gi, "</h2>")
+      .replace(/<h4/gi, "<h2")
+      .replace(/<\/h4>/gi, "</h2>")
+      .replace(/<h3/gi, "<h2")
+      .replace(/<\/h3>/gi, "</h2>")
+  }
+
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
@@ -116,6 +132,7 @@ const BlogsDetails = ({ slug }) => {
         search="/search-dark.svg"
       />
 
+      <main id="main-content">
       <div className="pt-24 md:pt-28 pb-7 px-3 md:px-6 lg:px-4 max-w-screen-lg mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10">
           {/* Title and Date Section */}
@@ -157,31 +174,32 @@ const BlogsDetails = ({ slug }) => {
 
       <div className="flex flex-col md:flex-row justify-between relative overflow-hidden">
         {/* Social Media Icons */}
-        <div className="flex gap-3 absolute md:left-20 md:top-20 left-4 top-4 md:flex-col flex-row">
-          <LinkedinShareButton url={blogUrl} title={blog.title.rendered}>
-            <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on LinkedIn">
+        <div className="flex gap-4 absolute md:left-20 md:top-20 left-4 top-4 md:flex-col flex-row">
+          <LinkedinShareButton url={blogUrl} title={blog.title.rendered} aria-label="Share on LinkedIn">
+            <span className="relative inline-flex items-center justify-center p-2 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
               {linkedInIcon}
-            </button>
+              <span className="absolute -inset-2" aria-hidden="true" />
+            </span>
           </LinkedinShareButton>
-          {/* <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
-            {instagramIcon}
-          </button> */}
-          <FacebookShareButton url={blogUrl} title={blog.title.rendered}>
-            <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on Facebook">
+          <FacebookShareButton url={blogUrl} title={blog.title.rendered} aria-label="Share on Facebook">
+            <span className="relative inline-flex items-center justify-center p-2 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
               {facebookIcon}
-            </button>
+              <span className="absolute -inset-2" aria-hidden="true" />
+            </span>
           </FacebookShareButton>
-          <TwitterShareButton url={blogUrl} title={blog.title.rendered}>
-            <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on X (Twitter)">
+          <TwitterShareButton url={blogUrl} title={blog.title.rendered} aria-label="Share on X (Twitter)">
+            <span className="relative inline-flex items-center justify-center p-2 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
               {xIcon}
-            </button>
+              <span className="absolute -inset-2" aria-hidden="true" />
+            </span>
           </TwitterShareButton>
           <button
             onClick={handleCopyLink}
-            className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
+            className="relative inline-flex items-center justify-center p-2 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
             aria-label="Copy link"
           >
             {linkIcon}
+            <span className="absolute -inset-2" aria-hidden="true" />
           </button>
 
           {copySuccess && (
@@ -199,15 +217,16 @@ const BlogsDetails = ({ slug }) => {
 
         {/* Blog Content Section */}
         <div className="py-7 max-w-screen-lg mx-auto flex flex-col gap-10 px-4 mt-5">
-          {/* Blog Description (rendering raw HTML content) */}
+          {/* Blog Description (rendering raw HTML content with normalized headings) */}
           <div
             className="text-lg text-gray-700 leading-relaxed blog-content"
             dangerouslySetInnerHTML={{
-              __html: blog.content.rendered,
+              __html: normalizeHeadings(blog.content.rendered),
             }}
           />
         </div>
       </div>
+      </main>
     </>
   )
 }

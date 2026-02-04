@@ -52,10 +52,19 @@ const Heading = () => {
             playsInline
             controls
             muted
+            aria-label="Narayan Rajan interview at TradeWinds TV Studio"
           >
             <source
               src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus-video.mp4"
               type="video/mp4"
+            />
+            {/* Captions track for accessibility */}
+            <track
+              kind="captions"
+              src=""
+              srcLang="en"
+              label="English captions"
+              default
             />
             Your browser does not support the video tag.
           </video>
