@@ -34,6 +34,7 @@ const HeroBanner = () => {
         muted
         playsInline
         preload="auto"
+        aria-label="Ocean waves background video"
       >
         <source
           src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilusshipping_sea.mp4"
@@ -42,6 +43,14 @@ const HeroBanner = () => {
         <source
           src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus_sea.webm"
           type="video/webm"
+        />
+        {/* Captions track for accessibility - video is decorative/ambient with no speech */}
+        <track
+          kind="captions"
+          src=""
+          srcLang="en"
+          label="English captions"
+          default
         />
         Your browser does not support the video tag.
       </video>
