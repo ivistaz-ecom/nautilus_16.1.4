@@ -124,11 +124,11 @@ export const crewMemberList = [
       //   post: "Purchase Assistant",
       // },
 
-      {
-        imageUrl: "/about-us/member/Joe.png",
-        name: "Joe",
-        post: "Purchase Assistant",
-      },
+      // {
+      //   imageUrl: "/about-us/member/Joe.png",
+      //   name: "Joe",
+      //   post: "Purchase Assistant",
+      // },
       {
         imageUrl: "/about-us/member/Sudha_Kumar.webp",
         name: "Sudha",
