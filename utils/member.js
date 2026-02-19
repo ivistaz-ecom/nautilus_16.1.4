@@ -98,6 +98,16 @@ export const crewMemberList = [
         post: "Technical Director",
       },
       {
+        imageUrl: "/about-us/member/OP_Sheoran.webp",
+        name: "Cdr. O P Sheron",
+        post: "Technical Director<br />Repairs & Refit",
+      },
+      {
+        imageUrl: "/about-us/member/RajinderKumar.webp",
+        name: "Capt. Rajinder",
+        post: "Director - Repairs & Refit",
+      },
+      {
         imageUrl: "/about-us/member/abid-02.png",
         name: "Abid Ansari",
         post: "General Manager - Technical",

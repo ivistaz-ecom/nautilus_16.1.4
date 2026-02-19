@@ -151,9 +151,7 @@ const MeetOurCrewItems = () => {
                                   <p className="text-lg sm:text-xl font-light">
                                     {member.name}
                                   </p>
-                                  <p className="text-base sm:text-sm font-light">
-                                    {member.post}
-                                  </p>
+                                  <p className="text-base sm:text-sm font-light" dangerouslySetInnerHTML={{ __html: member.post }}></p>
                                 </div>
                               </motion.div>
                             </motion.div>
