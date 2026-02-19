@@ -58,7 +58,7 @@ const Committee = ({ data }) => {
                     <div className="bg-primary rounded-b-md flex justify-between items-center p-2 mt-auto">
                       <div className="space-y-1 text-white">
                         <p className="font-light text-sm">{item.name}</p>
-                        <p className="text-xs font-[100]">{item.post}</p>
+                        <p className="text-xs font-[100]" dangerouslySetInnerHTML={{ __html: item.post }}></p>
                       </div>
                       {/* <Image
                         src="/arrow.svg"
