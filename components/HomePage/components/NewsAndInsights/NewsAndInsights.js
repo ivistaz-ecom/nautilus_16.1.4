@@ -19,9 +19,9 @@ const NewsAndInsights = () => {
           <h2 className="text-white text-4xl md:text-6xl lg:text-8xl font-light tracking-wide leading-tight">
             News & <br className="hidden sm:block" /> Insights
           </h2>
-          <Link href="/news-and-insights" className="hidden md:block">
+          <Link href="/news-and-insights" className="hidden md:block" aria-label="Read more about News and Insights">
             <button className="py-2 px-6 bg-white rounded-lg text-primary hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
-              Read More
+              Read more about News and Insights
             </button>
           </Link>
         </div>
@@ -37,9 +37,9 @@ const NewsAndInsights = () => {
 
       {/* Mobile Read More Button */}
       <div className="md:hidden text-center -mt-8">
-        <Link href="/news-and-insights">
+        <Link href="/news-and-insights" aria-label="Read more about News and Insights">
           <button className="py-2 px-6 bg-white rounded-lg text-primary hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
-            Read More
+            Read more about News and Insights
           </button>
         </Link>
       </div>

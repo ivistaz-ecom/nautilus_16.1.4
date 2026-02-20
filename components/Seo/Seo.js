@@ -1,9 +1,12 @@
 "use client"
 import React from "react"
 
+const SITE_URL = "https://www.nautilusshipping.com"
+
 function NextSeo({ title, description, path, metaImage, preloadImage }) {
-  // Dynamically get the domain name from window.location (client-side)
-  const domainName = typeof window !== "undefined" ? window.location.origin : ""
+  // Use absolute URL for canonical (required by crawlers). During SSR window is undefined, so use SITE_URL.
+  const domainName =
+    typeof window !== "undefined" ? window.location.origin : SITE_URL
 
   return (
     <head>

@@ -61,7 +61,7 @@ const Header = ({ logo, hamburger, search }) => {
       >
         <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" aria-label="Nautilus Shipping - Go to homepage">
             <Image
               src={logo}
               width={126}
@@ -80,7 +80,7 @@ const Header = ({ logo, hamburger, search }) => {
                 width={29}
                 height={29}
                 alt="search"
-                className="w-full h-[21px] md:h-auto"
+                className="w-full h-auto"
               />
             </button>
             <button onClick={toggleMenu} className="w-8 md:w-[33px]">
@@ -89,7 +89,7 @@ const Header = ({ logo, hamburger, search }) => {
                 width={33}
                 height={25}
                 alt="hamburger-menu"
-                className="w-full h-[20px] md:h-auto"
+                className="w-full h-auto"
               />
             </button>
           </div>
@@ -113,7 +113,7 @@ const Header = ({ logo, hamburger, search }) => {
                 width={29}
                 height={29}
                 alt="search"
-                className="w-full h-[21px] md:h-auto"
+                className="w-full h-auto"
               />
             </button>
             <button onClick={toggleMenu} className="w-8 md:w-[33px]">
@@ -122,7 +122,7 @@ const Header = ({ logo, hamburger, search }) => {
                 width={33}
                 height={25}
                 alt="hamburger-menu"
-                className="w-full h-[20px] md:h-auto"
+                className="w-full h-auto"
               />
             </button>
           </motion.div>
