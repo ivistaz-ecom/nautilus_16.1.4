@@ -28,7 +28,7 @@ const NavMenuItems = () => {
         {navMenu.map((item, index) => (
           <li key={index} className="flex items-center gap-1 w-full relative">
             {item.path ? (
-              <Link href={item.path}>
+              <Link href={item.path} aria-label={`Go to ${item.menu}`}>
                 <button
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
@@ -39,7 +39,7 @@ const NavMenuItems = () => {
                   {item.menu}{" "}
                   {item.subMenu.length > 0 &&
                   item.subMenu[0].type === "page" ? (
-                    <span className="font-thin">{shorArrowIcon}</span>
+                    <span className="font-thin" aria-hidden="true">{shorArrowIcon}</span>
                   ) : null}
                 </button>
               </Link>
@@ -64,7 +64,7 @@ const NavMenuItems = () => {
                 <ul className="absolute left-[64px] -top-3">
                   {item.subMenu.map((subItem, subIndex) => (
                     <li key={subIndex}>
-                      <Link href={subItem.path}>
+                      <Link href={subItem.path} aria-label={`Go to ${subItem.menu} page`}>
                         <button
                           onMouseEnter={() => handleMouseEnter(index)}
                           onMouseLeave={handleMouseLeave}
@@ -72,7 +72,7 @@ const NavMenuItems = () => {
                         >
                           {subItem.menu}
                           {/* {subItem.type === "page" && (
-                            <span className="font-thin">{shorArrowIcon}</span>
+                            <span className="font-thin" aria-hidden="true">{shorArrowIcon}</span>
                           )} */}
                         </button>
                       </Link>

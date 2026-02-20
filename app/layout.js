@@ -17,7 +17,7 @@ const merriweather = Merriweather({
 })
 
 export const metadata = {
-  //metadataBase: new URL("https://www.nautilusshipping.com"),
+  metadataBase: new URL("https://www.nautilusshipping.com"),
   robots: "index, follow",
 }
 

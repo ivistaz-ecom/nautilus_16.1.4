@@ -12,7 +12,7 @@ const NavMenu = ({ handleMenu, menuRef }) => {
       {/* Header */}
       <div className="border-b border-gray-500">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-          <Link href="/">
+          <Link href="/" aria-label="Nautilus Shipping - Go to homepage">
             <Image
               src="/logo.png"
               width={126}

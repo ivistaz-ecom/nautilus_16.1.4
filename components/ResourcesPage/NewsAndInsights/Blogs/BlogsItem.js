@@ -4,6 +4,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 
+const stripHtml = (html) => (html || "").replace(/<[^>]*>/g, "").trim()
+const truncate = (text, maxLen = 50) =>
+  text.length > maxLen ? `${text.slice(0, maxLen).trim()}…` : text
+
 const BlogsItem = ({ getFilteredBlogs, onViewMore, hasMore, isSubmitting }) => {
   const blogs = getFilteredBlogs()
 
@@ -40,9 +44,12 @@ const BlogsItem = ({ getFilteredBlogs, onViewMore, hasMore, isSubmitting }) => {
                         day: "numeric",
                       })}
                     </span>
-                    <Link href={`/news-and-insights/${item.slug}`}>
-                      <button className="flex items-center gap-3 text-sm text-primary bg-white hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 rounded-md px-4 py-2">
-                        Read More
+                    <Link
+                      href={`/news-and-insights/${item.slug}`}
+                      aria-label={`Read full article: ${stripHtml(item.title)}`}
+                    >
+                      <button className="flex items-center gap-3 text-sm text-primary bg-white hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 rounded-md px-4 py-2 max-w-full">
+                        <span className="truncate">Read article: {truncate(stripHtml(item.title))}</span>
                         <Image
                           src="/dark-arrow.svg"
                           width={20}

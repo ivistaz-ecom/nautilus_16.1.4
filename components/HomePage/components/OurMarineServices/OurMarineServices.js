@@ -67,9 +67,9 @@ const OurMarineServices = () => {
                       {item.desc}
                     </p>
 
-                    <Link href={item.link}>
+                    <Link href={item.link} aria-label={`Read more about ${item.title}`}>
                       <button className="mt-4 py-2 px-5 rounded-lg border border-gray-400 text-white hover:border-secondary hover:bg-secondary hover:scale-95 transition-all duration-300 ease-in-out">
-                        Read More
+                        Read more about {item.title}
                       </button>
                     </Link>
                   </div>
