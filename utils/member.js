@@ -37,7 +37,7 @@ export const advisoryCommitteeList = [
     name: "Anil Kariappa",
     post: "Executive Director",
     desc: "Anil brings extensive seagoing experience as a marine engineer, transitioning to a shore-based career in 1994. He rose to become the Managing Director of ITM Shipping (Wilhelmsen, Norway), which later became part of V Group. Now retired from this position, Anil serves as an advisor to Nautilus, contributing his wealth of industry expertise.",
-    imageUrl: "/about-us/member/pp.svg",
+    imageUrl: "/about-us/member/Anil.webp",
   },
   {
     name: "Capt. Ajay G",
