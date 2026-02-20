@@ -4,9 +4,8 @@ import React from "react"
 const SITE_URL = "https://www.nautilusshipping.com"
 
 function NextSeo({ title, description, path, metaImage, preloadImage }) {
-  // Use absolute URL for canonical (required by crawlers). During SSR window is undefined, so use SITE_URL.
-  const domainName =
-    typeof window !== "undefined" ? window.location.origin : SITE_URL
+  // Always use SITE_URL for canonical to avoid conflicting www vs non-www. Search engines need a single preferred URL.
+  const domainName = SITE_URL
 
   return (
     <head>

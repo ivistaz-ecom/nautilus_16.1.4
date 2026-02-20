@@ -54,7 +54,7 @@ const NautilusPromise = () => {
         </div>
 
         <Link href="/contact-us">
-          <button className="py-1.5 px-4 mt-3 rounded-lg bg-secondary text-white hover:bg-primary hover:scale-95 transition-all duration-300 ease-in-out">
+          <button className="py-2 px-5 mt-3 rounded-lg bg-secondary text-white hover:bg-primary hover:scale-95 transition-all duration-300 ease-in-out">
             Let’s Connect
           </button>
         </Link>

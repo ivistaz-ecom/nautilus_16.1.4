@@ -49,7 +49,7 @@ const BlogsItem = ({ getFilteredBlogs, onViewMore, hasMore, isSubmitting }) => {
                       aria-label={`Read full article: ${stripHtml(item.title)}`}
                     >
                       <button className="flex items-center gap-3 text-sm text-primary bg-white hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 rounded-md px-4 py-2 max-w-full">
-                        <span className="truncate">Read article: {truncate(stripHtml(item.title))}</span>
+                        <span className="truncate">Read article: <span aria-hidden="true" className="hidden">{truncate(stripHtml(item.title))}</span></span>
                         <Image
                           src="/dark-arrow.svg"
                           width={20}

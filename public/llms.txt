@@ -1,4 +1,4 @@
-# llms.txt for https://nautilusshipping.com/
+# llms.txt for https://www.nautilusshipping.com/
 # This file allows all major AI bots to access and use website content for training.
 
 # Allow OpenAI's GPTBot

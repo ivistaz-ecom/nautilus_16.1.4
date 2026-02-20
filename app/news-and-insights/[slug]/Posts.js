@@ -10,7 +10,7 @@ import {
 import { facebookIcon, linkedInIcon, xIcon, linkIcon } from "@/utils/icon"
 import Image from "next/image"
 
-const domainName = "https://nautilusshipping.com"
+const domainName = "https://www.nautilusshipping.com"
 
 const Posts = ({ slug, data }) => {
   const [scrollPercentage, setScrollPercentage] = useState(0)
