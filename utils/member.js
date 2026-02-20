@@ -170,11 +170,11 @@ export const crewMemberList = [
         name: "Capt. Monson",
         post: "General Manager- Operations (Kochi)",
       },
-      {
-        imageUrl: "/about-us/member/Ananya.webp",
-        name: "Ananya",
-        post: "Marine Personnel Officer",
-      },
+      // {
+      //   imageUrl: "/about-us/member/Ananya.webp",
+      //   name: "Ananya",
+      //   post: "Marine Personnel Officer",
+      // },
       // {
       //   imageUrl: "/about-us/member/Akash.png",
       //   name: "Akash",
