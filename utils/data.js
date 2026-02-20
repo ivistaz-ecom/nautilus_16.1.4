@@ -238,7 +238,7 @@ export const ourLocationData = [
     imageUrl: "/contact-us/location/img02.png",
     add: "Reliaable Phoenix Towers, 4th Floor, 16 & 16/1, Museum Road, Bengaluru – 560025",
     tel: "+91 80 6998 9999",
-    location: " https://maps.app.goo.gl/e9RKwNQ7xQHpVJS79",
+    location: " https://www.google.com/maps/place/NAUTILUS+SHIPPING+(INDIA)+PRIVATE+LIMITED/@12.9720007,77.6045134,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae171d47d40679:0x5608d1187cc5b602!8m2!3d12.9720007!4d77.6045134!16s%2Fg%2F11yyx4l8pz?entry=ttu&g_ep=EgoyMDI2MDIxNy4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     city: "Kochi",
