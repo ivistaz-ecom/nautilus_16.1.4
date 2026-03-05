@@ -201,7 +201,7 @@ export const crewMemberList = [
       //   post: "Operations Executive",
       // },
       {
-        imageUrl: "/about-us/member/Swathi.png",
+        imageUrl: "/about-us/member/Swathi_.webp",
         name: "Swathi",
         post: "Marine Personnel Executive",
       },
