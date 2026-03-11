@@ -9,11 +9,13 @@ import { ourPositionList } from "@/utils/resources"
 import { vesselList } from "@/utils/data"
 import Image from "next/image"
 import axios from "axios"
+import ReCAPTCHA from "react-google-recaptcha"
 
 const Form = () => {
   const [errors, setErrors] = useState({})
   const [showPopup, setShowPopup] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [recaptchaToken, setRecaptchaToken] = useState("")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -53,6 +55,7 @@ const Form = () => {
       newErrors.newPosition = "New position is required."
     if (!formData.INDoSNo) newErrors.INDoSNo = "INDoS Number is required."
     if (!formData.file) newErrors.file = "CV/Resume is required."
+    if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA"
 
     setErrors(newErrors)
 
@@ -89,6 +92,7 @@ const Form = () => {
       data.append("position", formData.position)
       data.append("newPosition", formData.newPosition)
       data.append("INDoSNo", formData.INDoSNo)
+      data.append("g-recaptcha-response", recaptchaToken)
 
       if (formData.file) {
         data.append("file", formData.file)
@@ -123,6 +127,7 @@ const Form = () => {
         file: null,
         fileName: "No file chosen",
       })
+      setRecaptchaToken("")
 
       setErrors({})
     } catch (error) {
@@ -651,6 +656,30 @@ const Form = () => {
     </div>
   )
 
+  const renderRecaptchaField = () => (
+    <div className="flex flex-col gap-2 w-full">
+      <div className="max-w-full overflow-x-auto">
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          onChange={(token) => {
+            setRecaptchaToken(token || "")
+            setErrors((prev) => {
+              if (!prev.recaptcha) return prev
+              const { recaptcha, ...rest } = prev
+              return rest
+            })
+          }}
+          onExpired={() => setRecaptchaToken("")}
+        />
+      </div>
+      <div className="h-4">
+        {errors.recaptcha && (
+          <span className="text-red-500 text-sm">*{errors.recaptcha}</span>
+        )}
+      </div>
+    </div>
+  )
+
   return (
     <div className="p-3 sm:py-10 sm:px-4">
       <p className="text-sm font-light text-white">
@@ -686,6 +715,7 @@ const Form = () => {
 
         {renderINDoSNoield()}
         {renderChooseAFile()}
+        {renderRecaptchaField()}
 
         <button
           type="submit"
