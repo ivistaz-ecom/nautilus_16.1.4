@@ -566,7 +566,7 @@ const Form = () => {
           onExpired={() => setRecaptchaToken("")}
         />
       </div>
-      <div className="h-4">
+      <div className="">
         {errors.recaptcha && (
           <span className="text-red-500 text-sm">*{errors.recaptcha}</span>
         )}
