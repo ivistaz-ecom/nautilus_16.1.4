@@ -8,11 +8,13 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import axios from "axios"
+import ReCAPTCHA from "react-google-recaptcha"
 
 const Form = () => {
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showPopup, setShowPopup] = useState(false)
+  const [recaptchaToken, setRecaptchaToken] = useState("")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -55,6 +57,7 @@ const Form = () => {
       newErrors.message = "Special characters { } \\ | ` ~ ^ are not allowed"
     }
     if (!formData.consent) newErrors.consent = "You must agree to the terms"
+    if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA"
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0 // Returns true if no errors
@@ -77,6 +80,7 @@ const Form = () => {
       data.append("country", formData.country)
       data.append("message", formData.message)
       data.append("consent", formData.consent)
+      data.append("g-recaptcha-response", recaptchaToken)
       
       data.append("_wpcf7", "10026")
       data.append("_wpcf7_version", "6.1.4")
@@ -86,15 +90,7 @@ const Form = () => {
       const instanceId = Math.random().toString(36).substring(2, 15)
       data.append("_wpcf7_unit_tag", `wpcf7-f10026-p0-o${instanceId}`)
 
-      const response = await axios.post(
-        "https://docs.nautilusshipping.com/wp-json/contact-form-7/v1/contact-forms/10026/feedback",
-        data,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      )
+      const response = await axios.post("/api/contact", data)
 
       //console.log("Form Submitted Successfully:", response.data)
 
@@ -111,6 +107,7 @@ const Form = () => {
         message: "",
         consent: false,
       })
+      setRecaptchaToken("")
 
       setErrors({})
     } catch (error) {
@@ -363,6 +360,30 @@ const Form = () => {
     </div>
   )
 
+  const renderRecaptchaField = () => (
+    <div className="flex flex-col gap-2 w-full">
+      <div className="max-w-full overflow-x-auto">
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          onChange={(token) => {
+            setRecaptchaToken(token || "")
+            setErrors((prev) => {
+              if (!prev.recaptcha) return prev
+              const { recaptcha, ...rest } = prev
+              return rest
+            })
+          }}
+          onExpired={() => setRecaptchaToken("")}
+        />
+      </div>
+      <div className="h-4">
+        {errors.recaptcha && (
+          <span className="text-red-500 text-sm">*{errors.recaptcha}</span>
+        )}
+      </div>
+    </div>
+  )
+
   return (
     <div className="p-3 sm:p-10">
       <h3 className="text-base sm:text-lg md:text-xl font-light text-white text-center md:text-left">
@@ -386,6 +407,7 @@ const Form = () => {
 
         {renderMessageField()}
         {renderConsentField()}
+        {renderRecaptchaField()}
 
         <button
           type="submit"
