@@ -53,7 +53,11 @@ const Form = () => {
     if (!formData.position) newErrors.position = "Position is required."
     if (!formData.newPosition)
       newErrors.newPosition = "New position is required."
-    if (!formData.INDoSNo) newErrors.INDoSNo = "INDoS Number is required."
+    if (!formData.INDoSNo) {
+      newErrors.INDoSNo = "INDoS Number is required."
+    } else if (!/^[a-zA-Z0-9]{8}$/.test(formData.INDoSNo)) {
+      newErrors.INDoSNo = "INDoS Number must be exactly 8 alphanumeric characters."
+    }
     if (!formData.file) newErrors.file = "CV/Resume is required."
     if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA"
 
@@ -644,9 +648,17 @@ const Form = () => {
         placeholder="INDoS No."
         className="border-b border-t-0 border-x-0 text-white bg-transparent w-full border-gray-300 ps-0 p-1.5 text-base focus:ring-0 focus:border-white"
         value={formData.INDoSNo}
-        onChange={(e) =>
-          setFormData((prev) => ({ ...prev, INDoSNo: e.target.value }))
-        }
+        maxLength={8}
+        autoCapitalize="none"
+        autoCorrect="off"
+        inputMode="text"
+        onChange={(e) => {
+          const cleaned = (e.target.value || "")
+            .replace(/[^a-zA-Z0-9]/g, "")
+            .slice(0, 8)
+
+          setFormData((prev) => ({ ...prev, INDoSNo: cleaned }))
+        }}
       />
       <div className="h-4">
         {errors.INDoSNo && (
