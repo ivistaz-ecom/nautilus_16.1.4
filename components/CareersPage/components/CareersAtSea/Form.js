@@ -34,7 +34,7 @@ const Form = () => {
 
   const getSubOptions = () => {
     const selectedPosition = ourPositionList.find(
-      (p) => p.option === formData.position
+      (p) => p.option === formData.position,
     )
     return selectedPosition ? selectedPosition.subOption : []
   }
@@ -55,8 +55,9 @@ const Form = () => {
       newErrors.newPosition = "New position is required."
     if (!formData.INDoSNo) {
       newErrors.INDoSNo = "INDoS Number is required."
-    } else if (!/^[a-zA-Z0-9]{8}$/.test(formData.INDoSNo)) {
-      newErrors.INDoSNo = "INDoS Number must be exactly 8 alphanumeric characters."
+    } else if (!/^[A-Za-z]{2}\d{6}$/.test(formData.INDoSNo)) {
+      newErrors.INDoSNo =
+        "INDoS Number must be exactly 8 characters and contain both letters and numbers."
     }
     if (!formData.file) newErrors.file = "CV/Resume is required."
     if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA"
@@ -75,7 +76,7 @@ const Form = () => {
 
     try {
       const data = new FormData()
-      
+
       // Contact Form 7 required fields
       data.append("_wpcf7", "10028")
       data.append("_wpcf7_version", "6.1.4")
@@ -84,7 +85,7 @@ const Form = () => {
       // Generate unit tag: wpcf7-f{formId}-p{postId}-o{instanceId}
       const instanceId = Math.random().toString(36).substring(2, 15)
       data.append("_wpcf7_unit_tag", `wpcf7-f10028-p0-o${instanceId}`)
-      
+
       data.append("name", formData.name)
       data.append("email", formData.email)
       data.append("phone", formData.phone)
@@ -109,7 +110,7 @@ const Form = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        }
+        },
       )
 
       //console.log("Form Submitted Successfully:", response.data)
@@ -147,7 +148,9 @@ const Form = () => {
 
   const renderNameField = () => (
     <div className="w-full">
-      <label htmlFor="name-atsea" className="sr-only">Name</label>
+      <label htmlFor="name-atsea" className="sr-only">
+        Name
+      </label>
       <input
         type="text"
         id="name-atsea"
@@ -168,7 +171,9 @@ const Form = () => {
 
   const renderEmailField = () => (
     <div className="w-full">
-      <label htmlFor="email-atsea" className="sr-only">Email</label>
+      <label htmlFor="email-atsea" className="sr-only">
+        Email
+      </label>
       <input
         type="email"
         id="email-atsea"
@@ -190,7 +195,9 @@ const Form = () => {
   const renderPhoneField = () => {
     return (
       <div className="flex flex-col w-full">
-        <label htmlFor="phone-atsea" className="sr-only">Phone Number</label>
+        <label htmlFor="phone-atsea" className="sr-only">
+          Phone Number
+        </label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <PhoneInput
             international
@@ -435,7 +442,9 @@ const Form = () => {
 
   const renderZipCodeField = () => (
     <div className="w-full">
-      <label htmlFor="zipcode-atsea" className="sr-only">Zip Code</label>
+      <label htmlFor="zipcode-atsea" className="sr-only">
+        Zip Code
+      </label>
       <input
         type="text"
         id="zipcode-atsea"
@@ -457,7 +466,9 @@ const Form = () => {
   const renderVesselField = () => {
     return (
       <div className="flex flex-col w-full">
-        <label htmlFor="vessel-atsea" className="sr-only">Select Vessel</label>
+        <label htmlFor="vessel-atsea" className="sr-only">
+          Select Vessel
+        </label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="vessel"
@@ -468,7 +479,9 @@ const Form = () => {
               setFormData((prev) => ({ ...prev, vessel: e.target.value }))
             }
           >
-            <option value="" className="text-black">Select Vessel</option>
+            <option value="" className="text-black">
+              Select Vessel
+            </option>
             {vesselList.map((vessel, index) => (
               <option key={index} value={vessel} className="text-black">
                 {vessel}
@@ -488,7 +501,9 @@ const Form = () => {
   const renderPositionField = () => {
     return (
       <div className="flex flex-col gap-1 w-full">
-        <label htmlFor="position-atsea" className="sr-only">Select Current/Previous Position</label>
+        <label htmlFor="position-atsea" className="sr-only">
+          Select Current/Previous Position
+        </label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="position"
@@ -504,7 +519,9 @@ const Form = () => {
                 })) // Update only the necessary fields
             }
           >
-            <option value="" className="text-black">Select Position</option>
+            <option value="" className="text-black">
+              Select Position
+            </option>
             {ourPositionList.map((pos, index) => (
               <option key={index} value={pos.option} className="text-black">
                 {pos.option}
@@ -522,7 +539,9 @@ const Form = () => {
   const renderNewPositionField = () => {
     return (
       <div className="flex flex-col gap-1 w-full">
-        <label htmlFor="newposition-atsea" className="sr-only">Select New Position to Apply</label>
+        <label htmlFor="newposition-atsea" className="sr-only">
+          Select New Position to Apply
+        </label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="newPosition"
@@ -538,7 +557,9 @@ const Form = () => {
             }
             disabled={!formData.position} // Disable if no position selected
           >
-            <option value="" className="text-black">Select New Position</option>
+            <option value="" className="text-black">
+              Select New Position
+            </option>
             {getSubOptions().map((subPos, index) => (
               <option key={index} value={subPos} className="text-black">
                 {subPos}
@@ -641,7 +662,9 @@ const Form = () => {
 
   const renderINDoSNoield = () => (
     <div className="w-full">
-      <label htmlFor="indos-atsea" className="sr-only">INDoS Number</label>
+      <label htmlFor="indos-atsea" className="sr-only">
+        INDoS Number
+      </label>
       <input
         type="text"
         id="indos-atsea"
@@ -694,9 +717,7 @@ const Form = () => {
 
   return (
     <div className="p-3 sm:py-10 sm:px-4">
-      <p className="text-sm font-light text-white">
-        All fields are mandatory*
-      </p>
+      <p className="text-sm font-light text-white">All fields are mandatory*</p>
       <h2 className="text-xl sm:text-2xl font-light text-white mt-3">
         Submit a CV/Resume <span className="text-base">(Offshore Job)</span>
       </h2>
