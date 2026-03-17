@@ -55,7 +55,9 @@ const Form = () => {
       newErrors.newPosition = "New position is required."
     if (!formData.INDoSNo) {
       newErrors.INDoSNo = "INDoS Number is required."
-    } else if (!/^[A-Za-z]{2}\d{6}$/.test(formData.INDoSNo)) {
+    } else if (
+      !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z0-9]{8}$/.test(formData.INDoSNo)
+    ) {
       newErrors.INDoSNo =
         "INDoS Number must be exactly 8 characters and contain both letters and numbers."
     }

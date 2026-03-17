@@ -56,7 +56,7 @@ const Form = () => {
 
     try {
       const data = new FormData()
-      
+
       // Contact Form 7 required fields
       data.append("_wpcf7", "10030")
       data.append("_wpcf7_version", "6.1.4")
@@ -65,7 +65,7 @@ const Form = () => {
       // Generate unit tag: wpcf7-f{formId}-p{postId}-o{instanceId}
       const instanceId = Math.random().toString(36).substring(2, 15)
       data.append("_wpcf7_unit_tag", `wpcf7-f10030-p0-o${instanceId}`)
-      
+
       data.append("name", formData.name)
       data.append("email", formData.email)
       data.append("phone", formData.phone)
@@ -87,7 +87,7 @@ const Form = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        }
+        },
       )
 
       //console.log("Form Submitted Successfully!", response.data)
@@ -122,7 +122,9 @@ const Form = () => {
 
   const renderNameField = () => (
     <div className="w-full">
-      <label htmlFor="name-ashore" className="sr-only">Name</label>
+      <label htmlFor="name-ashore" className="sr-only">
+        Name
+      </label>
       <input
         type="text"
         id="name-ashore"
@@ -143,7 +145,9 @@ const Form = () => {
 
   const renderEmailField = () => (
     <div className="w-full">
-      <label htmlFor="email-ashore" className="sr-only">Email</label>
+      <label htmlFor="email-ashore" className="sr-only">
+        Email
+      </label>
       <input
         type="email"
         id="email-ashore"
@@ -165,7 +169,9 @@ const Form = () => {
   const renderPhoneField = () => {
     return (
       <div className="flex flex-col w-full">
-        <label htmlFor="phone-ashore" className="sr-only">Phone Number</label>
+        <label htmlFor="phone-ashore" className="sr-only">
+          Phone Number
+        </label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <PhoneInput
             international
@@ -410,7 +416,9 @@ const Form = () => {
 
   const renderZipCodeField = () => (
     <div className="w-full">
-      <label htmlFor="zipcode-ashore" className="sr-only">Zip Code</label>
+      <label htmlFor="zipcode-ashore" className="sr-only">
+        Zip Code
+      </label>
       <input
         type="text"
         id="zipcode-ashore"
@@ -432,7 +440,9 @@ const Form = () => {
   const renderPositionField = () => {
     return (
       <div className="flex flex-col gap-1 w-full">
-        <label htmlFor="position-ashore" className="sr-only">Select Position</label>
+        <label htmlFor="position-ashore" className="sr-only">
+          Select Position
+        </label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="position"
@@ -446,7 +456,9 @@ const Form = () => {
               }))
             }
           >
-            <option value="" className="text-black">Select Position</option>
+            <option value="" className="text-black">
+              Select Position
+            </option>
             {ashorePositionList.map((pos, index) => (
               <option key={index} value={pos} className="text-black">
                 {pos}
@@ -577,9 +589,7 @@ const Form = () => {
   return (
     <div className="p-3 sm:py-10 sm:px-4 h-full flex flex-col justify-center">
       {/* Mandatory Notice */}
-      <p className="text-sm font-light text-white">
-        All fields are mandatory*
-      </p>
+      <p className="text-sm font-light text-white">All fields are mandatory*</p>
 
       {/* Form Heading */}
       <h2 className="text-xl sm:text-2xl font-light text-white mt-4">
