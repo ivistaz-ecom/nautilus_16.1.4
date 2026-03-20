@@ -3,6 +3,14 @@ import Link from "next/link"
 
 const latestEditionData = [
   {
+    title: "Coastal Shipping: India’s Next Logistics Shift",
+    date: "February 2026",
+    description:
+      "The February edition of the Nautilus Newsletter explores the growing role of coastal shipping in shaping India’s logistics future. From policy developments and infrastructure expansion to operational and on-ground perspectives, this issue looks at how coastal routes are becoming an efficient and sustainable mode of freight movement.",
+    image: "/resources/feb-newsletter-2026.jpg",
+    link: "/NL/2026/Feb/Nautilus_Feb_Newsletter_compressed.pdf",
+  },
+  {
     title: "The Year Behind Us. The Course Ahead.",
     date: "November 2025",
     description:
