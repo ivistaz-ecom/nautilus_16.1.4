@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useMemo, useRef } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -49,8 +49,9 @@ const oldEditions = [
 
 const OtherEdition = () => {
   const sliderRefs = useRef({})
+  const [arrowVisibility, setArrowVisibility] = useState({})
 
-  const settings = useMemo(
+  const baseSettings = useMemo(
     () => ({
       dots: false,
       infinite: false,
@@ -80,16 +81,65 @@ const OtherEdition = () => {
     []
   )
 
+  const updateArrowVisibility = useCallback((yearIndex) => {
+    const slider = sliderRefs.current[yearIndex]
+    const inner = slider?.innerSlider
+    if (!inner?.state) return
+
+    const { slideCount = 0, currentSlide = 0 } = inner.state
+    const configuredSlidesToShow =
+      Number(inner?.props?.slidesToShow) ||
+      Number(inner?.state?.slidesToShow) ||
+      Number(baseSettings?.slidesToShow) ||
+      1
+    const show = Math.min(configuredSlidesToShow, slideCount)
+
+    if (slideCount <= show) {
+      setArrowVisibility((prev) => ({
+        ...prev,
+        [yearIndex]: { hidePrev: true, hideNext: true },
+      }))
+      return
+    }
+
+    const maxSlide = Math.max(0, slideCount - show)
+    setArrowVisibility((prev) => ({
+      ...prev,
+      [yearIndex]: {
+        hidePrev: currentSlide <= 0,
+        hideNext: currentSlide >= maxSlide,
+      },
+    }))
+  }, [baseSettings?.slidesToShow])
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      oldEditions.forEach((_, i) => updateArrowVisibility(i))
+    })
+    return () => cancelAnimationFrame(id)
+  }, [updateArrowVisibility])
+
   return (
     <>
-      <div className="pb-14 px-4 md:px-4">
+      <div className="pb-10 px-4 md:px-4">
         <div className="max-w-screen-lg w-full mx-auto space-y-5 sm:space-y-7">
           <h2 className="text-2xl sm:text-[34px] font-light text-left md:text-left">
             Other Editions
           </h2>
 
-          <div className="space-y-10">
-            {oldEditions.map((group, yearIndex) => (
+          <div className="space-y-5">
+            {oldEditions.map((group, yearIndex) => {
+              const vis = arrowVisibility[yearIndex]
+              const hidePrev = vis?.hidePrev ?? true
+              const hideNext = vis?.hideNext ?? group.items.length <= 1
+
+              const sliderSettings = {
+                ...baseSettings,
+                afterChange: () => updateArrowVisibility(yearIndex),
+                onReInit: () => updateArrowVisibility(yearIndex),
+              }
+
+              return (
               <div key={group.year} className="space-y-4">
                 <h3 className="text-xl sm:text-3xl font-light">{group.year}</h3>
                 <div className="relative">
@@ -97,13 +147,13 @@ const OtherEdition = () => {
                     ref={(el) => {
                       sliderRefs.current[yearIndex] = el
                     }}
-                    {...settings}
+                    {...sliderSettings}
                     className="newsletter-slick px-1 md:px-6"
                   >
                     {group.items.map((edition) => (
                       <div key={edition.link} className="px-2 sm:px-3">
                         <Link href={edition.link} target="_blank" className="block">
-                          <div className="h-[550px] sm:h-[560px] lg:h-[550px] rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                          <div className="h-[500px] sm:h-[560px] lg:h-[550px] rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
                             <div className="p-3 bg-white shrink-0">
                               <p className="text-base font-light text-gray-900 text-center leading-tight">
                                 {edition.date}
@@ -116,11 +166,9 @@ const OtherEdition = () => {
                               alt={edition.title}
                               className="w-full h-[380px] sm:h-[380px] lg:h-[400px] object-contain bg-gray-50 shrink-0"
                             />
-                            <div className="p-3 bg-white grow flex flex-col justify-between items-center md:items-start mt-3">
-                              <p className="text-sm font-light text-gray-900 leading-tight line-clamp-2 text-center md:text-left">
-                                {edition.title}
-                              </p>
-                              <span className="mt-3 sm:mt-2 py-3 px-3 sm:py-1 sm:px-4 rounded-lg bg-secondary text-white border border-secondary hover:bg-primary hover:border-primary hover:scale-95 transition-all duration-300 ease-in-out text-sm w-fit self-center md:self-start">
+                            <div className="p-3 bg-white grow flex flex-col justify-between items-center gap-3 mt-3">
+                              
+                              <span className="py-3 px-3 sm:py-1 sm:px-4 rounded-lg bg-secondary text-white border border-secondary hover:bg-primary hover:border-primary hover:scale-95 transition-all duration-300 ease-in-out text-sm w-fit mx-auto">
                                 View Newsletter
                               </span>
                             </div>
@@ -130,7 +178,7 @@ const OtherEdition = () => {
                     ))}
                   </Slider>
 
-                  {/* Left arrow */}
+                  {!hidePrev && (
                   <button
                     type="button"
                     onClick={() => sliderRefs.current[yearIndex]?.slickPrev()}
@@ -139,8 +187,9 @@ const OtherEdition = () => {
                   >
                     <FaChevronLeft className="text-secondary text-sm sm:text-base" />
                   </button>
+                  )}
 
-                  {/* Right arrow */}
+                  {!hideNext && (
                   <button
                     type="button"
                     onClick={() => sliderRefs.current[yearIndex]?.slickNext()}
@@ -149,9 +198,11 @@ const OtherEdition = () => {
                   >
                     <FaChevronRight className="text-secondary text-sm sm:text-base" />
                   </button>
+                  )}
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
