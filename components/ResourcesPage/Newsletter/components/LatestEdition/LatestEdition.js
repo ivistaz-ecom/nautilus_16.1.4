@@ -8,7 +8,7 @@ const latestEditionData = [
     description:
       "The February edition of the Nautilus Newsletter explores the growing role of coastal shipping in shaping India’s logistics future. From policy developments and infrastructure expansion to operational and on-ground perspectives, this issue looks at how coastal routes are becoming an efficient and sustainable mode of freight movement.",
     image: "/resources/feb-newsletter-2026.jpg",
-    link: "/NL/2026/Feb/Nautilus_Feb_Newsletter_compressed.pdf",
+    link: "/NL/2026/Feb/Nautilus_February_Newsletter.pdf",
   },
   {
     title: "The Year Behind Us. The Course Ahead.",
@@ -66,7 +66,7 @@ const LatestEdition = () => {
           Latest Edition
         </h2>
 
-        {latestEditionData.map((edition, index) => (
+        {latestEditionData.slice(0, 1).map((edition, index) => (
           <div
             key={index}
             className="flex flex-col gap-10 md:gap-0 items-center md:items-start md:flex-row"
