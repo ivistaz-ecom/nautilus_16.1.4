@@ -37,7 +37,7 @@ const HeroBanner = () => {
         aria-label="Ocean waves background video"
       >
         <source
-          src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilusshipping_sea.mp4"
+          src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilusshipping_sea_banner.mp4"
           type="video/mp4"
         />
         <source
