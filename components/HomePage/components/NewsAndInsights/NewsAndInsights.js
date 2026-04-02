@@ -70,7 +70,11 @@ const NewsAndInsights = () => {
         </div>
 
         {/* Slider Progress Bar */}
+        <label htmlFor="news-insights-slide-slider" className="sr-only">
+          Choose slide for News and Insights
+        </label>
         <input
+          id="news-insights-slide-slider"
           type="range"
           min={0}
           max={maxSlides}

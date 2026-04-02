@@ -30,7 +30,7 @@ const FindInsideItem = ({ sliderRef, setSlideIndex }) => {
     <Slider ref={sliderRef} {...sliderSettings}>
       {findInsideList.map((item, index) => (
         <div key={index} className="px-2">
-          <li className="border border-gray-400 rounded-lg h-full min-h-[220px] flex flex-col">
+          <div className="border border-gray-400 rounded-lg h-full min-h-[220px] flex flex-col">
             {/* Title */}
             <div className="py-4 border-b border-gray-400">
               <h3 className="text-base sm:text-xl font-light text-white text-center">
@@ -42,7 +42,7 @@ const FindInsideItem = ({ sliderRef, setSlideIndex }) => {
             <p className="p-5 text-base sm:text-lg font-light text-center text-white flex items-center">
               {item.desc}
             </p>
-          </li>
+          </div>
         </div>
       ))}
     </Slider>
