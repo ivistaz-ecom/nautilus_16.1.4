@@ -31,7 +31,7 @@ const NewsAndInsightsItem = ({ sliderRef, setSlideIndex }) => {
     <Slider ref={sliderRef} {...sliderSettings}>
       {newsAndInsightsData.map((item, index) => (
         <div key={index} className="px-4">
-          <li className="border border-gray-400 rounded-lg h-full min-h-[225px] flex flex-col">
+          <div className="border border-gray-400 rounded-lg h-full min-h-[225px] flex flex-col">
             {/* Title */}
             <div className="py-3 border-b border-gray-400">
               <h3 className="text-base sm:text-xl text-white text-center tracking-wide">
@@ -43,7 +43,7 @@ const NewsAndInsightsItem = ({ sliderRef, setSlideIndex }) => {
             <p className="py-7 px-5 text-sm font-light text-center text-white flex items-center tracking-wide">
               {item.desc}
             </p>
-          </li>
+          </div>
         </div>
       ))}
     </Slider>

@@ -26,7 +26,9 @@ const OurMarineServices = () => {
       </div>
     ),
     appendDots: (dots) => (
-      <div className="absolute -bottom-4 flex justify-center">{dots}</div>
+      <ul className="absolute -bottom-4 flex justify-center list-none m-0 p-0 gap-1">
+        {dots}
+      </ul>
     ),
   }
 
@@ -81,6 +83,7 @@ const OurMarineServices = () => {
                       width={470}
                       height={400}
                       alt={item.title}
+                      sizes="(max-width: 767px) 300px, 470px"
                       className="w-full max-w-[300px] md:max-w-[470px] h-auto object-contain"
                       loading="lazy"
                     />
