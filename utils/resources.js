@@ -33,7 +33,7 @@ export const visionMissionList = [
 export const WhyChooseNSList = [
   {
     title: "Proven <br /> Expertise",
-    desc: "18 years of industry experience delivering high-quality services.",
+    desc: "19 years of industry experience delivering high-quality services.",
   },
   {
     title: "Global <br /> Presence",

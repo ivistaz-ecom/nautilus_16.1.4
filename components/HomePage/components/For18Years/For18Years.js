@@ -56,7 +56,7 @@ const For18Years = () => {
           {/* Title */}
           <div className="flex flex-col w-full max-w-screen-xl relative pb-10 md:pb-14">
             <h2 className="text-white text-3xl sm:text-5xl md:text-8xl md:text-center font-light tracking-wide">
-              For 18 Years
+              For 19 Years
             </h2>
 
             {/* Audio Button */}
