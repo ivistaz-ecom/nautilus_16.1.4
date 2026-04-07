@@ -85,6 +85,11 @@ const LatestEdition = () => {
                   className="rounded-lg"
                 />
               </Link>
+              <Link href={edition.link} target="_blank" className="md:hidden mt-2 self-center">
+                <button className="py-1 px-4 rounded-lg bg-transparent border border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
+                  View Newsletter
+                </button>
+              </Link>
             </div>
 
             {/* Right Section */}
@@ -95,7 +100,7 @@ const LatestEdition = () => {
               <p className="text-base sm:text-base text-white font-light leading-tight tracking-wide">
                 {edition.description}
               </p>
-              <Link href={edition.link} target="_blank">
+              <Link href={edition.link} target="_blank" className="hidden md:block">
                 <button className="py-1 px-4 rounded-lg bg-transparent border-white border text-white hover:bg-secondary hover:border-secondary hover:scale-95 transition-all duration-300 ease-in-out">
                   View Newsletter
                 </button>

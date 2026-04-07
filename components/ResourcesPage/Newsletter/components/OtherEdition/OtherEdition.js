@@ -168,7 +168,7 @@ const OtherEdition = () => {
                             />
                             <div className="p-3 bg-white grow flex flex-col justify-between items-center gap-3 mt-3">
                               
-                              <span className="py-3 px-3 sm:py-1 sm:px-4 rounded-lg bg-secondary text-white border border-secondary hover:bg-primary hover:border-primary hover:scale-95 transition-all duration-300 ease-in-out text-sm w-fit mx-auto">
+                              <span className="py-2 px-4 rounded-lg bg-transparent border border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out text-sm w-fit mx-auto sm:bg-secondary sm:text-white sm:border-secondary sm:hover:bg-primary sm:hover:border-primary sm:hover:text-white">
                                 View Newsletter
                               </span>
                             </div>
