@@ -5,6 +5,11 @@ import PhoneInput from "react-phone-number-input"
 import { Country, State, City } from "country-state-city"
 import Select from "react-select"
 import { useState } from "react"
+import {
+  isPossiblePhoneNumber,
+  parsePhoneNumberFromString,
+  validatePhoneNumberLength,
+} from "libphonenumber-js/min"
 import { ashorePositionList, ourPositionList } from "@/utils/resources"
 import Image from "next/image"
 import axios from "axios"
@@ -28,16 +33,95 @@ const Form = () => {
     fileName: "No file chosen",
   })
 
+  const isAllowedPhoneEditKey = (key) => {
+    const allowedKeys = [
+      "Backspace",
+      "Delete",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+      "Home",
+      "End",
+      "Tab",
+    ]
+    return allowedKeys.includes(key)
+  }
+
+  const getPhoneCountryAndNationalDigits = (value) => {
+    if (!value) return { countryCode: "", nationalDigits: 0 }
+
+    const parsedPhone = parsePhoneNumberFromString(value)
+    return {
+      countryCode: parsedPhone?.country || "",
+      nationalDigits: parsedPhone?.nationalNumber?.length || 0,
+    }
+  }
+
+  const isIndiaPhone = (value) => {
+    const { countryCode } = getPhoneCountryAndNationalDigits(value)
+    return formData.country === "IN" || countryCode === "IN"
+  }
+
+  const handlePhoneChange = (value) => {
+    if (!value) {
+      setFormData((prev) => ({ ...prev, phone: "" }))
+      return
+    }
+
+    if (validatePhoneNumberLength(value) === "TOO_LONG") return
+
+    if (isIndiaPhone(value)) {
+      const { nationalDigits } = getPhoneCountryAndNationalDigits(value)
+      if (nationalDigits > 10) return
+    }
+
+    setFormData((prev) => ({ ...prev, phone: value }))
+  }
+
+  const handlePhoneKeyDown = (e) => {
+    if (e.ctrlKey || e.metaKey || e.altKey || isAllowedPhoneEditKey(e.key)) return
+
+    if (!/^\d$/.test(e.key)) {
+      e.preventDefault()
+      return
+    }
+
+    const currentPhoneValue = formData.phone || ""
+    if (!currentPhoneValue) return
+
+    if (isIndiaPhone(currentPhoneValue)) {
+      const { nationalDigits } = getPhoneCountryAndNationalDigits(currentPhoneValue)
+      if (nationalDigits >= 10) {
+        e.preventDefault()
+        return
+      }
+    }
+
+    const nextPhoneValue = `${currentPhoneValue}${e.key}`
+    if (validatePhoneNumberLength(nextPhoneValue) === "TOO_LONG") {
+      e.preventDefault()
+    }
+  }
+
   const validateForm = () => {
     let newErrors = {}
 
     if (!formData.name.trim()) newErrors.name = "Name is required."
-    if (!formData.phone.trim()) newErrors.phone = "Phone number is required."
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required."
+    } else if (isIndiaPhone(formData.phone)) {
+      const { nationalDigits } = getPhoneCountryAndNationalDigits(formData.phone)
+      if (nationalDigits !== 10) {
+        newErrors.phone = "India phone number must be exactly 10 digits."
+      }
+    } else if (!isPossiblePhoneNumber(formData.phone)) {
+      newErrors.phone = "Enter a valid phone number."
+    }
     if (!formData.email.trim()) newErrors.email = "Email is required."
     if (!formData.country) newErrors.country = "Country is required."
     if (!formData.state) newErrors.state = "State is required."
     if (!formData.city.trim()) newErrors.city = "City is required."
-    if (!formData.zipCode.trim()) newErrors.zipCode = "Zip code is required."
     if (!formData.position) newErrors.position = "Position is required."
     if (!formData.file) newErrors.file = "CV/Resume is required."
     if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA"
@@ -177,9 +261,11 @@ const Form = () => {
             international
             defaultCountry="IN"
             value={formData.phone}
-            onChange={(value) =>
-              setFormData((prev) => ({ ...prev, phone: value }))
-            }
+            onChange={handlePhoneChange}
+            numberInputProps={{
+              inputMode: "numeric",
+              onKeyDown: handlePhoneKeyDown,
+            }}
             className="custom-phone-input w-full text-white"
             id="phone-ashore"
           />

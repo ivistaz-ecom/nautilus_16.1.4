@@ -22,7 +22,7 @@ const CareersPage = () => {
         <CareersAtSea />
         <CareersAshore />
          {/* Trustpilot Review Section */}
-         <div className="max-w-screen-md mx-auto lg:pb-12 pb-5  px-4">
+         <div className="max-w-screen-md mx-auto pb-12 lg:pb-12  px-4">
          <div className="border border-gray-300 rounded-2xl p-8 sm:p-12 text-center space-y-6 shadow-xl shadow-secondary">
             {/* Trustpilot Badge */}
             <div className="flex justify-center">
