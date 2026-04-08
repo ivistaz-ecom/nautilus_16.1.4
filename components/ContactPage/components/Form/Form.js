@@ -115,7 +115,7 @@ const Form = () => {
       newErrors.email = "Email is required"
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Enter a valid email address"
-    } else if (/@gmail\.com\s*$/i.test(formData.email)) {
+    } else if (/@gmail\.(com|in)\s*$/i.test(formData.email)) {
       newErrors.email =
         "Gmail addresses are not allowed. Please visit careers page to apply for job."
     } else if (/@yahoo\.(com|in)\s*$/i.test(formData.email)) {
