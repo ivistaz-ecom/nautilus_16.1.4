@@ -3,7 +3,15 @@ import Form from "./Form"
 
 const CareersAtSeaItem = () => {
   return (
-    <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto pt-7 sm:pt-14">
+    <div className="max-w-screen-xl mx-auto pt-7 sm:pt-14">
+      <div className="space-y-4 sm:space-y-5 px-4 pb-6">
+        <h2 className="text-3xl sm:text-5xl font-light tracking-wide">
+          Careers At Sea
+        </h2>
+        
+      </div>
+
+      <div className="flex flex-col md:flex-row">
       <div className="bg-primary flex w-full md:w-1/2">
         <Form />
       </div>
@@ -17,6 +25,7 @@ const CareersAtSeaItem = () => {
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
         />
+      </div>
       </div>
     </div>
   )
