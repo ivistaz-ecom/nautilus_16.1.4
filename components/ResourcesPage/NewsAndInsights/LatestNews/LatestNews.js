@@ -63,7 +63,7 @@ const LatestNews = () => {
                   aria-label="Read Naavik Manthan 2025 article on Marex Media"
                 >
                   <button className="flex items-center gap-3 mt-2 text-sm text-primary bg-white hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out rounded-md px-4 py-2 w-fit">
-                    Read Naavik Manthan 2025 on Marex Media
+                    Read Article
                     <Image
                       src="/dark-arrow.svg"
                       width={20}
@@ -120,7 +120,7 @@ const LatestNews = () => {
                   aria-label="Read Naavik Manthan 2025 in Bhandarkar Shipping News PDF"
                 >
                   <button className="flex items-center gap-3 mt-2 text-sm text-primary bg-white hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out rounded-md px-4 py-2 w-fit">
-                    Read Bhandarkar Shipping News article
+                    Read Article
                     <Image
                       src="/dark-arrow.svg"
                       width={20}
@@ -170,7 +170,7 @@ const LatestNews = () => {
                 </span>
                 <Link href={`/news-and-insights/${slug}`} passHref aria-label="Read Nautilus Shipping TradeWinds feature on seafarer welfare">
                   <button className="flex items-center gap-3 mt-2 text-sm text-primary bg-white hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out rounded-md px-4 py-2 w-fit">
-                    Read TradeWinds feature on seafarer welfare
+                    Read Article
                     <Image
                       src="/dark-arrow.svg"
                       width={20}
