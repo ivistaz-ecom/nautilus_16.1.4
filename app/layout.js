@@ -4,7 +4,6 @@ import Footer from "@/components/Footer/Footer"
 import ScrollButton from "@/components/ScrollButton/ScrollButton"
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop"
 import Script from "next/script"
-import ClarityInit from "@/components/ClarityInit"
 
 const merriweather = Merriweather({
   weight: ["300", "400", "700", "900"],
@@ -78,7 +77,6 @@ export default function RootLayout({ children }) {
 
         {children}
         <Footer />
-        <ClarityInit />
         <ScrollButton />
 
         {/* 🔵 LinkedIn Insight Tag */}

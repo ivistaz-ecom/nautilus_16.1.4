@@ -24,7 +24,7 @@ const PromiseItem = () => {
       {/* Replace ParallaxBanner with normal div */}
       <div
         className="relative bg-cover bg-center h-auto md:py-14"
-        style={{ backgroundImage: "url('/home-page/section-3/img01.webp')" }}
+        style={{ backgroundImage: "url('/home-page/section-3/img011.webp')" }}
       >
         {/* Overlay for mobile */}
         <div className="bg-secondary absolute inset-0 mix-blend-multiply block md:hidden"></div>

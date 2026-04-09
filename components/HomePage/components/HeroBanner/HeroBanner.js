@@ -33,7 +33,7 @@ const HeroBanner = () => {
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-label="Ocean waves background video"
       >
         <source
@@ -43,6 +43,10 @@ const HeroBanner = () => {
         <source
           src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus_sea.webm"
           type="video/webm"
+        />
+        <source
+          src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilusshipping_sea.mp4"
+          type="video/mp4"
         />
         {/* Captions track for accessibility - video is decorative/ambient with no speech */}
         <track
