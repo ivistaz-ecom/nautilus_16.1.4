@@ -4,7 +4,6 @@ import Footer from "@/components/Footer/Footer"
 import ScrollButton from "@/components/ScrollButton/ScrollButton"
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop"
 import Script from "next/script"
-import ClarityInit from "@/components/ClarityInit"
 
 //import CookieConsentComponent from "@/components/CookieConsent/CookieConsent"
 //import "vanilla-cookieconsent/dist/cookieconsent.css"
@@ -25,6 +24,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={merriweather.className}>
       <head>
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//snap.licdn.com" />
+        <link rel="dns-prefetch" href="//px.ads.linkedin.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://snap.licdn.com" />
+        <link rel="preconnect" href="https://px.ads.linkedin.com" />
         {/* Other head elements */}
         <meta
           name="google-site-verification"
@@ -101,7 +106,6 @@ export default function RootLayout({ children }) {
         </Script>
         {children}
         <Footer />
-        <ClarityInit />
         <ScrollButton />
         {/* <CookieConsentComponent /> */}
       </body>

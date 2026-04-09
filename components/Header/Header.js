@@ -67,7 +67,6 @@ const Header = ({ logo, hamburger, search }) => {
               width={126}
               height={54}
               alt="Nautilus Shipping"
-              priority
               className="w-[100px] md:w-[126px] h-auto"
             />
           </Link>
