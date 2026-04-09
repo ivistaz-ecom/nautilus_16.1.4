@@ -3,6 +3,14 @@ import Link from "next/link"
 
 const latestEditionData = [
   {
+    title: "Coastal Shipping: India’s Next Logistics Shift",
+    date: "February 2026",
+    description:
+      "The February edition of the Nautilus Newsletter explores the growing role of coastal shipping in shaping India’s logistics future. From policy developments and infrastructure expansion to operational and on-ground perspectives, this issue looks at how coastal routes are becoming an efficient and sustainable mode of freight movement.",
+    image: "/resources/feb-newsletter-2026.jpg",
+    link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/Nautilus_Feb_Newsletter.pdf",
+  },
+  {
     title: "The Year Behind Us. The Course Ahead.",
     date: "November 2025",
     description:
@@ -58,7 +66,7 @@ const LatestEdition = () => {
           Latest Edition
         </h2>
 
-        {latestEditionData.map((edition, index) => (
+        {latestEditionData.slice(0, 1).map((edition, index) => (
           <div
             key={index}
             className="flex flex-col gap-10 md:gap-0 items-center md:items-start md:flex-row"
@@ -77,6 +85,11 @@ const LatestEdition = () => {
                   className="rounded-lg"
                 />
               </Link>
+              <Link href={edition.link} target="_blank" className="md:hidden mt-2 self-center">
+                <button className="py-1 px-4 rounded-lg bg-transparent border border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
+                  View Newsletter
+                </button>
+              </Link>
             </div>
 
             {/* Right Section */}
@@ -87,7 +100,7 @@ const LatestEdition = () => {
               <p className="text-base sm:text-base text-white font-light leading-tight tracking-wide">
                 {edition.description}
               </p>
-              <Link href={edition.link} target="_blank">
+              <Link href={edition.link} target="_blank" className="hidden md:block">
                 <button className="py-1 px-4 rounded-lg bg-transparent border-white border text-white hover:bg-secondary hover:border-secondary hover:scale-95 transition-all duration-300 ease-in-out">
                   View Newsletter
                 </button>

@@ -23,7 +23,7 @@ const SustainabilityPage = () => {
     },
     {
       ques: "What makes Nautilus Shipping a leader among ship management companies in India?",
-      ans: "Nautilus Shipping combines 18 years of industry expertise with cutting-edge technology and proactive compliance management. We tailor our ship management services to optimize operational efficiency, minimize downtime, and enhance vessel performance.",
+      ans: "Nautilus Shipping combines 19 years of industry expertise with cutting-edge technology and proactive compliance management. We tailor our ship management services to optimize operational efficiency, minimize downtime, and enhance vessel performance.",
     },
   ]
 

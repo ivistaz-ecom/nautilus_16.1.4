@@ -5,14 +5,21 @@ import PhoneInput from "react-phone-number-input"
 import { Country, State, City } from "country-state-city"
 import Select from "react-select"
 import { useState } from "react"
+import {
+  isPossiblePhoneNumber,
+  parsePhoneNumberFromString,
+  validatePhoneNumberLength,
+} from "libphonenumber-js/min"
 import { ashorePositionList, ourPositionList } from "@/utils/resources"
 import Image from "next/image"
 import axios from "axios"
+import ReCAPTCHA from "react-google-recaptcha"
 
 const Form = () => {
   const [errors, setErrors] = useState({})
   const [showPopup, setShowPopup] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [recaptchaToken, setRecaptchaToken] = useState("")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,18 +33,98 @@ const Form = () => {
     fileName: "No file chosen",
   })
 
+  const isAllowedPhoneEditKey = (key) => {
+    const allowedKeys = [
+      "Backspace",
+      "Delete",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+      "Home",
+      "End",
+      "Tab",
+    ]
+    return allowedKeys.includes(key)
+  }
+
+  const getPhoneCountryAndNationalDigits = (value) => {
+    if (!value) return { countryCode: "", nationalDigits: 0 }
+
+    const parsedPhone = parsePhoneNumberFromString(value)
+    return {
+      countryCode: parsedPhone?.country || "",
+      nationalDigits: parsedPhone?.nationalNumber?.length || 0,
+    }
+  }
+
+  const isIndiaPhone = (value) => {
+    const { countryCode } = getPhoneCountryAndNationalDigits(value)
+    return formData.country === "IN" || countryCode === "IN"
+  }
+
+  const handlePhoneChange = (value) => {
+    if (!value) {
+      setFormData((prev) => ({ ...prev, phone: "" }))
+      return
+    }
+
+    if (validatePhoneNumberLength(value) === "TOO_LONG") return
+
+    if (isIndiaPhone(value)) {
+      const { nationalDigits } = getPhoneCountryAndNationalDigits(value)
+      if (nationalDigits > 10) return
+    }
+
+    setFormData((prev) => ({ ...prev, phone: value }))
+  }
+
+  const handlePhoneKeyDown = (e) => {
+    if (e.ctrlKey || e.metaKey || e.altKey || isAllowedPhoneEditKey(e.key)) return
+
+    if (!/^\d$/.test(e.key)) {
+      e.preventDefault()
+      return
+    }
+
+    const currentPhoneValue = formData.phone || ""
+    if (!currentPhoneValue) return
+
+    if (isIndiaPhone(currentPhoneValue)) {
+      const { nationalDigits } = getPhoneCountryAndNationalDigits(currentPhoneValue)
+      if (nationalDigits >= 10) {
+        e.preventDefault()
+        return
+      }
+    }
+
+    const nextPhoneValue = `${currentPhoneValue}${e.key}`
+    if (validatePhoneNumberLength(nextPhoneValue) === "TOO_LONG") {
+      e.preventDefault()
+    }
+  }
+
   const validateForm = () => {
     let newErrors = {}
 
     if (!formData.name.trim()) newErrors.name = "Name is required."
-    if (!formData.phone.trim()) newErrors.phone = "Phone number is required."
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required."
+    } else if (isIndiaPhone(formData.phone)) {
+      const { nationalDigits } = getPhoneCountryAndNationalDigits(formData.phone)
+      if (nationalDigits !== 10) {
+        newErrors.phone = "India phone number must be exactly 10 digits."
+      }
+    } else if (!isPossiblePhoneNumber(formData.phone)) {
+      newErrors.phone = "Enter a valid phone number."
+    }
     if (!formData.email.trim()) newErrors.email = "Email is required."
     if (!formData.country) newErrors.country = "Country is required."
     if (!formData.state) newErrors.state = "State is required."
     if (!formData.city.trim()) newErrors.city = "City is required."
-    if (!formData.zipCode.trim()) newErrors.zipCode = "Zip code is required."
     if (!formData.position) newErrors.position = "Position is required."
     if (!formData.file) newErrors.file = "CV/Resume is required."
+    if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA"
 
     setErrors(newErrors)
 
@@ -53,7 +140,7 @@ const Form = () => {
 
     try {
       const data = new FormData()
-      
+
       // Contact Form 7 required fields
       data.append("_wpcf7", "10030")
       data.append("_wpcf7_version", "6.1.4")
@@ -62,7 +149,7 @@ const Form = () => {
       // Generate unit tag: wpcf7-f{formId}-p{postId}-o{instanceId}
       const instanceId = Math.random().toString(36).substring(2, 15)
       data.append("_wpcf7_unit_tag", `wpcf7-f10030-p0-o${instanceId}`)
-      
+
       data.append("name", formData.name)
       data.append("email", formData.email)
       data.append("phone", formData.phone)
@@ -71,6 +158,7 @@ const Form = () => {
       data.append("city", formData.city)
       data.append("zipCode", formData.zipCode)
       data.append("position", formData.position)
+      data.append("g-recaptcha-response", recaptchaToken)
 
       if (formData.file) {
         data.append("file", formData.file)
@@ -83,7 +171,7 @@ const Form = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        }
+        },
       )
 
       //console.log("Form Submitted Successfully!", response.data)
@@ -102,6 +190,7 @@ const Form = () => {
         file: null,
         fileName: "No file chosen",
       })
+      setRecaptchaToken("")
 
       setErrors({})
     } catch (error) {
@@ -117,7 +206,9 @@ const Form = () => {
 
   const renderNameField = () => (
     <div className="w-full">
-      <label htmlFor="name-ashore" className="sr-only">Name</label>
+      <label htmlFor="name-ashore" className="sr-only">
+        Name
+      </label>
       <input
         type="text"
         id="name-ashore"
@@ -138,7 +229,9 @@ const Form = () => {
 
   const renderEmailField = () => (
     <div className="w-full">
-      <label htmlFor="email-ashore" className="sr-only">Email</label>
+      <label htmlFor="email-ashore" className="sr-only">
+        Email
+      </label>
       <input
         type="email"
         id="email-ashore"
@@ -160,15 +253,19 @@ const Form = () => {
   const renderPhoneField = () => {
     return (
       <div className="flex flex-col w-full">
-        <label htmlFor="phone-ashore" className="sr-only">Phone Number</label>
+        <label htmlFor="phone-ashore" className="sr-only">
+          Phone Number
+        </label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <PhoneInput
             international
             defaultCountry="IN"
             value={formData.phone}
-            onChange={(value) =>
-              setFormData((prev) => ({ ...prev, phone: value }))
-            }
+            onChange={handlePhoneChange}
+            numberInputProps={{
+              inputMode: "numeric",
+              onKeyDown: handlePhoneKeyDown,
+            }}
             className="custom-phone-input w-full text-white"
             id="phone-ashore"
           />
@@ -405,7 +502,9 @@ const Form = () => {
 
   const renderZipCodeField = () => (
     <div className="w-full">
-      <label htmlFor="zipcode-ashore" className="sr-only">Zip Code</label>
+      <label htmlFor="zipcode-ashore" className="sr-only">
+        Zip Code
+      </label>
       <input
         type="text"
         id="zipcode-ashore"
@@ -427,7 +526,9 @@ const Form = () => {
   const renderPositionField = () => {
     return (
       <div className="flex flex-col gap-1 w-full">
-        <label htmlFor="position-ashore" className="sr-only">Select Position</label>
+        <label htmlFor="position-ashore" className="sr-only">
+          Select Position
+        </label>
         <div className="flex items-center border-b border-gray-300 pb-1">
           <select
             name="position"
@@ -441,7 +542,9 @@ const Form = () => {
               }))
             }
           >
-            <option value="" className="text-black">Select Position</option>
+            <option value="" className="text-black">
+              Select Position
+            </option>
             {ashorePositionList.map((pos, index) => (
               <option key={index} value={pos} className="text-black">
                 {pos}
@@ -545,12 +648,34 @@ const Form = () => {
     )
   }
 
+  const renderRecaptchaField = () => (
+    <div className="flex flex-col gap-2 w-full">
+      <div className="max-w-full overflow-x-auto">
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          onChange={(token) => {
+            setRecaptchaToken(token || "")
+            setErrors((prev) => {
+              if (!prev.recaptcha) return prev
+              const { recaptcha, ...rest } = prev
+              return rest
+            })
+          }}
+          onExpired={() => setRecaptchaToken("")}
+        />
+      </div>
+      <div className="">
+        {errors.recaptcha && (
+          <span className="text-red-500 text-sm">*{errors.recaptcha}</span>
+        )}
+      </div>
+    </div>
+  )
+
   return (
     <div className="p-3 sm:py-10 sm:px-4 h-full flex flex-col justify-center">
       {/* Mandatory Notice */}
-      <p className="text-sm font-light text-white">
-        All fields are mandatory*
-      </p>
+      <p className="text-sm font-light text-white">All fields are mandatory*</p>
 
       {/* Form Heading */}
       <h2 className="text-xl sm:text-2xl font-light text-white mt-4">
@@ -580,6 +705,7 @@ const Form = () => {
 
         {renderPositionField()}
         {renderChooseAFile()}
+        {renderRecaptchaField()}
 
         {/* Submit Button */}
         <button

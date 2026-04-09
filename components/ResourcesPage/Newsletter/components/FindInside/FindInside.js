@@ -55,7 +55,11 @@ const FindInside = () => {
             </button>
           </div>
           {/* <hr className="w-3/5 border-gray-400" /> */}
+          <label htmlFor="find-inside-slide-slider" className="sr-only">
+            Choose slide in newsletter contents
+          </label>
           <input
+            id="find-inside-slide-slider"
             type="range"
             min={0}
             max={4} // If 4 slidesToShow, adjust max accordingly

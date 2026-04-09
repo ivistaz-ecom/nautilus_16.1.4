@@ -5,9 +5,6 @@ import ScrollButton from "@/components/ScrollButton/ScrollButton"
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop"
 import Script from "next/script"
 
-//import CookieConsentComponent from "@/components/CookieConsent/CookieConsent"
-//import "vanilla-cookieconsent/dist/cookieconsent.css"
-
 const merriweather = Merriweather({
   weight: ["300", "400", "700", "900"],
   style: ["normal", "italic"],
@@ -24,13 +21,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={merriweather.className}>
       <head>
-      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="//snap.licdn.com" />
-        <link rel="dns-prefetch" href="//px.ads.linkedin.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://snap.licdn.com" />
-        <link rel="preconnect" href="https://px.ads.linkedin.com" />
-        {/* Other head elements */}
         <meta
           name="google-site-verification"
           content="ximcwDn5nLvnNzaFd5RFKg4kZIsdRpd2fZ5waaTkXZw"
@@ -46,7 +36,6 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-MC9BP82');
           `}
         </Script>
-        {/* End Google Tag Manager */}
 
         {/* Google Analytics */}
         <Script
@@ -63,25 +52,6 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-N3V27DPYSK');
           `}
         </Script>
-
-        {/* Apollo Tracking */}
-        <Script strategy="lazyOnload" id="apollo-tracking">
-          {`
-            function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
-            o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
-            o.onload=function(){window.trackingFunctions.onLoad({appId:"663865f413aed80300110b0d"})},
-            document.head.appendChild(o)}initApollo();
-          `}
-        </Script>
-        {/* Apollo Tracking End */}
-
-        {/* Apollo Form Enrichment */}
-        <Script strategy="afterInteractive" id="apollo-form-enrichment">
-          {`
-            (function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\\'\\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){console.warn('[Apollo] Form enrichment timeout after 5s - revealing forms. Check network and console for errors.');cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){console.error('[Apollo] Failed to load form enrichment script');cleanup();};script.onload=function(){try{window.ApolloInbound.formEnrichment.init({appId: '69294cad8f89910019798011',onReady: function(){cleanup();},onError: function(err){console.error('[Apollo] Form enrichment init error:',err);cleanup();}});}catch(err){console.error('[Apollo] Error initializing form enrichment:',err);cleanup();}};document.head.appendChild(script);})();
-          `}
-        </Script>
-        {/* Apollo Form Enrichment End */}
       </head>
 
       <body>
@@ -94,9 +64,9 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
 
         <ScrollToTop />
+
         <Script id="disable-scroll-restoration" strategy="beforeInteractive">
           {`
             if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
@@ -104,10 +74,37 @@ export default function RootLayout({ children }) {
             }
           `}
         </Script>
+
         {children}
         <Footer />
         <ScrollButton />
-        {/* <CookieConsentComponent /> */}
+
+        {/* 🔵 LinkedIn Insight Tag */}
+        <Script id="linkedin-partner" strategy="afterInteractive">
+          {`
+            _linkedin_partner_id = "6046612";
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+          `}
+        </Script>
+
+        <Script
+          id="linkedin-insight"
+          strategy="afterInteractive"
+          src="https://snap.licdn.com/li.lms-analytics/insight.min.js"
+        />
+
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=6046612&fmt=gif"
+          />
+        </noscript>
+        {/* 🔵 LinkedIn Insight Tag End */}
+
       </body>
     </html>
   )

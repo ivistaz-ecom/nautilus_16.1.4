@@ -100,7 +100,7 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/OP_Sheoran.webp",
         name: "Cdr. O P Sheron",
-        post: "Technical Director<br />Repairs & Refit",
+        post: "Technical Director Repairs & Refit",
       },
       {
         imageUrl: "/about-us/member/RajinderKumar.webp",
@@ -158,17 +158,17 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/Esa.png",
         name: "Esa",
-        post: "General Manager - Crewing & Operations",
+        post: "GM - Crewing & Operations",
       },
       {
         imageUrl: "/about-us/member/Ravindra.png",
         name: "Capt. Ravindra",
-        post: "General Manager - Crewing & Operations",
+        post: "GM - Crewing & Operations",
       },
       {
         imageUrl: "/about-us/member/Capt_Monson_Zugustin.webp",
         name: "Capt. Monson",
-        post: "General Manager- Operations (Kochi)",
+        post: "GM - Operations (Kochi)",
       },
       // {
       //   imageUrl: "/about-us/member/Ananya.webp",
@@ -201,7 +201,7 @@ export const crewMemberList = [
       //   post: "Operations Executive",
       // },
       {
-        imageUrl: "/about-us/member/Swathi.png",
+        imageUrl: "/about-us/member/Swathi_.webp",
         name: "Swathi",
         post: "Marine Personnel Executive",
       },
@@ -377,12 +377,12 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/Yaju.png",
         name: "Capt. Dev",
-        post: "General Manager - Marine",
+        post: "GM - Marine",
       },
       {
         imageUrl: "/about-us/member/Vinodh.png",
         name: "Vinodh",
-        post: "General Manager - HSEQ & Technology",
+        post: "GM - HSEQ & Technology",
       },
       {
         imageUrl: "/about-us/member/Santhosh.png",
@@ -399,11 +399,11 @@ export const crewMemberList = [
         name: "Divakar",
         post: "Manager - Talent Acquisition",
       },
-      {
-        imageUrl: "/about-us/member/Supriya.png",
-        name: "Supriya",
-        post: "Talent Acquisition Executive",
-      },
+      // {
+      //   imageUrl: "/about-us/member/Supriya.png",
+      //   name: "Supriya",
+      //   post: "Talent Acquisition Executive",
+      // },
       {
         imageUrl: "/about-us/member/Imran-01.webp",
         name: "Imran",
@@ -478,7 +478,7 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/kevin_nautilus.webp",
         name: "Kevin",
-        post: "Manager - Client Engagement & Business Development",
+        post: "Manager - Client Engagement & BD",
       },
       {
         imageUrl: "/about-us/member/Architha.png",
