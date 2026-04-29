@@ -419,6 +419,23 @@ export const crewMemberList = [
         name: "Sumanth",
         post: "Talent Acquisition Executive",
       },
+      {
+        imageUrl: "/about-us/member/Geethasri.webp",
+        name: "Geethasri",
+        post: "Talent Acquisition Executive",
+      },
+      {
+        imageUrl: "/about-us/member/Haasini.webp",
+        name: "Haasini",
+        post: "Talent Acquisition Executive",
+      },
+      {
+        imageUrl: "/about-us/member/Pravalika.webp",
+        name: "Pravalika",
+        post: "Talent Acquisition Executive",
+      },
+    
+      
     ],
   },
   {
