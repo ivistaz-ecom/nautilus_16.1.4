@@ -13,6 +13,11 @@
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://www.nautilusshipping.com/info</loc>
+  <lastmod>2026-02-13T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
   <loc>https://www.nautilusshipping.com/contact-us</loc>
   <lastmod>2025-05-08T06:24:10+00:00</lastmod>
   <priority>0.80</priority>

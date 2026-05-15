@@ -1,6 +1,6 @@
 import { Merriweather } from "next/font/google"
 import "@/styles/globals.css"
-import Footer from "@/components/Footer/Footer"
+import ConditionalFooter from "@/components/ConditionalFooter/ConditionalFooter"
 import ScrollButton from "@/components/ScrollButton/ScrollButton"
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop"
 import Script from "next/script"
@@ -105,7 +105,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         {children}
-        <Footer />
+        <ConditionalFooter />
         <ScrollButton />
         {/* <CookieConsentComponent /> */}
       </body>
