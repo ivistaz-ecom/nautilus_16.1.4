@@ -436,7 +436,6 @@ export const crewMemberList = [
         name: "Pravalika",
         post: "Talent Acquisition Executive",
       },
-    
       
     ],
   },
