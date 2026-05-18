@@ -50,7 +50,7 @@ const pinLocations = [
     content:
       "Survey no. 79, Bargat Lane, Chakkar Gaon, South Andaman, Sri Vijaya Puram, A & N Islands - 744112",
     tel: "+91 94 3426 0414",
-    location: "https://maps.app.goo.gl/5MPnyL9bfGr9bYV37",
+    location: "https://www.google.com/maps/place/ANGEL+ENTERPRISES/@11.6477875,92.7441664,932m/data=!3m2!1e3!4b1!4m6!3m5!1s0x308894fdf3b71e67:0xcf847364e96c2817!8m2!3d11.6477875!4d92.7441664!16s%2Fg%2F11w8qtbswf!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D", 
   },
   {
     top: 313,
