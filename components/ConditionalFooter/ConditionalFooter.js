@@ -3,7 +3,10 @@
 import { usePathname } from "next/navigation"
 import Footer from "@/components/Footer/Footer"
 
-const HIDE_FOOTER_PREFIXES = ["/narayan-rajan-info"]
+const HIDE_FOOTER_PREFIXES = [
+  "/narayan-rajan-info",
+  "/info",
+]
 
 export default function ConditionalFooter() {
   const pathname = usePathname() || ""
