@@ -11,28 +11,18 @@ import {
   FaRedditAlien,
 } from "react-icons/fa"
 
-import {
-  FaXTwitter,
-  FaTelegram,
-} from "react-icons/fa6"
+import { FaXTwitter, FaTelegram } from "react-icons/fa6"
 
 import { SiPinterest } from "react-icons/si"
 
-import {
-  Phone,
-  Mail,
-  Share2,
-  Link2,
-  X,
-} from "lucide-react"
+import { Phone, Mail, Share2, Link2, X, Globe } from "lucide-react"
 
 export default function NarayanRajanInfo() {
   const [shareOpen, setShareOpen] = useState(false)
   const [copyDone, setCopyDone] = useState(false)
 
   // LIVE URL
-  const pageUrl =
-    "https://nautilusshipping.com/narayan-rajan-info"
+  const pageUrl = "https://nautilusshipping.com/narayan-rajan-info"
 
   const sharePanelRef = useRef(null)
 
@@ -41,29 +31,17 @@ export default function NarayanRajanInfo() {
   const SHARE_TEXT =
     "Connect with Narayan Rajan — Co-Founder & Managing Director"
 
-  const encodedUrl = useMemo(
-    () => encodeURIComponent(pageUrl),
-    [pageUrl]
-  )
+  const encodedUrl = useMemo(() => encodeURIComponent(pageUrl), [pageUrl])
 
-  const encodedText = useMemo(
-    () => encodeURIComponent(SHARE_TEXT),
-    []
-  )
+  const encodedText = useMemo(() => encodeURIComponent(SHARE_TEXT), [])
 
-  const encodedTitle = useMemo(
-    () => encodeURIComponent(SHARE_TITLE),
-    []
-  )
+  const encodedTitle = useMemo(() => encodeURIComponent(SHARE_TITLE), [])
 
   useEffect(() => {
     if (!shareOpen) return
 
     const onDocMouseDown = (e) => {
-      if (
-        sharePanelRef.current &&
-        !sharePanelRef.current.contains(e.target)
-      ) {
+      if (sharePanelRef.current && !sharePanelRef.current.contains(e.target)) {
         setShareOpen(false)
       }
     }
@@ -301,9 +279,7 @@ export default function NarayanRajanInfo() {
           </div>
 
           {/* Name */}
-          <h1 className="text-3xl font-semibold text-black">
-            Narayan Rajan
-          </h1>
+          <h1 className="text-3xl font-semibold text-black">Narayan Rajan</h1>
 
           {/* Designation */}
           <p className="mt-2 text-base font-light leading-relaxed text-black">
@@ -319,9 +295,7 @@ export default function NarayanRajanInfo() {
           >
             <FaLinkedin className="text-2xl" />
 
-            <span className="text-sm font-medium">
-              Connect on LinkedIn
-            </span>
+            <span className="text-sm font-medium">Connect on LinkedIn</span>
           </a>
 
           {/* Contact Buttons */}
@@ -329,19 +303,45 @@ export default function NarayanRajanInfo() {
             {/* Phone */}
             <a
               href="tel:+919901911119"
-              className="flex items-center rounded-full bg-secondary px-5 py-4 text-white shadow-sm transition duration-300 hover:scale-[1.02] hover:bg-primary"
+              className="flex w-full items-center rounded-full bg-primary px-4 py-4 text-white shadow-sm transition duration-300 hover:scale-[1.02] hover:bg-secondary"
             >
-              <Phone className="mr-3 h-5 w-5" />
-              +91 99019 11119
+              <div className="mr-3 flex h-5 w-5 shrink-0 items-center justify-center">
+                <Phone className="h-5 w-5" />
+              </div>
+
+              <span className="min-w-0 text-sm sm:text-base">
+                +91 99019 11119
+              </span>
             </a>
 
             {/* Email */}
             <a
               href="mailto:narayan.r@nautilusshipping.com"
-              className="flex items-center rounded-full bg-secondary px-5 py-4 text-white shadow-sm transition duration-300 hover:scale-[1.02] hover:bg-primary"
+              className="flex w-full items-center rounded-full bg-primary px-4 py-4 text-white shadow-sm transition duration-300 hover:scale-[1.02] hover:bg-secondary"
             >
-              <Mail className="mr-3 h-5 w-5" />
-              narayan.r@nautilusshipping.com
+              <div className="mr-3 flex h-5 w-5 shrink-0 items-center justify-center">
+                <Mail className="h-5 w-5" />
+              </div>
+
+              <span className="min-w-0 truncate text-sm sm:text-base">
+                narayan.r@nautilusshipping.com
+              </span>
+            </a>
+
+            {/* Website */}
+            <a
+              href="https://nautilusshipping.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center rounded-full bg-primary px-4 py-4 text-white shadow-sm transition duration-300 hover:scale-[1.02] hover:bg-secondary"
+            >
+              <div className="mr-3 flex h-5 w-5 shrink-0 items-center justify-center">
+                <Globe className="h-5 w-5" />
+              </div>
+
+              <span className="min-w-0 truncate text-sm sm:text-base">
+                nautilusshipping.com
+              </span>
             </a>
           </div>
         </div>
