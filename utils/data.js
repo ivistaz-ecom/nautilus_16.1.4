@@ -258,9 +258,9 @@ export const ourLocationData = [
   {
     city: "Port Blair",
     imageUrl: "/contact-us/location/img05.png",
-    add: "4th Cross Road, Near Confidential Dental Clinic, Junglighat, Port Blair, South Andaman – 744103",
-    tel: "+91 99 3208 8859",
-    location: "https://maps.app.goo.gl/Ty1UskNyjqmwtjii9",
+    add: "Survey no. 79, Bargat Lane, Chakkar Gaon, South Andaman, Sri Vijaya Puram, A & N Islands - 74411",
+    tel: "+91 94 3426 0414",
+    location: "https://maps.app.goo.gl/5MPnyL9bfGr9bYV37",
   },
  
 
