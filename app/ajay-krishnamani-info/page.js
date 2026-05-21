@@ -1,12 +1,12 @@
-import NarayanRajanInfo from "@/components/InfoPage/NarayanRajanInfo"
+import AjayKrishnamaniInfo from "@/components/InfoPage/AjayKrishnamaniInfo"
 import NextSeo from "@/components/Seo/Seo"
 
 export default function Page() {
   const seoField = {
-    title: "Narayan Rajan  | Links & Social",
+    title: "Ajay Krishnamani | Links & Social",
     description:
-      "Quick links to Narayan Rajan Profile — website, contact, LinkedIn, Instagram, Facebook, and X.",
-    path: "/info",
+      "Quick links to Ajay Krishnamani profile — website, contact, LinkedIn, and Nautilus Shipping.",
+    path: "/ajay-krishnamani-info",
     metaImage: "https://www.nautilusshipping.com/logo.png",
     robots: "noindex, nofollow",
   }
@@ -15,7 +15,7 @@ export default function Page() {
     <>
       <NextSeo {...seoField} />
       <main id="main-content">
-        <NarayanRajanInfo />
+        <AjayKrishnamaniInfo />
       </main>
     </>
   )
