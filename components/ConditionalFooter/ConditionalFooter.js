@@ -5,6 +5,7 @@ import Footer from "@/components/Footer/Footer"
 
 const HIDE_FOOTER_PREFIXES = [
   "/narayan-rajan-info",
+  "/ajay-krishnamani-info",
   "/info",
 ]
 

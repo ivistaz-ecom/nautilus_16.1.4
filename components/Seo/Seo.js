@@ -3,17 +3,31 @@ import React from "react"
 
 const SITE_URL = "https://www.nautilusshipping.com"
 
-function NextSeo({ title, description, path, metaImage, preloadImage }) {
-  // Always use SITE_URL for canonical to avoid conflicting www vs non-www. Search engines need a single preferred URL.
+function NextSeo({
+  title,
+  description,
+  path,
+  metaImage,
+  preloadImage,
+  robots,
+}) {
+  // Always use SITE_URL for canonical to avoid conflicting www vs non-www.
   const domainName = SITE_URL
 
   return (
     <head>
       <meta charSet="utf-8" />
       <title>{title}</title>
+
       <meta name="description" content={description} />
+
+      {/* Robots Meta */}
+      <meta name="robots" content={robots || "index, follow"} />
+
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       <link rel="icon" href="/images/favicon-150x150.png" />
+
       {/* Preload LCP image for faster rendering */}
       {preloadImage && (
         <link
@@ -23,7 +37,9 @@ function NextSeo({ title, description, path, metaImage, preloadImage }) {
           fetchPriority="high"
         />
       )}
+
       <link rel="canonical" href={`${domainName}${path}`} />
+
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
@@ -31,6 +47,7 @@ function NextSeo({ title, description, path, metaImage, preloadImage }) {
       <meta property="og:url" content={`${domainName}${path}`} />
       <meta property="og:site_name" content={title} />
       <meta property="og:image" content={metaImage} />
+
       <meta name="twitter:card" content="summary_large_image" />
 
       <script
