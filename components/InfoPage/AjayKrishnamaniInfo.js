@@ -24,7 +24,7 @@ const PROFILE = {
   pageUrl: "https://nautilusshipping.com/ajay-krishnamani-info",
   qrSrc: "/info-card-qr/Ajay_krishnamani_info.png",
   linkedin: "https://www.linkedin.com/in/ajay-krishnamani-a1258311/",
-  phone: { href: "tel:+919840085546", label: "+91 9840085546" },
+  phone: { href: "tel:+919840085546", label: "+91 98400 85546" },
   email: {
     href: "mailto:ajay.k@nautilusshipping.com",
     label: "ajay.k@nautilusshipping.com",
