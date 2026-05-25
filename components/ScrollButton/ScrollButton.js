@@ -7,15 +7,23 @@ const ScrollButton = () => {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    let ticking = false
+
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setVisible(true)
-      } else {
-        setVisible(false)
-      }
+      if (ticking) return
+
+      ticking = true
+      window.requestAnimationFrame(() => {
+        setVisible((current) => {
+          const next = window.scrollY > 300
+          return current === next ? current : next
+        })
+        ticking = false
+      })
     }
 
-    window.addEventListener("scroll", toggleVisibility)
+    toggleVisibility()
+    window.addEventListener("scroll", toggleVisibility, { passive: true })
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
 
