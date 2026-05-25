@@ -1,5 +1,3 @@
-"use client"
-
 // import { useEffect } from "react"
 // import { ParallaxProvider } from "react-scroll-parallax"
 // import AOS from "aos"

@@ -2,16 +2,11 @@
 //import Image from "next/image"
 import Link from "next/link"
 //import { useParallax, ParallaxBanner } from "react-scroll-parallax"
-import dynamic from "next/dynamic"
+import HeroHeader from "./HeroHeader"
 //import { useEffect, useRef } from "react"
 
 // Old Video URL: https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus_sea.mp4
 // New Video URL: https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus_sea.webm
-
-// Dynamically import Header to reduce initial JS bundle if it's heavy
-const Header = dynamic(() => import("@/components/Header/Header"), {
-  ssr: false,
-})
 
 const HeroBanner = () => {
   //const videoRef = useRef(null)
@@ -63,7 +58,7 @@ const HeroBanner = () => {
       {/* <div className="absolute inset-0 bg-black/30 pointer-events-none" /> */}
 
       {/* Header */}
-      <Header
+      <HeroHeader
         logo="/white-logo.png"
         hamburger="/hamburger.svg"
         search="/search.svg"
