@@ -14,7 +14,7 @@ const latestEditionData = [
       </>
     ),
     image: "/resources/april-newsletter.jpeg",
-    link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/Nautilus_April_Newsletter.pdf",
+    link: "/resources/Nautilus_April_Newsletter.pdf",
   },
   {
     title: "Coastal Shipping: India’s Next Logistics Shift",
