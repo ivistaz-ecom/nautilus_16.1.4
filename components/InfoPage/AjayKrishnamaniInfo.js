@@ -17,6 +17,7 @@ import { SiPinterest } from "react-icons/si"
 
 import { Phone, Mail, Share2, Link2, X, Globe } from "lucide-react"
 
+
 const PROFILE = {
   name: "Ajay Krishnamani",
   title: "Co-Founder & Managing Director",

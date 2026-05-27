@@ -9,9 +9,19 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 const oldEditions = [
+  
+    
+      
+   
   {
     year: "2025",
     items: [
+      {
+        title: "Coastal Shipping: India’s Next Logistics Shift",
+        date: "February 2026",
+        image: "/resources/feb-newsletter-2026.jpg",
+        link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/Nautilus_Feb_Newsletter.pdf",
+      },
       {
         title: "Aging Vessels: Balancing Legacy and Innovation",
         date: "January 2025",
@@ -141,7 +151,7 @@ const OtherEdition = () => {
 
               return (
               <div key={group.year} className="space-y-4">
-                <h3 className="text-xl sm:text-3xl font-light">{group.year}</h3>
+                
                 <div className="relative">
                   <Slider
                     ref={(el) => {
