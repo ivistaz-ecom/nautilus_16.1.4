@@ -9,10 +9,6 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 const oldEditions = [
-  
-    
-      
-   
   {
     year: "2025",
     items: [
@@ -20,37 +16,37 @@ const oldEditions = [
         title: "Coastal Shipping: India’s Next Logistics Shift",
         date: "February 2026",
         image: "/resources/feb-newsletter-2026.jpg",
-        link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/Nautilus_Feb_Newsletter.pdf",
+        link: "/resources/Nautilus_Feb_Newsletter.pdf",
       },
       {
         title: "Aging Vessels: Balancing Legacy and Innovation",
         date: "January 2025",
         image: "/resources/image01.png",
-        link: "/NL/2025/Jan/January%20Nautilus%20Newsletter%20Compressed.pdf",
+        link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/January%20Nautilus%20Newsletter%20Compressed.pdf",
       },
       {
         title: "The Changing Tide: A Look at Maritime's Biggest Shifts",
         date: "March 2025",
         image: "/resources/March-Newsletter.jpg",
-        link: "/NL/2025/Mar/Nautilus-March-Newsletter.pdf",
+        link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/Nautilus-March-Newsletter.pdf",
       },
       {
         title: "The Hands That Move the World",
         date: "July 2025",
         image: "/resources/Nautilus_July_Newsletter.jpg",
-        link: "/NL/2025/July/july-newsletter-updated.pdf",
+        link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/july-newsletter-updated.pdf",
       },
       {
         title: "For The Sea, For The Future - World Maritime Day",
         date: "September 2025",
         image: "/resources/Nautilus_Newsletter_September_2025.jpg",
-        link: "/NL/2025/September/Newsletter-September-2025.pdf",
+        link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/Newsletter-September-2025.pdf",
       },
       {
         title: "The Year Behind Us. The Course Ahead.",
         date: "November 2025",
         image: "/resources/nov-newsletter.webp",
-        link: "/NL/2025/November/Newsletter-November-2025.pdf",
+        link: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/Newsletter-November-2025.pdf",
       },
      
     ],
