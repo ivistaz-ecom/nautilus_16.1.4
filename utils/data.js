@@ -245,7 +245,7 @@ export const ourLocationData = [
     imageUrl: "/contact-us/location/Kochi-img.webp",
     add: "1st floor, SaiPoornashree, #41/139-E, Thevarakavu road, Thripunithura - 682301",
     tel: "+91 99440 10494",
-    location: "https://www.google.com/maps/place/Poornasree+Apartments/@9.9470389,76.3442167,21z/data=!4m6!3m5!1s0x3b08739d311bdf9b:0xbc7bd9c0a74ff8ba!8m2!3d9.9471911!4d76.3444246!16s%2Fg%2F11jxy21pt9?entry=tts&g_ep=EgoyMDI2MDEyNS4wIPu8ASoASAFQAw%3D%3D&skid=ef261db7-ba09-4788-b164-67f36d02046f",
+    location: "https://maps.app.goo.gl/TAKQDYYd1Xn5sXzD9",
   },
   {
     city: "Singapore",

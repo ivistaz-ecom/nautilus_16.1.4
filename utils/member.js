@@ -252,17 +252,17 @@ export const crewMemberList = [
       //   name: "Priyanka",
       //   post: "Marine Personnel Executive",
       // },
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "Kartiki",
-      //   post: "Marine Personnel Executive",
-      // },
+      {
+        imageUrl: "/about-us/member/Kartiki.webp",
+        name: "Kartiki",
+        post: "Marine Personnel Executive",
+      },
      
-      // {
-      //   imageUrl: "/about-us/member/Akansha_Bekare.webp",
-      //   name: "Akansha",
-      //   post: "Marine Personnel Executive",
-      // },
+      {
+        imageUrl: "/about-us/member/Serma.webp",
+        name: "Serma Shanti",
+        post: "Marine Personnel Executive",
+      },
      
     
     ],

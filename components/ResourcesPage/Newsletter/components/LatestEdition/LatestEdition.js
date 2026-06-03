@@ -14,7 +14,7 @@ const latestEditionData = [
       </>
     ),
     image: "/resources/april-newsletter.jpeg",
-    link: "/resources/Nautilus_April_Newsletter.pdf",
+    link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/April/Nautilus_April_Newsletter.pdf",
   },
   
 ]
