@@ -293,7 +293,7 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/Akash.png",
         name: "Akash",
-        post: "Marine Personnel Officer",
+        post: "Operations Executive",
       },
       {
         imageUrl: "/about-us/member/Hari.png",
