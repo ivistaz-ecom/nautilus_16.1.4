@@ -5,7 +5,9 @@ export const incidents = [
     title: "NEAR MISS REPORT",
     subtitle: "Engine Room Safety: Lessons from a Near Miss",
     image:
-      "/landing-page/technical-incidents/NEAR_MISS_REPORT.png",
+      "/landing-page/technical-incidents/NEAR_MISS.webp",
+    detailImage:
+      "/landing-page/technical-incidents/banner-incidents/NEAR_MISS.webp",
     objectPosition: "center",
     location: "Engine Room",
     sections: [
@@ -92,7 +94,8 @@ export const incidents = [
     slug: "provision-crane-incident",
     title: "Provision Crane Incident",
     subtitle: "A Lesson in Maintenance",
-    image: "/landing-page/technical-incidents/Provision_Crane_Incident.png",
+    image: "/landing-page/technical-incidents/Provision_CraneI.webp",
+    detailImage: "/landing-page/technical-incidents/banner-incidents/Provision_CraneI.webp",
     objectPosition: "center",
     location: "Main Deck",
     sections: [
@@ -145,7 +148,9 @@ export const incidents = [
     title: "The Tangled Anchors at Jaigarh",
     subtitle: "A Monsoon Seamanship Lesson",
     image:
-      "/landing-page/technical-incidents/TheTangled_Anchors.png",
+      "/landing-page/technical-incidents/The_Tangled.webp",
+    detailImage:
+      "/landing-page/technical-incidents/banner-incidents/The_Tangled.webp",
     objectPosition: "center",
     location: "Jaigarh Port",
     sections: [
@@ -199,7 +204,9 @@ export const incidents = [
     title: "Incident Report: Unsafe Position During Mooring Operations",
     subtitle: "Snap-Back Zone Awareness at Forward Station",
     image:
-      "/landing-page/technical-incidents/Unsafe_Position.png",
+      "/landing-page/technical-incidents/unsafe.webp",
+    detailImage:
+      "/landing-page/technical-incidents/banner-incidents/unsafe.webp",
     objectPosition: "center",
     location: "Jaigarh Port (Forward Station)",
     sections: [
@@ -250,7 +257,9 @@ export const incidents = [
     title: "Why Is Every Tiny Detail Important?",
     subtitle: "MV Sea Ruby Cargo Water Ingress Case",
     image:
-      "/landing-page/technical-incidents/MV_SEA_RUBY.png",
+      "/landing-page/technical-incidents/MVSEA_RUBY.webp",
+    detailImage:
+      "/landing-page/technical-incidents/banner-incidents/MVSEA_RUBY.webp",
     objectPosition: "center",
     location: "Puerto Cabello, Venezuela",
     sections: [
@@ -307,78 +316,7 @@ export const incidents = [
       },
     ],
   },
-  {
-    id: 6,
-    slug: "navigating-the-suez-canal",
-    title: "Navigating the Suez Canal",
-    subtitle: "A Test of Preparation and Precision",
-    image:
-      "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1600&q=80",
-    objectPosition: "center",
-    location: "Suez Canal",
-    sections: [
-      {
-        heading: "Name: Fakhri Ravat",
-        body: ["Current Position: Technical Superintendent"],
-      },
-      {
-        heading: "Description of Event:",
-        body: [
-          "The Suez Canal is one of the most crucial maritime routes in the world, connecting the Mediterranean and Red Seas, facilitating the movement of global trade. For two cargo vessels set to make the passage, careful planning and execution were critical. With a highly skilled crew and extensive pre-transit preparations, the journey through the canal was an exercise in coordination, risk management, and problem-solving.",
-          "Before the transit, we carried out extensive planning to ensure smooth passage through the Suez Canal. This included verifying the vessel's compliance with the Suez Canal Authority requirements, such as draft restrictions, hull conditions, and navigational equipment functionality. We also conducted detailed route planning, ensuring that our voyage plan aligned with the canal's convoy system and scheduling.",
-          "Crew preparedness was a top priority. We held pre-transit briefings covering safety procedures, communication protocols, and emergency response plans. Coordination between bridge teams and engine room staff was strengthened to ensure operational readiness. Additionally, we ensured that all required documentation and permits were in place to avoid unnecessary delays.",
-          "Clear communication is key to a successful transit. We established a structured communication channel where the bridge team, engine room, and deck officers worked in sync with the Suez Canal pilots. Before entering the canal, the master and officers reviewed the transit plan and the specific roles of each crew member.",
-          "During the transit, we maintained an open line of communication with the SCA authorities to receive real-time updates and instructions. The pilots were given full support by the bridge team, and we ensured the crew remained vigilant to execute orders promptly. Regular position reporting and continuous monitoring of traffic and weather conditions also helped maintain smooth operations.",
-          "While the transit was largely smooth, we encountered a temporary traffic congestion due to a vessel ahead experiencing technical difficulties. This required a slowdown in speed and close coordination with the SCA to adjust our position in the convoy.",
-          "Additionally, one vessel experienced minor steering fluctuations, which we quickly diagnosed as an issue with the hydraulic system. The engineering team acted swiftly, implementing corrective measures without delaying the transit. Our proactive approach and well-trained crew ensured minimal impact on the schedule.",
-        ],
-      },
-      {
-        heading: "Immediate Action Taken:",
-        points: [
-          "Close coordination with the SCA to adjust our position in the convoy.",
-          "The engineering team acted swiftly, implementing corrective measures without delaying the transit.",
-          "Regular position reporting and continuous monitoring of traffic and weather conditions.",
-          "The pilots were given full support by the bridge team, and we ensured the crew remained vigilant to execute orders promptly.",
-        ],
-      },
-      {
-        heading: "Potential Consequences:",
-        points: [
-          "Delays to the transit schedule due to traffic congestion.",
-          "Navigational risks associated with vessel congestion within the canal.",
-          "Loss of steering control due to hydraulic system issues.",
-          "Operational disruption resulting from mechanical failures during transit.",
-          "Increased risk to vessel safety during restricted-water navigation.",
-        ],
-      },
-      {
-        heading: "Root Cause:",
-        body: [
-          "The primary operational risks included congestion within the canal, potential mechanical failures, and environmental factors such as strong currents or poor visibility.",
-          "One vessel experienced minor steering fluctuations, which we quickly diagnosed as an issue with the hydraulic system.",
-        ],
-      },
-      {
-        heading: "Corrective / Preventive Action:",
-        points: [
-          "We conducted thorough pre-transit maintenance checks, focusing on propulsion systems, steering gear, and generators. Standby equipment was tested to ensure operational redundancy.",
-          "The bridge team was briefed on manoeuvring procedures, and contingency plans were in place in case of emergency anchoring or delays.",
-          "Weather forecasts were closely monitored, and transit timing was adjusted if necessary to avoid adverse conditions.",
-          "We held pre-transit briefings covering safety procedures, communication protocols, and emergency response plans.",
-          "Coordination between bridge teams and engine room staff was strengthened to ensure operational readiness.",
-          "We established a structured communication channel where the bridge team, engine room, and deck officers worked in sync with the Suez Canal pilots.",
-          "Before entering the canal, the master and officers reviewed the transit plan and the specific roles of each crew member.",
-        ],
-      },
-      {
-        heading: "Lessons from the Passage:",
-        body: [
-          "This passage reinforced the importance of preparation, communication, coordination, and proactive risk management during critical navigational operations.",
-        ],
-      },
-    ],
-  },
+  
 ];
 
 export function getIncidentBySlug(slug) {
