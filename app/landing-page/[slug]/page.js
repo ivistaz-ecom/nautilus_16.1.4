@@ -57,11 +57,11 @@ export default async function IncidentDetailPage({ params }) {
           </p>
         </section>
 
-        <div className="mx-auto w-full max-w-[1160px] px-6">
+        <div className="h-[260px] w-full overflow-hidden md:h-[560px]">
           <img
             src={detailImage}
             alt={incident.title}
-            className="h-auto w-full object-contain"
+            className="h-full w-full rounded-none object-cover"
             style={{ objectPosition: detailObjectPosition }}
           />
         </div>
