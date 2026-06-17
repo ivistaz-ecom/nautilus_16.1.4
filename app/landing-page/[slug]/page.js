@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getIncidentBySlug, incidents } from "@/components/LandingPage/incidents";
@@ -28,6 +27,10 @@ export default async function IncidentDetailPage({ params }) {
     );
   }
 
+  const detailImage = incident.detailImage || incident.image;
+  const detailObjectPosition =
+    incident.detailObjectPosition || incident.objectPosition;
+
   return (
     <>
       <HeroHeader
@@ -54,25 +57,13 @@ export default async function IncidentDetailPage({ params }) {
           </p>
         </section>
 
-        <div className="relative h-[260px] w-full md:h-[360px]">
-          {incident.image.startsWith("http") ? (
-            <img
-              src={incident.image}
-              alt={incident.title}
-              className="h-full w-full object-cover"
-              style={{ objectPosition: incident.objectPosition }}
-            />
-          ) : (
-            <Image
-              src={incident.image}
-              alt={incident.title}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-              style={{ objectPosition: incident.objectPosition }}
-            />
-          )}
+        <div className="mx-auto w-full max-w-[1160px] px-6">
+          <img
+            src={detailImage}
+            alt={incident.title}
+            className="h-auto w-full object-contain"
+            style={{ objectPosition: detailObjectPosition }}
+          />
         </div>
 
         <article className="mx-auto max-w-[960px] px-6 py-7 font-serif text-[12px] leading-tight text-black md:text-[16px]">
