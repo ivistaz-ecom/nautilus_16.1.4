@@ -42,7 +42,7 @@ export const incidents = [
         ],
       },
       {
-        heading: "Corrective / Preventive Action:",
+        heading: "Corrective/Preventive Action:",
         points: [
           "All floor plates in the engine room were checked and properly secured.",
           "Regular inspection schedule implemented for all floor plates and walking areas.",
@@ -51,7 +51,6 @@ export const incidents = [
       },
       {
         heading: "Aloft Safety: Lessons from a Near Miss",
-        body: [],
       },
       {
         heading: "Description of Event:",
@@ -75,16 +74,16 @@ export const incidents = [
       {
         heading: "Root Cause:",
         points: [
-          "Failure to follow Working Aloft safety procedures.",
+          "Failure to follow \"Working Aloft\" safety procedures.",
           "Lack of situational awareness and supervision.",
         ],
       },
       {
-        heading: "Corrective / Preventive Action:",
+        heading: "Corrective/Preventive Action:",
         points: [
           "Conducted immediate safety briefing for all crew regarding the importance of fastening safety harness while working aloft.",
           "Emphasized the need for proper supervision during aloft work.",
-          "Reinforced the requirement to follow the company's Permit to Work Aloft system strictly.",
+          "Reinforced the requirement to follow the company's \"Permit to Work Aloft\" system strictly.",
         ],
       },
     ],
@@ -103,7 +102,7 @@ export const incidents = [
         heading: "Description of Event:",
         body: [
           "A small incident took place recently involving the provision crane. Two days earlier, the crane wire operating handle block had been attended to due to a leak, and the O-ring was replaced. After completing the job, the crane was not tested or tried out.",
-          "Two days later, when the vessel was alongside the jetty, the provision and stores boat came, and the same crane had to be used. The AB and OS prepared the crane as routine. While lowering the hook, the electric hoisting limit got activated. This limit is positioned at the far end of the crane boom, and it does not release automatically during lowering.",
+          "Two days later, when the vessel was alongside the jetty, the provision and stores boat came, and the same crane had to be used. The AB and OS prepared the crane as routine. While lowering the hook, the electric hoisting limit got activated — this limit is positioned at the far end of the crane boom, and it does not release automatically during lowering.",
           "The hook reached the store boat, and they secured the belt, but the wire would not hoist up. The AB informed the engine team, who suspected an air lock in the wire handling block since it had been opened earlier but never tested. They tried releasing air and even checked and renewed the hydraulic limit block. About two hours passed without success.",
           "Finally, it was discovered that the electric limit switch had remained activated when the hook was lowered earlier. The hoisting limit had not reset due to rust, moisture, and general wear, and the AB had not noticed it because the limit is located far out and not easily visible during operation.",
         ],
@@ -162,14 +161,14 @@ export const incidents = [
         heading: "Description of Event:",
         body: [
           "It was the peak of the monsoon, June 2024, when our vessel lay anchored between Buoy No.13 and the breakwater at Jaigarh Port. Heavy swells rolled across the harbour, and visibility was good. We had dropped the port anchor earlier, waiting for instructions. By noon, the Port Authority called us to proceed with loading.",
-          "As we began to heave up anchor, under the watch of Captain Clifford Carvalho, 2nd Officer Junaid Ahmed Sheikh was on the forecastle deck, guiding the operation. The windlass groaned as the chain came up unusually tight. When the anchor was sighted, our hearts sank: another ship's anchor chain was fouled and tightly interlocked with ours.",
+          "As we began to heave up anchor, under the watch of Captain Clifford Carvalho, 2nd Officer Junaid Ahmed Sheikh was on the forecastle deck, guiding the operation. The windlass groaned as the chain came up unusually tight. When the anchor was sighted, our hearts sank: another ship's anchor chain was fouled and tightly interlocked with ours!",
         ],
       },
       {
         heading: "Immediate Action Taken:",
         body: [
-          "Despite several attempts to lower and heave up, the anchors refused to part. Captain Carvalho decided to summon a tug and prepare for gas cutting, but before help arrived, the situation worsened: the chains twisted even more.",
-          "Yet, we refused to yield. With calculated manoeuvres, using the ship's engine, helm, and anchor brake control, we finally freed our anchor without any tug assistance. Cheers erupted on deck. It was a perfect display of seamanship, teamwork, and the unwavering resolve of our crew amidst the roaring monsoon seas.",
+          "Despite several attempts to lower and heave up, the anchors refused to part. Captain Carvalho decided to summon a tug and prepare for gas cutting, but before help arrived, the situation worsened: the chains twisted even more!",
+          "Yet, we refused to yield. With calculated manoeuvres, using the ship's engine, helm, and anchor brake control, we finally freed our anchor, without any tug assistance. Cheers erupted on deck. It was a perfect display of seamanship, teamwork, and the unwavering resolve of our crew amidst the roaring monsoon seas.",
         ],
       },
       {
@@ -210,16 +209,17 @@ export const incidents = [
     objectPosition: "center",
     location: "Jaigarh Port (Forward Station)",
     sections: [
+      
       {
         heading: "Description of Event:",
         body: [
-          "During berthing operations at Jaigarh Port, the Chief Officer observed an Ordinary Seaman standing within the snap-back zone while mooring operations were in progress at the forward station. At the time, all mooring ropes were under high tension due to vessel surging, creating a potential risk of a rope parting, an event that could have caused serious injury or loss of life.",
+          "During berthing operations at Jaigarh Port, the Chief Officer observed an Ordinary Seaman (OS) standing within the snap-back zone while mooring operations were in progress at the forward station. At the time, all mooring ropes were under high tension due to vessel surging, creating a potential risk of a rope parting — an event that could have caused serious injury or loss of life.",
           "The Chief Officer immediately called out and instructed the OS to move clear of the snap-back zone. The crew promptly responded, cleared the area, and the mooring operation was completed safely without injury or damage.",
         ],
       },
       {
         heading: "Immediate Action Taken:",
-        points: [
+        body: [
           "The Chief Officer immediately instructed the crew to vacate the snap-back zone.",
           "The mooring operation was safely completed without further incident.",
           "Following berthing, all crew members were briefed on the importance of observing safety precautions and remaining alert to the hazards associated with snap-back zones.",
