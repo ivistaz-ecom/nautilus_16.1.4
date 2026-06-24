@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getIncidentBySlug, incidents } from "@/components/LandingPage/incidents";
@@ -30,6 +31,7 @@ export default async function IncidentDetailPage({ params }) {
   const detailImage = incident.detailImage || incident.image;
   const detailObjectPosition =
     incident.detailObjectPosition || incident.objectPosition;
+  const otherIncidents = incidents.filter((item) => item.slug !== slug);
 
   return (
     <>
@@ -52,7 +54,7 @@ export default async function IncidentDetailPage({ params }) {
           <h1 className="mx-auto max-w-[800px] font-serif text-[38px] font-light uppercase leading-tight tracking-[-0.03em] text-[#001f2b] md:text-[44px] lg:text-[50px]">
             {incident.title}
           </h1>
-          <p className="mx-auto mt-3 max-w-[560px] font-serif text-[26px] font-light leading-tight text-[#001f2b] md:text-[31px]">
+          <p className="mx-auto mt-3 max-w-[800px] font-serif text-[26px] font-light leading-tight text-[#001f2b] md:text-[31px]">
             {incident.subtitle}
           </p>
         </section>
@@ -93,6 +95,57 @@ export default async function IncidentDetailPage({ params }) {
             ))}
           </div>
         </article>
+
+        {otherIncidents.length > 0 ? (
+          <section className="mx-auto max-w-[1160px] px-6 pb-14 pt-8">
+            <h2 className="mb-8 text-center text-[28px] font-light leading-tight text-black md:mb-10 md:text-[34px]">
+              Related Technical Incidents
+            </h2>
+
+            <div className="grid items-stretch gap-8 md:grid-cols-2 md:gap-10">
+              {otherIncidents.map((item) => (
+                <article key={item.id} className="group flex h-full flex-col">
+                  <div className="overflow-hidden rounded-[8px]">
+                    {item.image.startsWith("http") ? (
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-[200px] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-[220px]"
+                        style={{ objectPosition: item.objectPosition }}
+                      />
+                    ) : (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        width={620}
+                        height={360}
+                        className="h-[200px] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-[220px]"
+                        style={{ objectPosition: item.objectPosition }}
+                      />
+                    )}
+                  </div>
+
+                  <div className="mt-3 flex flex-1 flex-col">
+                    <h3 className="line-clamp-2 text-[20px] leading-tight tracking-[-0.03em] text-black md:text-[24px]">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-1 line-clamp-2 text-[14px] text-[#1f292d]">
+                      {item.subtitle}
+                    </p>
+
+                    <Link
+                      href={`/landing-page/${item.slug}`}
+                      className="mt-4 inline-flex w-fit rounded-full bg-[#002b3c] px-6 py-2 text-[11px] text-white transition-colors duration-300 hover:bg-[#00455f]"
+                    >
+                      Read More
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
       </main>
     </>
   );

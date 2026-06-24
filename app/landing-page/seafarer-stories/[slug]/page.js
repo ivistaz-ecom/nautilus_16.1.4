@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import HeroHeader from "@/components/HomePage/components/HeroBanner/HeroHeader";
+import RelatedSeafarerStories from "@/components/LandingPage/Components/RelatedSeafarerStories";
 import { getStoryBySlug, stories } from "@/components/LandingPage/stories";
 
 export function generateStaticParams() {
@@ -28,6 +29,8 @@ export default async function SeafarerStoryDetailPage({ params }) {
     );
   }
 
+  const otherStories = stories.filter((item) => item.slug !== slug);
+
   return (
     <>
       <HeroHeader
@@ -37,7 +40,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
       />
 
       <main className="bg-[#f7f7f4] pb-16 pt-20 text-[#111]">
-        <section className="relative bg-[#0796a7] text-white">
+        <section className="relative bg-gradient-to-b from-[#002a36] to-[#0796a7] text-white mt-2">
           <div className="mx-auto grid min-h-[360px] max-w-[1160px] items-end gap-8 px-6 pt-10 md:grid-cols-[0.82fr_1.18fr] md:pt-0">
             <Link
               href="/landing-page"
@@ -72,12 +75,44 @@ export default async function SeafarerStoryDetailPage({ params }) {
         </section>
 
         <article className="mx-auto max-w-[960px] px-6 py-14 font-serif text-[12px] leading-tight text-black md:text-[16px]">
-          <div className="space-y-3">
-            {story.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
+          <div className="space-y-8">
+            {story.sections?.length
+              ? story.sections.map((section, index) => (
+                  <section
+                    key={section.heading || `section-${index}`}
+                    className="space-y-3"
+                  >
+                    {section.heading ? (
+                      <h2 className="text-[18px] font-bold md:text-[24px]">
+                        {section.heading}
+                      </h2>
+                    ) : null}
+                    {section.body?.[0] ? (
+                      <p key={`${section.heading || index}-body-0`}>
+                        {section.body[0]}
+                      </p>
+                    ) : null}
+                    {section.points?.length ? (
+                      <ul className="my-2 list-disc pl-5">
+                        {section.points.map((point) => (
+                          <li key={point}>{point}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                    {section.body?.slice(1).map((paragraph, paragraphIndex) => (
+                      <p key={`${section.heading || index}-body-${paragraphIndex + 1}`}>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </section>
+                ))
+              : story.paragraphs?.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
           </div>
         </article>
+
+        <RelatedSeafarerStories stories={otherStories} />
       </main>
     </>
   );
