@@ -27,10 +27,10 @@ export default function StoryCard({
 
       <div className="flex flex-1 flex-col justify-between p-5 md:p-6">
         <div>
-          <h3 className="text-[18px] leading-tight md:text-[20px]">{title}</h3>
+          <h3 className="text-[16px] font-normal tracking-wide">{title}</h3>
 
           {author ? (
-            <p className="mt-3 text-[14px] leading-snug text-white/85 md:text-[15px]">
+            <p className="mt-3 text-[14px] font-light italic tracking-wide text-white/85">
               {author}
             </p>
           ) : null}

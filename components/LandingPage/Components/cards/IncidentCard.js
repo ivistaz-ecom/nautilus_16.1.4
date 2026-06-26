@@ -41,11 +41,11 @@ export default function IncidentCard({
         )}
       </div>
 
-      <h3 className="mt-6 text-5xl font-light">
+      <h3 className="mt-6 text-[16px] font-normal tracking-wide">
         {title}
       </h3>
 
-      <p className="mt-3 text-xl text-gray-600">
+      <p className="mt-3 text-[14px] font-light italic tracking-wide text-gray-600">
         {subtitle}
       </p>
 

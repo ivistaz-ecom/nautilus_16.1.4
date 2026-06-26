@@ -62,11 +62,11 @@ export default async function SeafarerStoryDetailPage({ params }) {
             </div>
 
             <div className="pb-12 text-center md:pb-24 md:text-left">
-              <h1 className="font-serif text-[40px] font-light leading-tight md:text-[58px]">
+              <h1 className="text-3xl font-normal leading-tight tracking-wide sm:text-5xl">
                 {story.heroTitle || story.title}
               </h1>
               {story.heroSubtitle ? (
-                <p className="mt-4 max-w-[650px] font-serif text-[28px] font-light leading-tight md:text-[38px]">
+                <p className="mt-4 max-w-[650px] text-[14px] font-light italic leading-relaxed tracking-wide">
                   {story.heroSubtitle}
                 </p>
               ) : null}
@@ -74,7 +74,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
           </div>
         </section>
 
-        <article className="mx-auto max-w-[960px] px-6 py-14 font-serif text-[12px] leading-tight text-black md:text-[16px]">
+        <article className="mx-auto max-w-[960px] px-6 py-14 text-[16px] font-normal leading-relaxed tracking-wide text-black">
           <div className="space-y-8">
             {story.sections?.length
               ? story.sections.map((section, index) => (
@@ -83,7 +83,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
                     className="space-y-3"
                   >
                     {section.heading ? (
-                      <h2 className="text-[18px] font-bold md:text-[24px]">
+                      <h2 className="text-[16px] font-normal tracking-wide">
                         {section.heading}
                       </h2>
                     ) : null}

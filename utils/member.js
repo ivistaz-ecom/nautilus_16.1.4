@@ -149,6 +149,11 @@ export const crewMemberList = [
         name: "Angesh",
         post: "Assistant Manager - Admin & Purchase",
       },
+      {
+        imageUrl: "/about-us/member/Sai_Aravind.webp",
+        name: "Sai Aravind",
+        post: "Technical Assistant",
+      },
       
       
     ],
@@ -259,12 +264,15 @@ export const crewMemberList = [
       },
      
       {
-        imageUrl: "/about-us/member/Serma.webp",
+        imageUrl: "/about-us/member/serma.webp",
         name: "Serma Shanti",
         post: "Marine Personnel Executive",
       },
-     
-    
+      {
+        imageUrl: "/about-us/member/Megha_Mohan_Khandagale.webp",
+        name: "Megha",
+        post: "Marine Personnel Executive",
+      },
     ],
   },
   {
@@ -391,6 +399,11 @@ export const crewMemberList = [
       //   name: "Santhosh",
       //   post: "Sr. Executive - HSEQ",
       // },
+      {
+        imageUrl: "/about-us/member/Deepak_Choudhari.webp",
+        name: "Deepak",
+        post: "HSEQ Executive",
+      },
     ],
   },
   {
