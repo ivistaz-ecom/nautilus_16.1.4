@@ -21,7 +21,7 @@ export default function TechnicalIncidents() {
   };
 
   return (
-    <section className="overflow-x-hidden bg-[#f7f7f4] py-14 md:py-20">
+    <section className="overflow-x-hidden bg-[#ffffff] py-14 md:py-20">
       <div className="mx-auto max-w-[1160px] px-6">
         <div className="mx-auto max-w-[800px] text-center">
           <h2 className="text-3xl font-normal leading-tight tracking-wide text-black sm:text-5xl">
@@ -79,9 +79,10 @@ export default function TechnicalIncidents() {
 
                   <Link
                     href={`/landing-page/${incident.slug}`}
-                    className="mt-5 inline-flex w-fit rounded-full bg-[#002b3c] px-7 py-2.5 text-[12px] text-white transition-colors duration-300 hover:bg-[#00455f]"
+                    className="mt-5 inline-flex w-fit items-center gap-3 rounded-md bg-[#00222F] px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-secondary hover:text-white"
                   >
                     Read More
+                    <Image src="/dark-arrow.svg" width={20} height={20} alt="" />
                   </Link>
                 </div>
               </article>
@@ -93,7 +94,7 @@ export default function TechnicalIncidents() {
               <button
                 type="button"
                 onClick={handleLoadMore}
-                className="rounded-full border border-[#002b3c] px-8 py-3 text-[15px] text-[#002b3c] transition-all duration-300 hover:scale-105 hover:bg-[#002b3c] hover:text-white"
+                className="inline-flex items-center gap-3 rounded-md bg-[#00222F] px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-secondary hover:text-white"
               >
                 Load More
               </button>

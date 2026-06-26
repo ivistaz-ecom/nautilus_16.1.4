@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="bg-[#f7f7f4] pb-9 pt-24 md:pb-12 md:pt-28">
+    <section className="bg-[#ffffff] pb-9 pt-24 md:pb-12 md:pt-28">
       <div className="mx-auto w-full px-6">
         <div className="mx-auto w-full">
           <h1 className="text-center text-3xl font-normal leading-tight tracking-wide text-black sm:text-7xl">

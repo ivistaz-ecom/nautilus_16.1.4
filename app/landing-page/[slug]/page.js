@@ -136,9 +136,10 @@ export default async function IncidentDetailPage({ params }) {
 
                     <Link
                       href={`/landing-page/${item.slug}`}
-                      className="mt-4 inline-flex w-fit rounded-full bg-[#002b3c] px-6 py-2 text-[11px] text-white transition-colors duration-300 hover:bg-[#00455f]"
+                      className="mt-4 inline-flex w-fit shrink-0 items-center gap-3 rounded-md bg-[#00222F] px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-secondary hover:text-white"
                     >
                       Read More
+                      <Image src="/dark-arrow.svg" width={20} height={20} alt="" />
                     </Link>
                   </div>
                 </article>
