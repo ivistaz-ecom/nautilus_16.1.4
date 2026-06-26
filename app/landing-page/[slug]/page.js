@@ -51,10 +51,10 @@ export default async function IncidentDetailPage({ params }) {
             <ArrowLeft className="h-5 w-5" />
           </Link>
 
-          <h1 className="mx-auto max-w-[800px] font-serif text-[38px] font-light uppercase leading-tight tracking-[-0.03em] text-[#001f2b] md:text-[44px] lg:text-[50px]">
+          <h1 className="mx-auto max-w-[800px] text-2xl font-normal uppercase leading-tight tracking-wide text-[#001f2b] sm:text-3xl">
             {incident.title}
           </h1>
-          <p className="mx-auto mt-3 max-w-[800px] font-serif text-[26px] font-light leading-tight text-[#001f2b] md:text-[31px]">
+          <p className="mx-auto mt-3 max-w-[800px] text-[14px] font-light italic leading-relaxed tracking-wide text-[#001f2b]">
             {incident.subtitle}
           </p>
         </section>
@@ -68,24 +68,24 @@ export default async function IncidentDetailPage({ params }) {
           />
         </div>
 
-        <article className="mx-auto max-w-[960px] px-6 py-7 font-serif text-[12px] leading-tight text-black md:text-[16px]">
-          <h2 className="mb-4 text-[18px] font-bold md:text-[24px]">
+        <article className="mx-auto max-w-[960px] px-6 py-7 text-[16px] font-normal leading-relaxed tracking-wide text-black">
+          <h2 className="mb-4 text-[16px] font-normal tracking-wide">
             Location: {incident.location}
           </h2>
 
           <div className="space-y-3">
             {incident.sections.map((section) => (
               <section key={section.heading}>
-                <h3 className="text-[18px] font-bold md:text-[24px]">
+                <h3 className="text-[16px] font-normal tracking-wide">
                   {section.heading}
                 </h3>
                 {section.body?.map((paragraph) => (
-                  <p key={paragraph} className="my-2 text-[12px] md:text-[16px]">
+                  <p key={paragraph} className="my-2">
                     {paragraph}
                   </p>
                 ))}
                 {section.points ? (
-                  <ul className="my-2 list-disc pl-5 text-[12px] md:text-[16px]">
+                  <ul className="my-2 list-disc pl-5">
                     {section.points.map((point) => (
                       <li key={point}>{point}</li>
                     ))}
@@ -98,7 +98,7 @@ export default async function IncidentDetailPage({ params }) {
 
         {otherIncidents.length > 0 ? (
           <section className="mx-auto max-w-[1160px] px-6 pb-14 pt-8">
-            <h2 className="mb-8 text-center text-[28px] font-light leading-tight text-black md:mb-10 md:text-[34px]">
+            <h2 className="mb-8 text-center text-2xl font-normal tracking-wide text-black sm:text-3xl md:mb-10">
               Related Technical Incidents
             </h2>
 
@@ -126,11 +126,11 @@ export default async function IncidentDetailPage({ params }) {
                   </div>
 
                   <div className="mt-3 flex flex-1 flex-col">
-                    <h3 className="line-clamp-2 text-[20px] leading-tight tracking-[-0.03em] text-black md:text-[24px]">
+                    <h3 className="line-clamp-2 text-[16px] font-normal tracking-wide text-black">
                       {item.title}
                     </h3>
 
-                    <p className="mt-1 line-clamp-2 text-[14px] text-[#1f292d]">
+                    <p className="mt-1 line-clamp-2 text-[14px] font-light italic tracking-wide text-[#1f292d]">
                       {item.subtitle}
                     </p>
 

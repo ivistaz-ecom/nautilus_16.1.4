@@ -23,16 +23,16 @@ export default function SeafarerStories() {
     <section className="overflow-x-hidden bg-gradient-to-b from-[#0796a7] to-[#002a36] py-10 md:pb-12 md:pt-11">
       <div className="mx-auto max-w-[1280px] px-6">
         <div className="mx-auto max-w-[800px] text-center text-white">
-          <h2 className="text-[44px] font-light leading-[0.95] md:text-[57px]">
+          <h2 className="text-3xl font-normal leading-tight tracking-wide sm:text-5xl">
             Seafarer
             Stories
           </h2>
 
-          <p className="mx-auto mt-7 max-w-[800px] text-[16px] leading-relaxed text-white/85">
+          <p className="mx-auto mt-7 max-w-[800px] text-[16px] font-normal leading-relaxed tracking-wide text-white/85">
           Life at sea is filled with moments that rarely make it ashore - long voyages, unexpected challenges, small celebrations onboard, lessons learned, and experiences that stay with seafarers for life.
           </p>
 
-          <p className="mx-auto mt-7 max-w-[800px] text-[16px] leading-relaxed text-white/85">
+          <p className="mx-auto mt-7 max-w-[800px] text-[16px] font-normal leading-relaxed tracking-wide text-white/85">
           This section brings together stories and reflections from crew members across ranks and vessels, offering a firsthand perspective into the people who keep global trade moving.
 
           </p>

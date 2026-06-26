@@ -24,18 +24,18 @@ export default function TechnicalIncidents() {
     <section className="overflow-x-hidden bg-[#f7f7f4] py-14 md:py-20">
       <div className="mx-auto max-w-[1160px] px-6">
         <div className="mx-auto max-w-[800px] text-center">
-          <h2 className="text-[50px] font-light leading-[0.95] text-black md:text-[66px]">
+          <h2 className="text-3xl font-normal leading-tight tracking-wide text-black sm:text-5xl">
             Technical
            
             Incident
           </h2>
 
-          <p className="mx-auto mt-7 max-w-[800px] text-[16px] leading-relaxed text-[#1f292d]">
+          <p className="mx-auto mt-7 max-w-[800px] text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
           Every incident at sea carries a lesson. From operational challenges and equipment failures to safety observations and onboard responses, these experiences contribute to stronger practices across the industry.
 
           </p>
 
-          <p className="mx-auto mt-7 max-w-[800px] text-[16px] leading-relaxed text-[#1f292d]">
+          <p className="mx-auto mt-7 max-w-[800px] text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
           This section documents technical incidents, operational case studies, and key learnings from the field- helping build awareness, preparedness, and a stronger culture of safety at sea.
 
           </p>
@@ -69,11 +69,11 @@ export default function TechnicalIncidents() {
                 </div>
 
                 <div className="mt-4 flex flex-1 flex-col">
-                  <h3 className="line-clamp-2 text-[30px] leading-tight tracking-[-0.04em] text-black md:text-[34px]">
+                  <h3 className="line-clamp-2 text-[16px] font-normal tracking-wide text-black">
                     {incident.title}
                   </h3>
 
-                  <p className="mt-1 line-clamp-2 text-[16px] text-[#1f292d]">
+                  <p className="mt-1 line-clamp-2 text-[14px] font-light italic tracking-wide text-[#1f292d]">
                     {incident.subtitle}
                   </p>
 
