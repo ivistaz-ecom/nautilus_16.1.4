@@ -140,15 +140,16 @@ export const crewMemberList = [
         post: "Technical Manager - Port Blair",
       },
       {
-        imageUrl: "/about-us/member/Sudha_Kumar.webp",
-        name: "Sudha",
-        post: "Technical Assistant",
-      },
-      {
         imageUrl: "/about-us/member/Angesh.webp",
         name: "Angesh",
         post: "Assistant Manager - Admin & Purchase",
       },
+      {
+        imageUrl: "/about-us/member/Sudha_Kumar.webp",
+        name: "Sudha",
+        post: "Technical Assistant",
+      },
+      
       {
         imageUrl: "/about-us/member/Sai_Aravind.webp",
         name: "Sai Aravind",

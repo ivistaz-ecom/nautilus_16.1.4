@@ -17,7 +17,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
 
   if (!story) {
     return (
-      <main className="min-h-screen bg-[#f7f7f4] px-6 py-24 text-center">
+      <main className="min-h-screen bg-[#ffffff] px-6 py-24 text-center">
         <h1 className="text-4xl text-[#002b3c]">Story not found</h1>
         <Link
           href="/landing-page"
@@ -29,7 +29,11 @@ export default async function SeafarerStoryDetailPage({ params }) {
     );
   }
 
-  const otherStories = stories.filter((item) => item.slug !== slug);
+  const currentIndex = stories.findIndex((item) => item.slug === slug);
+  const relatedStories = Array.from(
+    { length: Math.min(3, stories.length - 1) },
+    (_, index) => stories[(currentIndex + 1 + index) % stories.length]
+  );
 
   return (
     <>
@@ -112,7 +116,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
           </div>
         </article>
 
-        <RelatedSeafarerStories stories={otherStories} />
+        <RelatedSeafarerStories stories={relatedStories} />
       </main>
     </>
   );
