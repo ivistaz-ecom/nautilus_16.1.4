@@ -22,23 +22,27 @@ export default function TechnicalIncidents() {
 
   return (
     <section className="overflow-x-hidden bg-[#ffffff] py-14 md:py-20">
-      <div className="mx-auto max-w-[1160px] px-6">
-        <div className="mx-auto max-w-[800px] text-center">
-          <h2 className="text-3xl font-normal leading-tight tracking-wide text-black sm:text-5xl">
+      <div className="mx-auto max-w-[1280px] px-6">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(220px,320px)_1fr] lg:gap-14">
+          <h2 className="text-4xl font-normal leading-[0.95] tracking-wide text-black md:text-5xl lg:text-[66px]">
             Technical
-           
+            <br />
             Incident
           </h2>
 
-          <p className="mx-auto mt-7 max-w-[800px] text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
-          Every incident at sea carries a lesson. From operational challenges and equipment failures to safety observations and onboard responses, these experiences contribute to stronger practices across the industry.
+          <div className="space-y-5 text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
+            <p>
+              Every incident at sea carries a lesson. From operational challenges
+              and equipment failures to safety observations and onboard responses,
+              these experiences contribute to stronger practices across the industry.
+            </p>
 
-          </p>
-
-          <p className="mx-auto mt-7 max-w-[800px] text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
-          This section documents technical incidents, operational case studies, and key learnings from the field- helping build awareness, preparedness, and a stronger culture of safety at sea.
-
-          </p>
+            <p>
+              This section documents technical incidents, operational case studies,
+              and key learnings from the field- helping build awareness,
+              preparedness, and a stronger culture of safety at sea.
+            </p>
+          </div>
         </div>
 
         <div className="overflow-visible">

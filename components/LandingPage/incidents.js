@@ -18,6 +18,13 @@ export const incidents = [
         ],
       },
       {
+        heading: "Root Cause:",
+        points: [
+          "Engine room floor plates not properly secured with screws.",
+          "Lack of routine inspection of the floor plate fastening condition.",
+        ],
+      },
+      {
         heading: "Immediate Corrective Action Taken:",
         points: [
           "The wiper was assisted to safety and checked for any injuries.",
@@ -35,13 +42,6 @@ export const incidents = [
         ],
       },
       {
-        heading: "Root Cause:",
-        points: [
-          "Engine room floor plates not properly secured with screws.",
-          "Lack of routine inspection of the floor plate fastening condition.",
-        ],
-      },
-      {
         heading: "Corrective/Preventive Action:",
         points: [
           "All floor plates in the engine room were checked and properly secured.",
@@ -49,43 +49,7 @@ export const incidents = [
           "Crew reminded about reporting unsafe conditions immediately.",
         ],
       },
-      {
-        heading: "Aloft Safety: Lessons from a Near Miss",
-      },
-      {
-        heading: "Description of Event:",
-        body: [
-          "During routine inspection, it was observed that a crew member was working aloft without fastening the safety harness hook to a strong point. This unsafe act could have resulted in a serious fall injury.",
-        ],
-      },
-      {
-        heading: "Immediate Action Taken:",
-        body: [
-          "The crew member was immediately instructed to stop work and fasten the harness hook to a secure, strong point. The area was checked to ensure proper anchorage points are available and suitable for use.",
-        ],
-      },
-      {
-        heading: "Potential Consequences:",
-        points: [
-          "Fall from height leading to serious injury or fatality.",
-          "Violation of safety working procedures.",
-        ],
-      },
-      {
-        heading: "Root Cause:",
-        points: [
-          "Failure to follow \"Working Aloft\" safety procedures.",
-          "Lack of situational awareness and supervision.",
-        ],
-      },
-      {
-        heading: "Corrective/Preventive Action:",
-        points: [
-          "Conducted immediate safety briefing for all crew regarding the importance of fastening safety harness while working aloft.",
-          "Emphasized the need for proper supervision during aloft work.",
-          "Reinforced the requirement to follow the company's \"Permit to Work Aloft\" system strictly.",
-        ],
-      },
+      
     ],
   },
   {
@@ -108,6 +72,14 @@ export const incidents = [
         ],
       },
       {
+        heading: "Root Cause:",
+        body: [
+          "Lack of proper maintenance planning. Safety and limit switches require regular inspection and cleaning.",
+          "Missed opportunity to test after repairs. The crane should have been tried out immediately after the O-ring replacement.",
+          "Inadequate checks during operation. ABs and others operating the crane must observe both lowering and hoisting limits and verify that all limits reset properly.",
+        ],
+      },
+      {
         heading: "Immediate Action Taken:",
         body: [
           "To get the crane into a safe position, the team tied a rope to the hook, manually lifted it enough to swing the boom back to the parking area, and then reset the limit switch. After resetting, the crane was tested and worked normally, allowing provisions and stores to be taken aboard.",
@@ -119,14 +91,6 @@ export const incidents = [
           "Delay in loading provisions and stores.",
           "Unsafe crane operations due to a malfunctioning limit switch.",
           "Risk of equipment damage and operational disruption.",
-        ],
-      },
-      {
-        heading: "Root Cause:",
-        body: [
-          "Lack of proper maintenance planning. Safety and limit switches require regular inspection and cleaning.",
-          "Missed opportunity to test after repairs. The crane should have been tried out immediately after the O-ring replacement.",
-          "Inadequate checks during operation. ABs and others operating the crane must observe both lowering and hoisting limits and verify that all limits reset properly.",
         ],
       },
       {
@@ -165,6 +129,12 @@ export const incidents = [
         ],
       },
       {
+        heading: "Root Cause:",
+        points: [
+          "Another ship's anchor chain was fouled and tightly interlocked with ours.",
+        ],
+      },
+      {
         heading: "Immediate Action Taken:",
         body: [
           "Despite several attempts to lower and heave up, the anchors refused to part. Captain Carvalho decided to summon a tug and prepare for gas cutting, but before help arrived, the situation worsened: the chains twisted even more!",
@@ -179,12 +149,6 @@ export const incidents = [
           "Requirement for tug assistance or gas cutting operations.",
           "Risk to personnel during anchor recovery operations.",
           "Vessel operational delays and additional costs.",
-        ],
-      },
-      {
-        heading: "Root Cause:",
-        points: [
-          "Another ship's anchor chain was fouled and tightly interlocked with ours.",
         ],
       },
       {
@@ -218,6 +182,13 @@ export const incidents = [
         ],
       },
       {
+        heading: "Root Cause / Contributing Factors:",
+        points: [
+          "Lack of situational awareness by the crew member regarding snap-back zone hazards.",
+          "Possible complacency during routine mooring operations.",
+        ],
+      },
+      {
         heading: "Immediate Action Taken:",
         body: [
           "The Chief Officer immediately instructed the crew to vacate the snap-back zone.",
@@ -232,13 +203,6 @@ export const incidents = [
           "Fatality in the event of a mooring rope parting under tension.",
           "Damage to equipment caused by uncontrolled rope recoil.",
           "Disruption of berthing operations and potential vessel damage.",
-        ],
-      },
-      {
-        heading: "Root Cause / Contributing Factors:",
-        points: [
-          "Lack of situational awareness by the crew member regarding snap-back zone hazards.",
-          "Possible complacency during routine mooring operations.",
         ],
       },
       {
@@ -280,6 +244,17 @@ export const incidents = [
         ],
       },
       {
+        heading: "Root Cause:",
+        body: [
+          "The main causes were water ingress from the ship's structure, rain during loading at Tekirdag, Turkey, and water running from the tween deck to the lower hold through the open access ladder.",
+          "Positive results were obtained on suspected areas of the ship's structure, including the port side of the ship's hull, indicating possible water ingress.",
+          "Tests on the bulkhead without visible stains also yielded positive results.",
+          "Signs of rust were noted on bags located near the aft access ladder.",
+          "Bags in the portside corner appeared more damaged compared to other areas.",
+          "Most of the damage was limited to the bottom of the big bags, with no visible side damage.",
+        ],
+      },
+      {
         heading: "Immediate Action Taken:",
         body: [
           "The damaged bags were immediately transferred to the forward section of the Cargo Hold 2 Tween Deck.",
@@ -294,17 +269,6 @@ export const incidents = [
           "Delays in cargo discharge operations.",
           "Loss of cargo quality and potential rejection by receivers.",
           "Reduced operational efficiency.",
-        ],
-      },
-      {
-        heading: "Root Cause:",
-        body: [
-          "The main causes were water ingress from the ship's structure, rain during loading at Tekirdag, Turkey, and water running from the tween deck to the lower hold through the open access ladder.",
-          "Positive results were obtained on suspected areas of the ship's structure, including the port side of the ship's hull, indicating possible water ingress.",
-          "Tests on the bulkhead without visible stains also yielded positive results.",
-          "Signs of rust were noted on bags located near the aft access ladder.",
-          "Bags in the portside corner appeared more damaged compared to other areas.",
-          "Most of the damage was limited to the bottom of the big bags, with no visible side damage.",
         ],
       },
       {

@@ -6,6 +6,7 @@ import StoryCard from "./cards/StoryCard";
 import { stories } from "../stories";
 
 const VISIBLE_COUNT = 3;
+const SCROLL_COUNT = 3;
 const AUTO_SCROLL_INTERVAL = 5000;
 
 const carouselVariants = {
@@ -37,13 +38,16 @@ export default function SeafarerStories() {
   const showPreviousStories = () => {
     setDirection(-1);
     setStartIndex(
-      (currentIndex) => (currentIndex - 1 + stories.length) % stories.length
+      (currentIndex) =>
+        (currentIndex - SCROLL_COUNT + stories.length) % stories.length
     );
   };
 
   const showNextStories = useCallback(() => {
     setDirection(1);
-    setStartIndex((currentIndex) => (currentIndex + 1) % stories.length);
+    setStartIndex(
+      (currentIndex) => (currentIndex + SCROLL_COUNT) % stories.length
+    );
   }, []);
 
   useEffect(() => {

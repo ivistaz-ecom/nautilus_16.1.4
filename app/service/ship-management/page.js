@@ -6,7 +6,7 @@ const page = () => {
   const seoField = {
     title: "Ship Management Services India | Nautilus Shipping",
     description:
-      "Nautilus Shipping provides comprehensive ship management services in India, ensuring technical excellence, compliance, and operational efficiency. As a trusted ship management company, we optimize performance across bulk carriers, tankers, and offshore vessels.",
+      "Nautilus Shipping delivers expert ship management services in India, ensuring compliance, efficiency, and performance across diverse vessel types.",
     path: "/service/ship-management",
     metaImage: "/our-approach/img01.png",
     pageType: "WebSite",

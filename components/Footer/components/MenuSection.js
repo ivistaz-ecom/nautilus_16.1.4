@@ -3,7 +3,6 @@
 import "@/styles/globals.css"
 
 import Image from "next/image"
-import SocialMediaBtn from "../../SocialMediaBtn/SocialMediaBtn"
 import {
   helpfulLinksList,
   informationList,

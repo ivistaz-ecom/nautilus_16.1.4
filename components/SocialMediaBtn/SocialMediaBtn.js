@@ -1,4 +1,4 @@
-import { facebookIcon, instagramIcon, linkedInIcon, mailIcon, phoneIcon, xIcon } from "@/utils/icon"
+import { instagramIcon, linkedInIcon, xIcon, youtubeIcon } from "@/utils/icon"
 import Link from "next/link"
 
 const SocialMediaBtn = () => {
@@ -24,21 +24,21 @@ const SocialMediaBtn = () => {
         <span className="absolute -inset-2" aria-hidden="true" />
       </Link>
       <Link
-        href="tel:+91 44 4684 9999"
-        target="_self"
-        aria-label="Call us"
+        href="https://x.com/Nautilushipping"
+        target="_blank"
+        aria-label="Visit our X page"
         className="relative inline-flex items-center justify-center p-2 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
       >
-        {phoneIcon}
+        {xIcon}
         <span className="absolute -inset-2" aria-hidden="true" />
       </Link>
       <Link
-        href="mailto:hello@nautilusshipping.com"
+        href="https://www.youtube.com/@NautilusShippingIndia"
         target="_blank"
-        aria-label="Email us"
+        aria-label="Visit our YouTube channel"
         className="relative inline-flex items-center justify-center p-2 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
       >
-        {mailIcon}
+        {youtubeIcon}
         <span className="absolute -inset-2" aria-hidden="true" />
       </Link>
     </div>

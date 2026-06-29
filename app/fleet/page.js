@@ -5,7 +5,7 @@ export default function Page() {
   const seoField = {
     title: "Fleet Management Shipping Company | Nautilus Shipping",
     description:
-      "Nautilus Shipping has successfully manned 237 vessels and continues to expand its fleet. As a leading fleet management shipping company, we ensure efficiency, safety, and compliance for bulk carriers, tankers, and specialized vessels. Explore our fleet management solutions today.",
+      "Nautilus Shipping has manned 237 vessels, delivering safe, efficient, and compliant fleet management for bulk carriers, tankers, and specialized ships.",
     path: "/fleet",
     metaImage: "/our-approach/img01.png",
     pageType: "WebSite",
