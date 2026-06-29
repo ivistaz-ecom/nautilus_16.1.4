@@ -1,8 +1,26 @@
 import CareersAtSeaItem from "./CareersAtSeaItem"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const CareersAtSea = () => {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
+
+  useEffect(() => {
+    if (!isInfoModalOpen) return
+
+    const scrollY = window.scrollY
+    document.body.style.position = "fixed"
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.width = "100%"
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.body.style.position = ""
+      document.body.style.top = ""
+      document.body.style.width = ""
+      document.body.style.overflow = ""
+      window.scrollTo(0, scrollY)
+    }
+  }, [isInfoModalOpen])
 
   return (
     <>
@@ -94,12 +112,18 @@ const CareersAtSea = () => {
       </div>
 
       {isInfoModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 sm:hidden">
-          <div className="bg-white text-[#00222F] rounded-lg w-full max-w-xl max-h-[85vh] overflow-y-auto p-5 relative">
+        <div
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 sm:hidden"
+          onClick={() => setIsInfoModalOpen(false)}
+        >
+          <div
+            className="bg-white text-[#00222F] rounded-lg w-full max-w-xl max-h-[85vh] overflow-y-auto p-5 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               type="button"
               onClick={() => setIsInfoModalOpen(false)}
-              className="absolute top-3 right-3 text-[#00222F] border border-[#00222F] rounded-full w-8 h-8 flex items-center justify-center"
+              className="absolute top-3 right-3 text-[#00222F] border border-[#00222F] hover:bg-secondary hover:text-white rounded-full w-6 h-6 flex items-center justify-center"
               aria-label="Close"
             >
               ×

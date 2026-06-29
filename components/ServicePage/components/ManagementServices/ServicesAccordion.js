@@ -4,7 +4,7 @@ import { plusIcon } from "@/utils/icon"
 import { useState } from "react"
 
 const ServicesAccordion = ({ servicesList }) => {
-  const [openIndex, setOpenIndex] = useState(null)
+  const [openIndex, setOpenIndex] = useState(0)
 
   const toggleAccordion = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index))
