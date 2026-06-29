@@ -11,13 +11,15 @@ export default function StoryCard({
     <article className="flex h-full w-full flex-col overflow-hidden">
       {image ? (
         <div className="group relative h-[300px] w-full shrink-0 overflow-hidden rounded-[8px] bg-gradient-to-b from-[#002a36] to-[#0796a7] md:h-[370px]">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="origin-bottom object-contain object-bottom transition-transform duration-700 ease-out group-hover:scale-105"
-          />
+          <div className="absolute inset-x-0 bottom-0 top-8 md:top-5">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="origin-bottom object-contain object-bottom transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+          </div>
         </div>
       ) : null}
 
@@ -34,7 +36,7 @@ export default function StoryCard({
 
         <Link
           href={`/landing-page/seafarer-stories/${slug}`}
-          className="mt-5 inline-flex w-fit shrink-0 items-center gap-3 rounded-md bg-secondary px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-secondary hover:text-white"
+          className="mt-5 inline-flex w-fit shrink-0 items-center gap-3 rounded-md bg-secondary px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-[#002B3C] hover:text-white"
         >
           Read More
           <Image src="/dark-arrow.svg" width={20} height={20} alt="" />

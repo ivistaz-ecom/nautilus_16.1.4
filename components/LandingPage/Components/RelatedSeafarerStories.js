@@ -6,7 +6,7 @@ export default function RelatedSeafarerStories({ stories }) {
 
   return (
     <section className="mx-auto max-w-[1160px] px-6 pb-14 pt-8">
-      <h2 className="mb-8 text-center text-2xl font-normal tracking-wide text-black sm:text-3xl md:mb-10">
+      <h2 className="mb-8 text-center text-[24px] font-normal tracking-wide text-black md:mb-10">
         Related Seafarer Stories
       </h2>
 
@@ -36,7 +36,7 @@ export default function RelatedSeafarerStories({ stories }) {
 
               <Link
                 href={`/landing-page/seafarer-stories/${item.slug}`}
-                className="mt-4 inline-flex w-fit shrink-0 items-center gap-3 rounded-md bg-secondary px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-secondary hover:text-white"
+                className="mt-4 inline-flex w-fit shrink-0 items-center gap-3 rounded-md bg-secondary px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-[#002B3C] hover:text-white"
               >
                 Read More
                 <Image src="/dark-arrow.svg" width={20} height={20} alt="" />

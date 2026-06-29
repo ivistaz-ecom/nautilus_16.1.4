@@ -5,7 +5,7 @@ export default function Page() {
   const seoField = {
     title: "Past & Upcoming Events | Nautilus Shipping",
     description:
-      "Stay updated with the latest events hosted and attended by Nautilus Shipping. Join us to gain insights into the maritime industry, learn from experts, and network with peers. These events are designed to foster professional growth, share industry best practices, and discuss innovative solutions in ship management.",
+      "Stay updated on Nautilus Shipping events featuring industry insights, expert discussions, networking opportunities, and maritime best practices.",
     path: "/events",
     metaImage: "/our-approach/img01.png",
     pageType: "WebSite",

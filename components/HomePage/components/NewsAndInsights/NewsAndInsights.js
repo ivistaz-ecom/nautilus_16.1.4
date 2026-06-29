@@ -21,7 +21,7 @@ const NewsAndInsights = () => {
           </h2>
           <Link href="/news-and-insights" className="hidden md:block" aria-label="Read more about News and Insights">
             <button className="py-2 px-6 bg-white rounded-lg text-primary hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out">
-              Read more about News and Insights
+              Read more
             </button>
           </Link>
         </div>

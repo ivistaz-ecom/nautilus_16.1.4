@@ -78,7 +78,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
           </div>
         </section>
 
-        <article className="mx-auto max-w-[960px] px-6 py-14 text-[16px] font-normal leading-relaxed tracking-wide text-black">
+        <article className="mx-auto max-w-[960px] px-6 py-14 text-[15px] font-normal leading-relaxed tracking-wide text-black">
           <div className="space-y-8">
             {story.sections?.length
               ? story.sections.map((section, index) => (
@@ -87,7 +87,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
                     className="space-y-3"
                   >
                     {section.heading ? (
-                      <h2 className="text-[16px] font-normal tracking-wide">
+                      <h2 className="text-[24px] font-normal tracking-wide">
                         {section.heading}
                       </h2>
                     ) : null}

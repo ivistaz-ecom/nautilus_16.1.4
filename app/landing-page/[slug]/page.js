@@ -68,15 +68,15 @@ export default async function IncidentDetailPage({ params }) {
           />
         </div>
 
-        <article className="mx-auto max-w-[960px] px-6 py-7 text-[16px] font-normal leading-relaxed tracking-wide text-black">
-          <h2 className="mb-4 text-[16px] font-normal tracking-wide">
+        <article className="mx-auto max-w-[960px] px-6 py-7 text-[15px] font-normal leading-relaxed tracking-wide text-black">
+          <h2 className="mb-4 text-[24px] font-normal tracking-wide">
             Location: {incident.location}
           </h2>
 
           <div className="space-y-3">
             {incident.sections.map((section) => (
               <section key={section.heading}>
-                <h3 className="text-[16px] font-normal tracking-wide">
+                <h3 className="text-[24px] font-normal tracking-wide">
                   {section.heading}
                 </h3>
                 {section.body?.map((paragraph) => (
@@ -98,7 +98,7 @@ export default async function IncidentDetailPage({ params }) {
 
         {otherIncidents.length > 0 ? (
           <section className="mx-auto max-w-[1160px] px-6 pb-14 pt-8">
-            <h2 className="mb-8 text-center text-2xl font-normal tracking-wide text-black sm:text-3xl md:mb-10">
+            <h2 className="mb-8 text-center text-[24px] font-normal tracking-wide text-black md:mb-10">
               Related Technical Incidents
             </h2>
 
