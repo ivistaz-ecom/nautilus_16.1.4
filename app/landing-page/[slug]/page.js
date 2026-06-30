@@ -80,7 +80,7 @@ export default async function IncidentDetailPage({ params }) {
                   {section.heading}
                 </h3>
                 {section.body?.map((paragraph) => (
-                  <p key={paragraph} className="my-2">
+                  <p key={paragraph} className="my-2 text-[15px]">
                     {paragraph}
                   </p>
                 ))}
