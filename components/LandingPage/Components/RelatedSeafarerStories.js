@@ -35,7 +35,7 @@ export default function RelatedSeafarerStories({ stories }) {
               </div>
 
               <Link
-                href={`/landing-page/seafarer-stories/${item.slug}`}
+                href={`/stories-from-the-sea/seafarer-stories/${item.slug}`}
                 className="mt-4 inline-flex w-fit shrink-0 items-center gap-3 rounded-md bg-secondary px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-[#002B3C] hover:text-white"
               >
                 Read More

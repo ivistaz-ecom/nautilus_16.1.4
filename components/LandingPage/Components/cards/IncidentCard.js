@@ -50,7 +50,7 @@ export default function IncidentCard({
       </p>
 
       <Link
-        href={`/landing-page/${slug}`}
+        href={`/stories-from-the-sea/${slug}`}
         className="
         inline-flex
         mt-6
