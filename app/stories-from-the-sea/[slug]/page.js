@@ -19,7 +19,7 @@ export default async function IncidentDetailPage({ params }) {
       <main className="min-h-screen bg-[#f7f7f4] px-6 py-24 text-center">
         <h1 className="text-4xl text-[#002b3c]">Incident not found</h1>
         <Link
-          href="/landing-page"
+          href="/stories-from-the-sea"
           className="mt-6 inline-flex rounded-full bg-[#002b3c] px-6 py-3 text-white"
         >
           Back to Stories
@@ -44,7 +44,7 @@ export default async function IncidentDetailPage({ params }) {
       <main className="bg-[#f7f7f4] pb-14 pt-20 text-[#111]">
         <section className="relative mx-auto max-w-[1160px] px-6 pb-5 pt-7 text-center">
           <Link
-            href="/landing-page"
+            href="/stories-from-the-sea"
             aria-label="Back to landing page"
             className="mb-5 flex h-9 w-9 items-center justify-center rounded-full border border-[#002b3c] text-[#002b3c] transition-colors hover:bg-[#002b3c] hover:text-white md:absolute md:left-6 md:top-6 md:mb-0"
           >
@@ -135,7 +135,7 @@ export default async function IncidentDetailPage({ params }) {
                     </p>
 
                     <Link
-                      href={`/landing-page/${item.slug}`}
+                      href={`/stories-from-the-sea/${item.slug}`}
                       className="mt-4 inline-flex w-fit shrink-0 items-center gap-3 rounded-md bg-[#00222F] px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-secondary hover:text-white"
                     >
                       Read More

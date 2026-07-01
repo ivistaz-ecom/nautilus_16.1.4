@@ -20,7 +20,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
       <main className="min-h-screen bg-[#ffffff] px-6 py-24 text-center">
         <h1 className="text-4xl text-[#002b3c]">Story not found</h1>
         <Link
-          href="/landing-page"
+          href="/stories-from-the-sea"
           className="mt-6 inline-flex rounded-full bg-[#002b3c] px-6 py-3 text-white"
         >
           Back to Stories
@@ -47,7 +47,7 @@ export default async function SeafarerStoryDetailPage({ params }) {
         <section className="relative bg-gradient-to-b from-[#002a36] to-[#0796a7] text-white mt-2">
           <div className="mx-auto grid min-h-[360px] max-w-[1160px] items-end gap-8 px-6 pt-10 md:grid-cols-[0.82fr_1.18fr] md:pt-0">
             <Link
-              href="/landing-page"
+              href="/stories-from-the-sea"
               aria-label="Back to landing page"
               className="absolute left-6 top-7 flex h-9 w-9 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-[#0796a7] md:left-12 lg:left-[calc((100vw-1160px)/2+24px)]"
             >

@@ -24,22 +24,22 @@ export default function TechnicalIncidents() {
     <section className="overflow-x-hidden bg-[#ffffff] py-14 md:py-20">
       <div className="mx-auto max-w-[1280px] px-6">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(220px,320px)_1fr] lg:gap-14">
-          <h2 className="text-4xl font-normal leading-[0.95] tracking-wide text-black md:text-5xl lg:text-[66px]">
-            Technical
-            <br />
-            Incident
-          </h2>
+            <h2 className="text-4xl font-normal leading-[0.95] tracking-wide text-black md:text-5xl lg:text-[66px]">
+              Technical
+              <br />
+              Incident
+            </h2>
 
-          <div className="space-y-5 text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
-            <p>
-              Every incident at sea carries a lesson. From operational challenges
-              and equipment failures to safety observations and onboard responses,
-              these experiences contribute to stronger practices across the industry.
-            </p>
+            <div className="space-y-5 text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
+              <p>
+                Every incident at sea carries a lesson. From operational challenges
+                and equipment failures to safety observations and onboard responses,
+                these experiences contribute to stronger practices across the industry.
+              </p>
 
-            <p>
-              This section documents technical incidents, operational case studies,
-              and key learnings from the field- helping build awareness,
+              <p>
+                This section documents technical incidents, operational case studies,
+                and key learnings from the field- helping build awareness,
               preparedness, and a stronger culture of safety at sea.
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function TechnicalIncidents() {
                   </p>
 
                   <Link
-                    href={`/landing-page/${incident.slug}`}
+                    href={`/stories-from-the-sea/${incident.slug}`}
                     className="mt-5 inline-flex w-fit items-center gap-3 rounded-md bg-[#00222F] px-4 py-2 text-sm text-white transition-all duration-300 hover:scale-95 hover:bg-secondary hover:text-white"
                   >
                     Read More
