@@ -27,7 +27,7 @@ const oldEditions = [
       {
         title: "The Changing Tide: A Look at Maritime's Biggest Shifts",
         date: "March 2025",
-        image: "/resources/March-Newsletter.jpg",
+        image: "/resources/March-Newsletter.webp",
         link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2025/Nautilus-March-Newsletter.pdf",
       },
       {
