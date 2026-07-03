@@ -15,6 +15,7 @@ export const findInsideList = [
     title: "Case Studies",
     desc: "Real-world examples of innovation and success from Nautilus Shipping",
   },
+  
 ]
 
 export const visionMissionList = [
@@ -209,6 +210,7 @@ export const helpfulLinksList = [
   { name: "Contact Us", path: "/contact-us" },
   { name: "Careers", path: "/careers" },
   { name: "News & Insights", path: "/news-and-insights" },
+  { name: "Stories From The Sea", path: "/stories-from-the-sea" },
   { name: "Newsletter", path: "/newsletter" },
   { name: "Events", path: "/events" },
 ]

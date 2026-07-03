@@ -56,6 +56,11 @@ export const navMenu = [
     subMenu: [],
   },
   {
+    menu: "Stories From The Sea",
+    path: "/stories-from-the-sea",
+    subMenu: [],
+  },
+  {
     menu: "Resources",
     path: "",
     subMenu: [

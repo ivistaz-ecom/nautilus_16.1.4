@@ -1,34 +1,68 @@
-//import Header from "@/components/Header/Header"
-//import Image from "next/image"
-import Link from "next/link"
-//import { useParallax, ParallaxBanner } from "react-scroll-parallax"
-import HeroHeader from "./HeroHeader"
-//import { useEffect, useRef } from "react"
+"use client"
 
-// Old Video URL: https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus_sea.mp4
-// New Video URL: https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus_sea.webm
+import Link from "next/link"
+import { useEffect, useRef, useState } from "react"
+import HeroHeader from "./HeroHeader"
+
+const POSTER_IMAGE =
+  "/Ocean.png"
 
 const HeroBanner = () => {
-  //const videoRef = useRef(null)
+  const videoRef = useRef(null)
+  const [isVideoReady, setIsVideoReady] = useState(false)
 
-  // Preload video on mount to improve LCP
-  // useEffect(() => {
-  //   if (videoRef.current) {
-  //     videoRef.current.load()
-  //   }
-  // }, [])
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return undefined
+
+    const isMobile = window.matchMedia("(max-width: 767px)").matches
+
+    const showVideo = () => {
+      setIsVideoReady(true)
+      video.play().catch(() => {})
+    }
+
+    video.load()
+
+    if (!isMobile) {
+      video.play().catch(() => {})
+      return undefined
+    }
+
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      showVideo()
+      return undefined
+    }
+
+    video.addEventListener("loadeddata", showVideo, { once: true })
+
+    return () => {
+      video.removeEventListener("loadeddata", showVideo)
+    }
+  }, [])
 
   return (
     <div className="relative h-screen flex flex-col justify-center items-center overflow-hidden">
-      {/* Video Background (deferred load) */}
+      <img
+        src={POSTER_IMAGE}
+        alt=""
+        aria-hidden="true"
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ease-out md:hidden ${
+          isVideoReady ? "pointer-events-none opacity-0" : "opacity-100"
+        }`}
+        fetchPriority="high"
+      />
+
       <video
-        //ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        ref={videoRef}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ease-out md:opacity-100 ${
+          isVideoReady ? "opacity-100" : "opacity-0"
+        }`}
         autoPlay
         loop
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
         aria-label="Ocean waves background video"
       >
         <source
@@ -43,7 +77,6 @@ const HeroBanner = () => {
           src="https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/nautilusshipping_sea.mp4"
           type="video/mp4"
         />
-        {/* Captions track for accessibility - video is decorative/ambient with no speech */}
         <track
           kind="captions"
           src=""
@@ -54,17 +87,12 @@ const HeroBanner = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark Overlay */}
-      {/* <div className="absolute inset-0 bg-black/30 pointer-events-none" /> */}
-
-      {/* Header */}
       <HeroHeader
         logo="/white-logo.png"
         hamburger="/hamburger.svg"
         search="/search.svg"
       />
 
-      {/* Main Content */}
       <div className="relative max-w-screen-xl w-full mx-auto flex flex-col justify-end md:justify-center items-center px-4 z-10">
         <div className="flex flex-col items-center text-white">
           <h1 className="text-3xl sm:text-5xl md:text-7xl text-center leading-tight tracking-wide font-semibold">
@@ -74,7 +102,6 @@ const HeroBanner = () => {
             in Ship Management and Marine Services
           </h2>
 
-          {/* CTA Buttons */}
           <div className="mt-10 md:mt-20 flex flex-row gap-4 md:gap-16">
             <Link href="/contact-us" passHref>
               <button className="p-1.5 w-[115px] md:w-[135px] text-sm md:text-base rounded-lg bg-white text-primary hover:text-white hover:border-secondary hover:bg-secondary hover:scale-95 transition duration-300 ease-in-out">
