@@ -54,25 +54,25 @@ export const ourExpertiseList = [
   {
     title: "Ship Management",
     desc: "From maintenance to compliance, we ensure your vessels operate seamlessly and efficiently.",
-    imageUrl: "/home-page/our-marine-services/image01.png",
+    imageUrl: "/home-page/our-marine-services/image01.webp",
     link: "/service/ship-management",
   },
   {
     title: "Crew Management",
     desc: "We recruit, train, and retain skilled seafarers who deliver excellence on every voyage.",
-    imageUrl: "/home-page/our-marine-services/image02.png",
+    imageUrl: "/home-page/our-marine-services/image02.webp",
     link: "/service/crew-management",
   },
   {
     title: "Inspections",
     desc: "Our detailed pre-purchase and safety audits safeguard your fleet’s compliance and performance.",
-    imageUrl: "/home-page/our-marine-services/image03.png",
+    imageUrl: "/home-page/our-marine-services/image03.webp",
     link: "/service/inspection",
   },
   {
     title: "Commercial Services",
     desc: "Tailored chartering strategies and operational support that maximize profitability.",
-    imageUrl: "/home-page/our-marine-services/image04.png",
+    imageUrl: "/home-page/our-marine-services/image04.webp",
     link: "/service/commercial-services",
   },
 ]
