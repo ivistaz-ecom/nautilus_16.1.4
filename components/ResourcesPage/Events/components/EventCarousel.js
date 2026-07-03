@@ -72,7 +72,7 @@ const EventCarousel = ({ title, description, slides, video }) => {
                 <div className="absolute inset-0 -z-20 bg-secondary blur-2xl opacity-50 rounded-lg"></div>
                 <video
                   ref={videoRef}
-                  className="w-full max-w-[485px] lg:w-auto aspect-[475/400] object-cover rounded-lg relative mt-5"
+                  className="w-full max-w-[485px] lg:w-auto aspect-[475/427] object-cover rounded-lg relative mt-2"
                   width={480}
                   height={600}
                   loop
