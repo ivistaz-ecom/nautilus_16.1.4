@@ -6,29 +6,24 @@ const Heading = () => {
   const videoRef = useRef(null)
 
   useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (videoRef.current) {
-          if (entry.isIntersecting) {
-            videoRef.current.play()
-          } else {
-            videoRef.current.pause()
-          }
+        if (entry.isIntersecting) {
+          videoEl.play().catch(() => {});
+        } else {
+          videoEl.pause();
         }
       },
-      { threshold: 0.3 } // 30% of the video should be visible to play
-    )
+      { threshold: 0.3 }
+    );
 
-    if (videoRef.current) {
-      observer.observe(videoRef.current)
-    }
+    observer.observe(videoEl);
 
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current)
-      }
-    }
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="pt-24 md:pt-28 pb-8 md:pb-14">
@@ -57,14 +52,6 @@ const Heading = () => {
             <source
               src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus-video.mp4"
               type="video/mp4"
-            />
-            {/* Captions track for accessibility */}
-            <track
-              kind="captions"
-              src=""
-              srcLang="en"
-              label="English captions"
-              default
             />
             Your browser does not support the video tag.
           </video>
