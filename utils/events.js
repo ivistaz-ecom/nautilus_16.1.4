@@ -2,7 +2,7 @@ export const eventCarousels = [
   {
     title: "Nautilus Kochi Seafarers Meet",
     description:
-      "We had the pleasure of celebrating an important milestone for Nautilus in Kochi. Following the inauguration of our new office, we hosted an evening with the local seafaring community on 31st May at Avenue Regent Hotel, bringing together around 60 seafarers for a memorable celebration.The gathering provided a wonderful opportunity to reconnect with the seafaring community, strengthen existing relationships, and reaffirm Nautilus' commitment to supporting maritime professionals in the region as we continue to grow our presence in Kochi.",
+      "We had the pleasure of celebrating an important milestone for Nautilus in Kochi. Following the inauguration of our new office, we hosted an evening with the local seafaring community on 31st May at Avenue Regent Hotel, bringing together around 60 seafarers for a memorable celebration. The gathering provided a wonderful opportunity to reconnect with the seafaring community, strengthen existing relationships, and reaffirm Nautilus' commitment to supporting maritime professionals in the region as we continue to grow our presence in Kochi.",
     video: {
       src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/Nautilus_Kochi_seafarers_meet.mp4",
       ariaLabel: "Nautilus Kochi Seafarers Meet",
