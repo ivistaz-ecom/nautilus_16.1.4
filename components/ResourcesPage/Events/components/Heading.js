@@ -12,6 +12,9 @@ const Heading = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          if (videoEl.readyState === 0) {
+            videoEl.load();
+          }
           videoEl.play().catch(() => {});
         } else {
           videoEl.pause();
@@ -33,20 +36,25 @@ const Heading = () => {
         </h1>
 
         <div
-          className="max-w-screen-lg mx-auto relative mt-7 mb-14"
-          data-aos="zoom-in"
+          className="max-w-screen-lg mx-auto relative mt-7 mb-14 isolate"
         >
-          <div className="absolute inset-0 -z-10 bg-primary blur opacity-50 rounded-lg"></div>
-          <div className="absolute inset-0 -z-20 bg-secondary blur-2xl opacity-50 rounded-lg"></div>
+          <div
+            className="absolute inset-0 z-0 bg-primary blur opacity-50 rounded-lg pointer-events-none"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 z-0 bg-secondary blur-2xl opacity-50 rounded-lg pointer-events-none"
+            aria-hidden="true"
+          />
 
           <video
             ref={videoRef}
-            className="w-full h-auto relative rounded-lg"
-            autoPlay
+            className="relative z-10 w-full h-auto rounded-lg"
             loop
             playsInline
             controls
             muted
+            preload="metadata"
             aria-label="Narayan Rajan interview at TradeWinds TV Studio"
           >
             <source
