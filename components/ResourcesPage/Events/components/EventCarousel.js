@@ -24,44 +24,26 @@ const EventCarousel = ({ title, description, slides, video }) => {
   useEffect(() => {
     if (!video?.src) return;
 
-    let observer;
+    const sectionEl = sectionRef.current;
+    const videoEl = videoRef.current;
+    if (!sectionEl || !videoEl) return;
 
-    const setupObserver = () => {
-      const sectionEl = sectionRef.current;
-      const videoEl = videoRef.current;
-      if (!sectionEl || !videoEl) return;
+    videoEl.pause();
 
-      observer?.disconnect();
-      videoEl.pause();
-
-      const playVideo = () => {
-        if (videoEl.readyState === 0) {
-          videoEl.load();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          videoEl.play().catch(() => {});
+        } else {
+          videoEl.pause();
         }
-        videoEl.play().catch(() => {});
-      };
+      },
+      { threshold: 0.3 }
+    );
 
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            playVideo();
-          } else {
-            videoEl.pause();
-          }
-        },
-        { threshold: 0.3, rootMargin: "0px 0px -10% 0px" }
-      );
+    observer.observe(sectionEl);
 
-      observer.observe(sectionEl);
-    };
-
-    setupObserver();
-    const frameId = requestAnimationFrame(setupObserver);
-
-    return () => {
-      cancelAnimationFrame(frameId);
-      observer?.disconnect();
-    };
+    return () => observer.disconnect();
   }, [video]);
 
   const nextSlide = () => {
@@ -85,23 +67,19 @@ const EventCarousel = ({ title, description, slides, video }) => {
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="lg:w-[55%] w-full relative rounded-lg">
             {video?.src ? (
-              <div className="w-full max-w-[485px] relative isolate">
-                <div
-                  className="absolute inset-0 z-0 bg-primary blur opacity-50 rounded-lg pointer-events-none"
-                  aria-hidden="true"
-                />
-                <div
-                  className="absolute inset-0 z-0 bg-secondary blur-2xl opacity-50 rounded-lg pointer-events-none"
-                  aria-hidden="true"
-                />
+              <div className="w-full max-w-[485px] relative">
+                <div className="absolute inset-0 -z-10 bg-primary blur opacity-50 rounded-lg"></div>
+                <div className="absolute inset-0 -z-20 bg-secondary blur-2xl opacity-50 rounded-lg"></div>
                 <video
                   ref={videoRef}
-                  className="relative z-10 w-full h-auto max-w-[485px] rounded-lg mt-2"
+                  className="w-full max-w-[485px] lg:w-auto aspect-[475/427] object-cover rounded-lg relative mt-2"
+                  width={480}
+                  height={600}
                   loop
                   playsInline
                   controls
                   muted
-                  preload="metadata"
+                  preload="none"
                   aria-label={video.ariaLabel}
                 >
                   <source src={video.src} type="video/mp4" />
@@ -110,22 +88,21 @@ const EventCarousel = ({ title, description, slides, video }) => {
               </div>
             ) : (
               <>
-                <AnimatePresence initial={false}>
+                <AnimatePresence mode="wait">
                   <motion.div
                     key={currentData.id}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.35 }}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -50 }}
+                    transition={{ duration: 0.4 }}
                     className="w-full"
-                    style={{ WebkitBackfaceVisibility: "hidden" }}
                   >
                     <Image
                       src={currentData.image}
                       alt={currentData.alt}
                       width={475}
                       height={400}
-                      className="w-full h-auto max-w-[475px]"
+                      className="w-full h-auto max-w-[475px] lg:w-auto"
                     />
                   </motion.div>
                 </AnimatePresence>
