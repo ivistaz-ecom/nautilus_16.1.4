@@ -21,7 +21,7 @@ const EventsItem = () => {
                     width={475}
                     height={400}
                     alt="Our People"
-                    className="w-full h-auto max-w-[475px]"
+                    className="w-full h-auto max-w-[475px] lg:w-auto"
                   />
                 </div>
 
@@ -57,7 +57,7 @@ const EventsItem = () => {
                     width={475}
                     height={400}
                     alt="Our People"
-                    className="w-full h-auto max-w-[475px]"
+                    className="w-full h-auto max-w-[475px] lg:w-auto"
                   />
                 </div>
 
