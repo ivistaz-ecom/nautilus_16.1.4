@@ -3,18 +3,19 @@ import Link from "next/link"
 
 const latestEditionData = [
   {
-    title: "Maritime India: Empowering Progress",
-    date: "April 2026",
+    title: "The Future of Shipping Doesn't End at Sea",
+    date: "June 2026",
     description: (
       <>
-        The April edition of the Nautilus Newsletter celebrates National Maritime Day 2026 and reflects on the growth, resilience, and future of India’s maritime industry. As Nautilus marks 19 years in shipping, this edition explores the people, progress, and developments shaping the sector today.
+        The June 2026 edition of the Nautilus Newsletter focuses on the evolving world of ship recycling and the growing importance of sustainability across the maritime industry. As the Hong Kong Convention comes into force, this edition explores how responsible recycling, environmental stewardship, and global standards are reshaping the way the industry approaches a vessel's final chapter.
+
         <br />
         <br />
-        From maritime insights and industry updates to stories from sea and shore, the edition looks at how the industry continues to move forward.
+        From India's emergence as a global ship recycling leader to inspiring seafarer stories, industry developments, and Nautilus milestones, this edition brings together the insights, people, and progress defining the future of maritime excellence.
       </>
     ),
-    image: "/resources/april-newsletter.jpeg",
-    link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/April/Nautilus_April_Newsletter.pdf",
+    image: "/resources/june_newsletter.webp",
+    link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/June/Nautilus_Newsletter_June26.pdf",
   },
   
 ]
@@ -54,7 +55,7 @@ const LatestEdition = () => {
             </div>
 
             {/* Right Section */}
-            <div className="bg-primary px-5 sm:px-8 py-8 flex flex-col gap-4 flex-1 self-center md:rounded-tr-lg md:rounded-br-lg">
+            <div className="bg-primary px-5 sm:px-8 py-8 md:mt-12 flex flex-col gap-4 flex-1 self-center md:rounded-tr-lg md:rounded-br-lg">
               <h3 className="text-xl sm:text-[28px] text-white font-light leading-tight tracking-wide">
                 {edition.title}
               </h3>
