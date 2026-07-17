@@ -13,6 +13,20 @@ const oldEditions = [
     year: "2025",
     items: [
       {
+          title: "Maritime India: Empowering Progress",
+          date: "April 2026",
+          description: (
+            <>
+              The April edition of the Nautilus Newsletter celebrates National Maritime Day 2026 and reflects on the growth, resilience, and future of India’s maritime industry. As Nautilus marks 19 years in shipping, this edition explores the people, progress, and developments shaping the sector today.
+              <br />
+              <br />
+              From maritime insights and industry updates to stories from sea and shore, the edition looks at how the industry continues to move forward.
+            </>
+          ),
+          image: "/resources/april-newsletter.jpeg",
+          link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/April/Nautilus_April_Newsletter.pdf",
+        },
+      {
         title: "Coastal Shipping: India’s Next Logistics Shift",
         date: "February 2026",
         image: "/resources/feb-newsletter-2026.jpg",
