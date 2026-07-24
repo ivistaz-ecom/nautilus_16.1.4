@@ -15,7 +15,7 @@ const latestEditionData = [
       </>
     ),
     image: "/resources/june_newsletter.webp",
-    link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/June/Nautilus_Newsletter_June26.pdf",
+    link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/June/Nautilus_Newsletter_June_2026.pdf",
   },
   
 ]

@@ -1,5 +1,97 @@
 export const stories = [
   {
+    slug: "pavneet-singh-narula-deck-cadet-to-chief-officer",
+    heroTitle: "From Deck Cadet to Chief Officer:",
+    heroSubtitle: "A Journey of Growth, Resilience, and Leadership",
+    title:
+      "From Deck Cadet to Chief Officer: A Journey of Growth, Resilience, and Leadership",
+    author: "Pavneet Singh Narula, Chief Officer",
+    image: "/landing-page/stories/Singh.webp",
+    sections: [
+      {
+        body: [
+          "My journey from Deck Cadet to Chief Officer has been shaped by challenges, tough decisions, and continuous learning. Every stage required dedication, perseverance, and the determination to grow both professionally and personally. Completing marine competency courses and clearing examinations while sailing was never easy, but each milestone brought me closer to becoming a capable and confident deck officer.",
+          "I was only 18 years old when I first stepped into this remarkable industry. Life at sea has been my greatest teacher. It has tested my limits, strengthened my character, and prepared me to face adversity with confidence. There is a saying that has stayed with me throughout my career: “A smooth sea never made a skilled sailor.” Looking back, I can truly say that every challenge helped shape the officer I am today.",
+          "When I joined as a young Deck Cadet, I carried dreams, ambitions, and a strong desire to succeed. Through patience, hard work, and persistence, I gradually turned those dreams into reality.",
+          "One of the most demanding aspects of a seafaring career is the mental challenge of being away from family and friends. They are often our strongest support system, and the distance can be difficult to manage. During my time as a Third Officer and Second Officer, internet connectivity onboard was either unavailable or extremely limited. Staying connected with loved ones was a luxury we rarely had.",
+          "To keep our spirits high, we created our own sense of community onboard. Cricket tournaments, karaoke nights, celebrations, and shared moments with fellow crew members helped us build friendships that often felt like family. Those experiences taught me the true value of camaraderie and teamwork at sea.",
+          "The year 2018 marked a significant change for seafarers when internet access became available on many vessels. It transformed life onboard by restoring an important connection with home. Being able to communicate regularly with family and friends greatly improved morale and made life at sea more manageable.",
+          "As a Third Officer and Second Officer, my responsibilities were largely operational. My focus was on navigation, cargo watches, safety procedures, and ensuring the smooth execution of daily shipboard activities. However, stepping into the role of Chief Officer introduced me to an entirely new dimension of responsibility — leadership and management.",
+          "The transition was both challenging and rewarding. As Chief Officer, every decision carries greater accountability. Crew safety, cargo operations, compliance, and overall vessel performance become part of your daily responsibility. You learn to make difficult decisions, often under pressure, while ensuring that the welfare and safety of everyone onboard remain the highest priority.",
+          "Today, one of the most fulfilling aspects of my role is looking after crew welfare. Beyond operational duties, I ensure that crew members receive adequate rest, have access to recreational activities, and maintain good morale throughout their voyage. A motivated and well-supported crew is essential for safe and efficient ship operations.",
+          "The responsibility can be immense, but so is the sense of pride that comes with it. Knowing that I play a role in creating a safe, productive, and positive environment onboard gives me immense satisfaction.",
+          "My journey at sea has taught me resilience, leadership, humility, and the importance of never giving up. The sea does more than build officers—it builds character.",
+        ],
+      },
+      {
+        heading: "Memorable Moment at Sea",
+        body: [
+          "Professionally- The happiest moment of my career was when I successfully completed a grain loading operation just two days after joining the vessel as Chief Officer for the first time. Grain is regarded as one of the most complex and demanding cargoes in the industry due to its stringent stability, trimming, and safety requirements. To handle it flawlessly in my very first assignment as Chief Mate was a proud achievement and a defining moment in my seafaring journey.",
+          "Personally- The happiest moment of my life was finding the right life partner — someone who understands the challenges of life at sea and remains my strongest support through every voyage.",
+          "The sea taught me to take on tough challenges. Life taught me to value the right companionship. Both have shaped who I am today.",
+        ],
+      },
+      {
+        heading: "My Message to Every New Trainee",
+        body: [
+          "Never lose hope, and never stop believing in your dreams.",
+          "The sea will test your patience, challenge your determination, and demand sacrifices. There will be long nights, difficult examinations, and moments when being away from home feels overwhelming. But if you remain focused, work hard, and stay committed to your goals, this industry will reward you with experiences, growth, and opportunities beyond imagination.",
+          "Remember: A smooth sea never made a skilled sailor.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "gagan-sankar-classroom-dream-to-open-sea",
+    heroTitle: "From a Classroom Dream to the Open Sea:",
+    heroSubtitle: "My Journey as a Deck Cadet",
+    title:
+      "From a Classroom Dream to the Open Sea: My Journey as a Deck Cadet",
+    author: "Gagan Sankar, Deck Cadet",
+    image: "/landing-page/stories/Gagan.webp",
+    sections: [
+      {
+        heading: "My Journey to the Sea",
+      },
+      {
+        heading: "How It All Started",
+        body: [
+          "In 2021, while I was in Class 12, I found myself asking the same question many students face: What should I do next?",
+          "I knew I didn't want a conventional 9-to-5 job. I wanted a career that would challenge me, help me learn something new every day, and provide both financial stability and personal growth.",
+          "Around that time, I came across YouTube vlogs by Karanvir Singh Nayyar (KSN). Watching his life at sea was a turning point for me. His videos showed me that the Merchant Navy is more than just a profession—it's a unique lifestyle that demands dedication, resilience, and continuous learning. Inspired by what I saw, I decided to pursue a career at sea.",
+        ],
+      },
+      {
+        heading: "College and My First Step into Shipping",
+        body: [
+          "After completing my 12th standard, I appeared for the IMU-CET examination and secured admission to AMET University, Chennai, where I enrolled in the three-year B.Sc. Nautical Science programme.",
+          "My time at university taught me the fundamentals of seamanship, navigation, and maritime operations, while also instilling discipline and professionalism.",
+          "During my final year, I was selected by Nautilus Shipping India Pvt. Ltd. (NSIPL). I still remember the interview vividly. My close friend, Srikanth, and I were interviewed by Ms. Priyadarshi R, HR Manager, and Mr. Ajay Krishnamani, Co-Founder and Managing Director of Nautilus Shipping. Following the interview, we were informed that we would join the familiarisation programme after completing our examinations.",
+        ],
+      },
+      {
+        heading: "My Time at the Nautilus Chennai Office",
+        body: [
+          "On 7 July 2025, I reported to the Nautilus Chennai office for the first time. Looking back, that day marked the true beginning of my professional journey.",
+          "Following the familiarisation programme, I had the opportunity to work closely with both the Technical and Operations teams. This exposure proved invaluable. I learned how to prepare risk assessments, update daily work reports, and manage the various forms, checklists, and documentation that are essential to vessel operations.",
+          "Many of the procedures and documentation processes I use onboard today were first introduced to me during my time in the office. The experience not only strengthened my technical knowledge but also improved my confidence and efficiency in handling administrative and computer-based tasks.",
+          "Beyond the learning experience, I was fortunate to be part of numerous office events and festival celebrations. The positive work culture and supportive environment made me feel like part of a family. I am sincerely grateful to Nautilus for providing me with such a strong foundation for my maritime career.",
+        ],
+      },
+      {
+        heading: "Life at Sea",
+        body: [
+          "Today, I am sailing as a Deck Cadet aboard M.V. TBC KAILASH and have completed three months onboard.",
+          "Every day presents new opportunities to learn. From deck maintenance and navigational watchkeeping to safety drills and vessel documentation, I am gaining practical experience across all aspects of shipboard operations.",
+          "The training I received at Nautilus has been immensely beneficial. Because I was already familiar with many of the procedures and documentation requirements, I was able to focus more on developing my practical seamanship skills under the guidance of my senior officers.",
+          "I would like to express my heartfelt gratitude to everyone at Nautilus Shipping for trusting me and giving me the opportunity to begin my seafaring career.",
+          "A special thank you to our Co-Founder and Managing Director, Mr. Ajay Krishnamani, and HR Manager, Ms. Priyadarshi R, for their guidance and support. I would also like to extend my sincere thanks to Mrs. Esa, General Manager – Crewing & Operations, whose encouragement and confidence in me played a significant role in my journey. Her support enabled me to sail with Transworld Shipping Lines and take this important step towards achieving my goals.",
+          "As I continue my journey at sea, I look forward to learning, growing, and making the most of every opportunity that comes my way.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "vn-surendran-journey",
     heroTitle: "A Life at Sea:",
     heroSubtitle: "VN Surendran's Journey Through Coastal and Foreign Shipping",
