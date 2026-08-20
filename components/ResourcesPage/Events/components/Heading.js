@@ -19,7 +19,6 @@ const featuredVideos = [
     title: "Naavik Sangam: Celebrating One Year Together",
     description: [
       "On August 7, we came together at Vivanta Navi Mumbai to celebrate our seafarers and the journey we've built together over the past year. Naavik Sangam brought together seafarers, Transworld, and Nautilus Shipping for an evening of reconnection, networking, and shared stories from across the maritime community.",
-      "The evening included an awards ceremony honoring our seafarers for their dedication and service. One moment stood out: a seafarer's wife and baby attended to receive his award on his behalf. Seeing his family there, standing in for him, was a powerful reminder of the people behind every voyage and how deeply they value the community we've built",
       "With seafarers, shore teams, and industry colleagues coming together, the evening was filled with meaningful conversations, shared stories, and new connections. It was a celebration of the people who make every voyage possible and the journey we continue to build together.",
     ],
   },
