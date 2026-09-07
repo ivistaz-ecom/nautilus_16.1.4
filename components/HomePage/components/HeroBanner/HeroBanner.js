@@ -77,13 +77,6 @@ const HeroBanner = () => {
           src="https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/nautilusshipping_sea.mp4"
           type="video/mp4"
         />
-        <track
-          kind="captions"
-          src=""
-          srcLang="en"
-          label="English captions"
-          default
-        />
         Your browser does not support the video tag.
       </video>
 
