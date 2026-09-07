@@ -1,26 +1,91 @@
 # llms.txt for https://www.nautilusshipping.com/
 # This file allows all major AI bots to access and use website content for training.
 
-# Allow OpenAI's GPTBot
+# Nautilus Shipping
+
+> Nautilus Shipping is a ship management and marine services company with 19+ years of experience, 200+ ships manned, and a network of 100,000+ seafarers worldwide. The company specializes in crew management and provides complete vessel management and marine services for bulk carriers, container ships, chemical tankers, oil & LPG/LNG tankers, general cargo vessels, and passenger ships. Its "4Ps" approach: Problem-solving with Agility, Performance-based Remuneration, Profit-making for Ship Owners, and Port State Control Adherence. An ISO 9001:2015 certified company, registered under RPSL No: RPSL/CHN/012 (valid to 29-12-2026). Contact: +91 44 4684 9999 | hello@nautilusshipping.com.
+
+## Marine Services
+
+- [Ship Management](https://www.nautilusshipping.com/service/ship-management): Reliable fleet management ensuring safety, efficiency, and compliance, with technical management tailored to each vessel's needs.
+- [Crew Management](https://www.nautilusshipping.com/service/crew-management): Expert recruitment, training, and welfare-focused support drawing on a 100,000+ seafarer database.
+- [Inspection](https://www.nautilusshipping.com/service/inspection): Thorough vessel inspections upholding safety, performance, and compliance with industry standards.
+- [Commercial Services](https://www.nautilusshipping.com/service/commercial-services): Practical commercial solutions to enhance fleet profitability and operational efficiency.
+
+## Company
+
+- [Company](https://www.nautilusshipping.com/about-us/company): Background on Nautilus Shipping's 19+ years in ship management.
+- [Team](https://www.nautilusshipping.com/about-us/team): Leadership and management team.
+- [Our Approach](https://www.nautilusshipping.com/our-approach): The 4Ps promise — proactive, responsive strategies that minimise delays and losses.
+- [Fleet](https://www.nautilusshipping.com/fleet): Vessels under Nautilus management.
+- [Sustainability](https://www.nautilusshipping.com/sustainability): Environmental responsibility and sustainable shipping practices.
+
+## Careers
+
+- [Careers](https://www.nautilusshipping.com/careers): Opportunities for seafarers and shore-based professionals.
+
+## Resources
+
+- [News & Insights](https://www.nautilusshipping.com/news-and-insights): Articles on crewing, sustainability, compliance (IMO rules, safety standards, audit readiness), and technical topics like vessel maintenance and performance optimization.
+- [Stories From The Sea](https://www.nautilusshipping.com/stories-from-the-sea): Seafarer stories and experiences.
+- [Newsletter](https://www.nautilusshipping.com/newsletter): Nautilus highlights and updates.
+- [Events](https://www.nautilusshipping.com/events): Company and industry events.
+
+## Contact
+
+- [Contact Us](https://www.nautilusshipping.com/contact-us): Enquiry form, phone, and email for ship management, crew management, ship agency & logistics, inspection, and commercial ship services.
+- [Privacy Statement](https://www.nautilusshipping.com/privacy-policy)
+- [Disclaimer](https://www.nautilusshipping.com/disclaimer)
+
+## Optional
+
+- [Hidden Costs Game](https://hiddencosts.nautilusshipping.com/): Interactive experience on uncovering hidden expenses in a ship's budget.
+- [Trustpilot Reviews](https://www.trustpilot.com/review/nautilusshipping.com)
+- [LinkedIn](https://www.linkedin.com/company/nautilusshipping/)
+- [Instagram](https://www.instagram.com/nautilusshipping)
+- [X (Twitter)](https://x.com/Nautilushipping)
+- [YouTube](https://www.youtube.com/@NautilusShippingIndia)
+
+# ✅ Allow OpenAI's GPTBot
 User-agent: GPTBot
 Allow: /
 
-# Allow OpenAI’s ChatGPT-User (used in browsing mode)
+# ✅ Allow OpenAI's ChatGPT-User (used in browsing mode)
 User-agent: ChatGPT-User
 Allow: /
 
-# Allow Google's Gemini (Google-Extended)
+# ✅ Allow OpenAI's OAI-SearchBot (used in ChatGPT search)
+User-agent: OAI-SearchBot
+Allow: /
+
+# ✅ Allow Google's Gemini (Google-Extended)
 User-agent: Google-Extended
 Allow: /
 
-# Allow Claude (Anthropic)
+# ✅ Allow Claude (Anthropic) — current crawler
+User-agent: ClaudeBot
+Allow: /
+
+# ✅ Allow Claude (Anthropic) — legacy token
 User-agent: anthropic-ai
 Allow: /
 
-# Allow Common Crawl (used by multiple AI training projects)
+# ✅ Allow Common Crawl (used by multiple AI training projects)
 User-agent: CCBot
 Allow: /
 
-# Allow Perplexity AI
+# ✅ Allow Perplexity AI
 User-agent: PerplexityBot
+Allow: /
+
+# ✅ Allow Perplexity's user-triggered fetcher
+User-agent: Perplexity-User
+Allow: /
+
+# ✅ Allow Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ✅ Allow Apple Intelligence
+User-agent: Applebot-Extended
 Allow: /

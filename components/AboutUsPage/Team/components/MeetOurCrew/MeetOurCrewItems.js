@@ -62,7 +62,10 @@ const MeetOurCrewItems = () => {
                   {item.department}
                 </span>
                 <button
-                  onClick={() => toggleTeam(index)}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    toggleTeam(index)
+                  }}
                   className={`text-lg sm:text-xl transform transition-transform duration-300 ease-in-out ${
                     openIndex === index ? "rotate-45" : ""
                   }`}

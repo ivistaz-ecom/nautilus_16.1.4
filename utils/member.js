@@ -134,16 +134,28 @@ export const crewMemberList = [
       //   post: "Purchase Assistant",
       // },
 
-      // {
-      //   imageUrl: "/about-us/member/Joe.png",
-      //   name: "Joe",
-      //   post: "Purchase Assistant",
-      // },
+      {
+        imageUrl: "/about-us/member/Javed_Hashmi.webp",
+        name: "Javed",
+        post: "Technical Manager - Port Blair",
+      },
+      {
+        imageUrl: "/about-us/member/Angesh.webp",
+        name: "Angesh",
+        post: "Assistant Manager - Admin & Purchase",
+      },
       {
         imageUrl: "/about-us/member/Sudha_Kumar.webp",
         name: "Sudha",
         post: "Technical Assistant",
       },
+      
+      {
+        imageUrl: "/about-us/member/Sai_Aravind.webp",
+        name: "Sai Aravind",
+        post: "Technical Assistant",
+      },
+      
       
     ],
   },
@@ -246,23 +258,22 @@ export const crewMemberList = [
       //   name: "Priyanka",
       //   post: "Marine Personnel Executive",
       // },
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "Kartiki",
-      //   post: "Marine Personnel Executive",
-      // },
       {
-        imageUrl: "/about-us/member/Chirag.webp",
-        name: "Chirag",
+        imageUrl: "/about-us/member/Kartiki.webp",
+        name: "Kartiki",
         post: "Marine Personnel Executive",
       },
-      // {
-      //   imageUrl: "/about-us/member/Akansha_Bekare.webp",
-      //   name: "Akansha",
-      //   post: "Marine Personnel Executive",
-      // },
      
-    
+      {
+        imageUrl: "/about-us/member/shanti_serma.webp",
+        name: "Serma Shanti",
+        post: "Marine Personnel Executive",
+      },
+      {
+        imageUrl: "/about-us/member/Megha_Mohan_Khandagale.webp",
+        name: "Megha",
+        post: "Marine Personnel Executive",
+      },
     ],
   },
   {
@@ -291,7 +302,7 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/Akash.png",
         name: "Akash",
-        post: "Marine Personnel Officer",
+        post: "Operations Executive",
       },
       {
         imageUrl: "/about-us/member/Hari.png",
@@ -384,10 +395,15 @@ export const crewMemberList = [
         name: "Vinodh",
         post: "GM - HSEQ & Technology",
       },
+      // {
+      //   imageUrl: "/about-us/member/Santhosh.png",
+      //   name: "Santhosh",
+      //   post: "Sr. Executive - HSEQ",
+      // },
       {
-        imageUrl: "/about-us/member/Santhosh.png",
-        name: "Santhosh",
-        post: "Sr. Executive - HSEQ",
+        imageUrl: "/about-us/member/Deepak_Choudhari.webp",
+        name: "Deepak",
+        post: "HSEQ Executive",
       },
     ],
   },
@@ -419,6 +435,22 @@ export const crewMemberList = [
         name: "Sumanth",
         post: "Talent Acquisition Executive",
       },
+      {
+        imageUrl: "/about-us/member/Geethasri.webp",
+        name: "Geethasri",
+        post: "Talent Acquisition Executive",
+      },
+      {
+        imageUrl: "/about-us/member/Haasini.webp",
+        name: "Haasini",
+        post: "Talent Acquisition Executive",
+      },
+      {
+        imageUrl: "/about-us/member/Pravalika.webp",
+        name: "Pravalika",
+        post: "Talent Acquisition Executive",
+      },
+      
     ],
   },
   {
@@ -449,11 +481,11 @@ export const crewMemberList = [
         name: "Revathy",
         post: "Accounts Assistant",
       },
-      // {
-      //   imageUrl: "/about-us/member/Bharath.png",
-      //   name: "Bharath",
-      //   post: "Sr. Manager - Fleet Accounts",
-      // },
+      {
+        imageUrl: "/about-us/member/Sathish.webp",
+        name: "Sathish",
+        post: "Sr. Accounts Executive",
+      },
     ],
   },
   {
@@ -469,6 +501,7 @@ export const crewMemberList = [
         name: "Ashwini",
         post: "Front Office Executive",
       },
+
     ],
   },
 

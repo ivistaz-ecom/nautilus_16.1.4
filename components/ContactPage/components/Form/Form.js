@@ -4,7 +4,7 @@ import "react-phone-number-input/style.css"
 import PhoneInput from "react-phone-number-input"
 import { Country } from "country-state-city"
 import Select from "react-select"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {
   isPossiblePhoneNumber,
   parsePhoneNumberFromString,
@@ -30,6 +30,24 @@ const Form = () => {
     message: "",
     consent: false,
   })
+
+  useEffect(() => {
+    if (!showPopup) return
+
+    const scrollY = window.scrollY
+    document.body.style.position = "fixed"
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.width = "100%"
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.body.style.position = ""
+      document.body.style.top = ""
+      document.body.style.width = ""
+      document.body.style.overflow = ""
+      window.scrollTo(0, scrollY)
+    }
+  }, [showPopup])
 
   const isAllowedPhoneEditKey = (key) => {
     const allowedKeys = [
@@ -479,7 +497,7 @@ const Form = () => {
   )
 
   return (
-    <div className="p-3 sm:p-10">
+    <div className="p-4 lg:p-10">
       <h3 className="text-base sm:text-lg md:text-xl font-light text-white text-center md:text-left">
         Let’s navigate towards excellence together!
       </h3>
@@ -537,7 +555,7 @@ const Form = () => {
 
       {/* Thank You Popup */}
       {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 mx-3">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center flex flex-col items-center relative">
             <Image src="/sent.png" width={200} height={100} alt="sent" />
             <h2 className="text-base font-semibold text-primary">Thank You!</h2>

@@ -15,6 +15,7 @@ export const findInsideList = [
     title: "Case Studies",
     desc: "Real-world examples of innovation and success from Nautilus Shipping",
   },
+  
 ]
 
 export const visionMissionList = [
@@ -53,25 +54,25 @@ export const ourExpertiseList = [
   {
     title: "Ship Management",
     desc: "From maintenance to compliance, we ensure your vessels operate seamlessly and efficiently.",
-    imageUrl: "/home-page/our-marine-services/image01.png",
+    imageUrl: "/home-page/our-marine-services/image01.webp",
     link: "/service/ship-management",
   },
   {
     title: "Crew Management",
     desc: "We recruit, train, and retain skilled seafarers who deliver excellence on every voyage.",
-    imageUrl: "/home-page/our-marine-services/image02.png",
+    imageUrl: "/home-page/our-marine-services/image02.webp",
     link: "/service/crew-management",
   },
   {
     title: "Inspections",
     desc: "Our detailed pre-purchase and safety audits safeguard your fleet’s compliance and performance.",
-    imageUrl: "/home-page/our-marine-services/image03.png",
+    imageUrl: "/home-page/our-marine-services/image03.webp",
     link: "/service/inspection",
   },
   {
     title: "Commercial Services",
     desc: "Tailored chartering strategies and operational support that maximize profitability.",
-    imageUrl: "/home-page/our-marine-services/image04.png",
+    imageUrl: "/home-page/our-marine-services/image04.webp",
     link: "/service/commercial-services",
   },
 ]
@@ -209,6 +210,7 @@ export const helpfulLinksList = [
   { name: "Contact Us", path: "/contact-us" },
   { name: "Careers", path: "/careers" },
   { name: "News & Insights", path: "/news-and-insights" },
+  { name: "Stories From The Sea", path: "/stories-from-the-sea" },
   { name: "Newsletter", path: "/newsletter" },
   { name: "Events", path: "/events" },
 ]
@@ -391,16 +393,19 @@ export const ourPositionList = [
 ]
 
 export const ashorePositionList = [
-  "HSEQ Executive/3rd Officer",
+  // "HSEQ Executive/3rd Officer",
   "Technical Superintendent",
-  "Fleet Personnel Executive",
-  "Accounts Assistant",
-  "Accounts Executive",
-  "Fleet Accountant",
-  "Operations Executive",
-  "Technical Assistant",
-  "Purchase Executive",
-  "Sr. Purchase Executive",
+  "Asst. Technical Superintendent",
+  "Marine Purchaser",
+  // "Fleet Personnel Executive",
+  // "Accounts Assistant",
+  // "Accounts Executive",
+  // "Fleet Accountant",
+  // "Operations Executive",
+  // "Technical Assistant",
+  // "Purchase Executive",
+  // "Sr. Purchase Executive",
+
 ]
 
 export const tailorSolutionsList = [

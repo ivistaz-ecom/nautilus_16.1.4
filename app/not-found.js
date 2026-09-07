@@ -1,10 +1,22 @@
 "use client"
 
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 import Header from "@/components/Header/Header"
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 import Link from "next/link"
 
 export default function NotFound() {
+  const router = useRouter()
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push("/")
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }, [router])
+
   return (
     <>
       <Header
@@ -19,6 +31,7 @@ export default function NotFound() {
             Looks like you've drifted off course!
           </h2>
           <p>The URL you requested was not found.</p>
+         
         </div>
 
         <DotLottieReact

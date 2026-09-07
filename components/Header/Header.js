@@ -14,12 +14,23 @@ const Header = ({ logo, hamburger, search }) => {
   const menuRef = useRef(null)
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0)
+      if (ticking) return
+
+      ticking = true
+      window.requestAnimationFrame(() => {
+        setScrolled((current) => {
+          const next = window.scrollY > 0
+          return current === next ? current : next
+        })
+        ticking = false
+      })
     }
 
     handleScroll()
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 

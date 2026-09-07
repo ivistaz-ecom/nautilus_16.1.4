@@ -5,7 +5,7 @@ export default function Page() {
   const seoField = {
     title: "Vessel Inspection Services | Nautilus Shipping",
     description:
-      "Ensure compliance and safety with Nautilus Shipping’s vessel inspection services. Our pre-purchase inspections, safety audits, and condition monitoring help shipowners maintain high performance and meet global regulatory standards.",
+      "Ensure compliance and safety with Nautilus Shipping’s vessel inspections, safety audits, and condition monitoring services.",
     path: "/service/inspection",
     metaImage: "/our-approach/img01.png",
     pageType: "WebSite",

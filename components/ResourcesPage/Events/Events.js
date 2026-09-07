@@ -2,6 +2,7 @@ import Header from "@/components/Header/Header";
 import Heading from "./components/Heading";
 import EventsItem from "./components/EventsItem";
 import EventCarousel from "./components/EventCarousel";
+import { eventCarousels } from "@/utils/events";
 
 const Events = () => {
   return (
@@ -12,7 +13,15 @@ const Events = () => {
         search="/search-dark.svg"
       />
       <Heading />
-      <EventCarousel />
+      {eventCarousels.map((carousel) => (
+        <EventCarousel
+          key={carousel.title}
+          title={carousel.title}
+          description={carousel.description}
+          slides={carousel.slides}
+          video={carousel.video}
+        />
+      ))}
       <EventsItem />
     </>
   );

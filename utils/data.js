@@ -56,6 +56,11 @@ export const navMenu = [
     subMenu: [],
   },
   {
+    menu: "Stories From The Sea",
+    path: "/stories-from-the-sea",
+    subMenu: [],
+  },
+  {
     menu: "Resources",
     path: "",
     subMenu: [
@@ -245,7 +250,7 @@ export const ourLocationData = [
     imageUrl: "/contact-us/location/Kochi-img.webp",
     add: "1st floor, SaiPoornashree, #41/139-E, Thevarakavu road, Thripunithura - 682301",
     tel: "+91 99440 10494",
-    location: "https://www.google.com/maps/place/Poornasree+Apartments/@9.9470389,76.3442167,21z/data=!4m6!3m5!1s0x3b08739d311bdf9b:0xbc7bd9c0a74ff8ba!8m2!3d9.9471911!4d76.3444246!16s%2Fg%2F11jxy21pt9?entry=tts&g_ep=EgoyMDI2MDEyNS4wIPu8ASoASAFQAw%3D%3D&skid=ef261db7-ba09-4788-b164-67f36d02046f",
+    location: "https://maps.app.goo.gl/TAKQDYYd1Xn5sXzD9",
   },
   {
     city: "Singapore",
@@ -258,9 +263,9 @@ export const ourLocationData = [
   {
     city: "Port Blair",
     imageUrl: "/contact-us/location/img05.png",
-    add: "Survey no. 79, Bargat Lane, Chakkar Gaon, South Andaman, Sri Vijaya Puram, A & N Islands - 74411",
-    tel: "+91 94 3426 0414",
-    location: "https://maps.app.goo.gl/5MPnyL9bfGr9bYV37",
+    add: "Survey no. 79, Bargat Lane, Chakkar Gaon, South Andaman, Sri Vijaya Puram, A & N Islands - 744112",
+    tel: "+91 94342 60414",
+    location: "https://www.google.com/maps/place/ANGEL+ENTERPRISES/@11.6477875,92.7441664,932m/data=!3m2!1e3!4b1!4m6!3m5!1s0x308894fdf3b71e67:0xcf847364e96c2817!8m2!3d11.6477875!4d92.7441664!16s%2Fg%2F11w8qtbswf!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D",
   },
  
 

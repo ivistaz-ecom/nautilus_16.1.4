@@ -13,34 +13,54 @@ const oldEditions = [
     year: "2025",
     items: [
       {
+          title: "Maritime India: Empowering Progress",
+          date: "April 2026",
+          description: (
+            <>
+              The April edition of the Nautilus Newsletter celebrates National Maritime Day 2026 and reflects on the growth, resilience, and future of India’s maritime industry. As Nautilus marks 19 years in shipping, this edition explores the people, progress, and developments shaping the sector today.
+              <br />
+              <br />
+              From maritime insights and industry updates to stories from sea and shore, the edition looks at how the industry continues to move forward.
+            </>
+          ),
+          image: "/resources/april-newsletter.jpeg",
+          link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/April/Nautilus_April_Newsletter.pdf",
+        },
+      {
+        title: "Coastal Shipping: India’s Next Logistics Shift",
+        date: "February 2026",
+        image: "/resources/feb-newsletter-2026.jpg",
+        link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/February/Nautilus_Feb_Newsletter.pdf",
+      },
+      {
         title: "Aging Vessels: Balancing Legacy and Innovation",
         date: "January 2025",
         image: "/resources/image01.png",
-        link: "/NL/2025/Jan/January%20Nautilus%20Newsletter%20Compressed.pdf",
+        link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2025/January%20Nautilus%20Newsletter%20Compressed.pdf",
       },
       {
         title: "The Changing Tide: A Look at Maritime's Biggest Shifts",
         date: "March 2025",
-        image: "/resources/March-Newsletter.jpg",
-        link: "/NL/2025/Mar/Nautilus-March-Newsletter.pdf",
+        image: "/resources/March-Newsletter.webp",
+        link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2025/Nautilus-March-Newsletter.pdf",
       },
       {
         title: "The Hands That Move the World",
         date: "July 2025",
         image: "/resources/Nautilus_July_Newsletter.jpg",
-        link: "/NL/2025/July/july-newsletter-updated.pdf",
+        link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2025/july-newsletter-updated.pdf",
       },
       {
         title: "For The Sea, For The Future - World Maritime Day",
         date: "September 2025",
         image: "/resources/Nautilus_Newsletter_September_2025.jpg",
-        link: "/NL/2025/September/Newsletter-September-2025.pdf",
+        link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2025/Newsletter-September-2025.pdf",
       },
       {
         title: "The Year Behind Us. The Course Ahead.",
         date: "November 2025",
         image: "/resources/nov-newsletter.webp",
-        link: "/NL/2025/November/Newsletter-November-2025.pdf",
+        link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2025/Newsletter-November-2025.pdf",
       },
      
     ],
@@ -141,7 +161,7 @@ const OtherEdition = () => {
 
               return (
               <div key={group.year} className="space-y-4">
-                <h3 className="text-xl sm:text-3xl font-light">{group.year}</h3>
+                
                 <div className="relative">
                   <Slider
                     ref={(el) => {

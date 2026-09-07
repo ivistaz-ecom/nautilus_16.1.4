@@ -26,7 +26,7 @@ const SOCIAL = [
     Icon: FaFacebookF,
   },
   {
-    href: "https://x.com/Nautilusshipping",
+    href: "https://x.com/nautilushipping",
     label: "Nautilus Shipping on X",
     Icon: FaXTwitter,
   },
@@ -169,7 +169,7 @@ export default function InfoPage() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-primary px-4 py-10">
       <article
         ref={sharePanelRef}
-        className="relative w-full max-w-[420px] rounded-[2rem] bg-primary px-6 pb-10 pt-14 shadow-xl ring-2 ring-secondary/40"
+        className="relative w-full max-w-[420px] rounded-[2rem] bg-white px-6 pb-10 pt-14 shadow-xl ring-2 ring-secondary/40"
       >
         {/* Top actions — share only, top-right */}
         <div className="absolute right-4 top-4 z-20 flex justify-end">
@@ -177,7 +177,7 @@ export default function InfoPage() {
             <button
               type="button"
               onClick={() => setShareOpen((o) => !o)}
-              className={`flex h-10 w-10 items-center justify-center rounded-full bg-secondary/25 text-white shadow-sm ring-1 ring-secondary/40 transition hover:bg-secondary ${
+              className={`flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-white shadow-sm ring-1 ring-secondary/40 transition hover:bg-primary ${
                 shareOpen ? "bg-secondary" : ""
               }`}
               aria-expanded={shareOpen}
@@ -209,7 +209,7 @@ export default function InfoPage() {
                 </div>
 
                 {!pageUrl ? (
-                  <p className="px-1 py-2 text-xs text-white/70">Loading…</p>
+                  <p className="px-1 py-2 text-xs text-secondary ">Loading…</p>
                 ) : (
                   <ul className="max-h-[min(60vh,22rem)] space-y-1 overflow-y-auto pr-1">
                     {typeof navigator !== "undefined" &&
@@ -218,7 +218,7 @@ export default function InfoPage() {
                           <button
                             type="button"
                             onClick={nativeShare}
-                            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm text-white transition hover:bg-secondary/30"
+                            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm text-white transition hover:bg-black"
                           >
                             <Share2
                               className="h-5 w-5 shrink-0 text-secondary"
@@ -286,9 +286,9 @@ export default function InfoPage() {
         </div>
 
         <div className="flex flex-col items-center text-center">
-          <div className="mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-white/10 shadow-inner ring-2 ring-secondary/50">
+          <div className="mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-white shadow-inner ring-2 ring-secondary">
             <Image
-              src="/white-logo.png"
+              src="/logo.png"
               width={112}
               height={48}
               alt="Nautilus Shipping"
@@ -297,15 +297,15 @@ export default function InfoPage() {
             />
           </div>
 
-          <h1 className="text-2xl font-semibold tracking-wide text-white sm:text-[1.65rem]">
+          <h1 className="text-2xl font-semibold tracking-wide text-black sm:text-[1.65rem]">
             Nautilus Shipping
           </h1>
-          <p className="mt-2 max-w-[280px] text-sm font-light leading-snug text-white/85 sm:text-base">
+          <p className="mt-2 max-w-[280px] text-sm font-light leading-snug text-black sm:text-base">
             India&apos;s fastest growing ship management company
           </p>
 
           <nav
-            className="mt-6 flex items-center justify-center gap-6 text-white"
+            className="mt-6 flex items-center justify-center gap-6 text-black"
             aria-label="Social media"
           >
             {SOCIAL.map(({ href, label, Icon }) => (
@@ -315,7 +315,7 @@ export default function InfoPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-2xl transition hover:text-secondary hover:scale-110"
+                className="text-2xl transition  hover:text-secondary hover:scale-110"
               >
                 <Icon aria-hidden />
               </a>
@@ -325,15 +325,15 @@ export default function InfoPage() {
           <div className="mt-8 flex w-full flex-col gap-3">
             <Link
               href="/"
-              className="group flex w-full items-center justify-between rounded-full bg-secondary/25 px-5 py-4 text-white shadow-sm ring-1 ring-secondary/40 transition hover:bg-secondary"
+              className="group flex w-full items-center justify-between rounded-full bg-secondary px-5 py-4 text-white shadow-sm ring-1 ring-secondary/40 transition hover:bg-primary"
             >
               <span className="flex items-center gap-3">
                 <Globe
-                  className="h-6 w-6 shrink-0 text-secondary group-hover:text-white"
+                  className="h-6 w-6 shrink-0 text-white group-hover:text-white"
                   strokeWidth={1.5}
                   aria-hidden
                 />
-                <span className="text-base font-normal tracking-wide">
+                <span className="text-base font-normal tracking-wide ">
                   Website
                 </span>
               </span>
@@ -345,11 +345,11 @@ export default function InfoPage() {
 
             <Link
               href="/contact-us"
-              className="group flex w-full items-center justify-between rounded-full bg-secondary/25 px-5 py-4 text-white shadow-sm ring-1 ring-secondary/40 transition hover:bg-secondary"
+              className="group flex w-full items-center justify-between rounded-full bg-secondary px-5 py-4 text-white shadow-sm ring-1 ring-secondary/40 transition hover:bg-primary"
             >
               <span className="flex items-center gap-3">
                 <Phone
-                  className="h-6 w-6 shrink-0 text-secondary group-hover:text-white"
+                  className="h-6 w-6 shrink-0 text-white group-hover:text-white"
                   strokeWidth={1.5}
                   aria-hidden
                 />

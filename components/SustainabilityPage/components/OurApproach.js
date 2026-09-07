@@ -35,21 +35,20 @@ const OurApproach = () => {
                 </button>
                 {isOpen && (
                   <ul className="absolute left-0 top-full w-full bg-white border border-gray-400 shadow-lg z-10">
-                    {ourApproachList.map((item, index) => (
-                      <li
-                        key={index}
-                        onClick={() => {
-                          setPoints(item)
-                          setIsOpen(false)
-                        }}
-                        className={`cursor-pointer py-4 px-3 text-xl transition-colors ${points.title === item.title
-                            ? "bg-primary text-white"
-                            : "text-black hover:bg-gray-200"
-                          }`}
-                      >
-                        {item.title}
-                      </li>
-                    ))}
+                    {ourApproachList
+                      .filter((item) => item.title !== points.title)
+                      .map((item, index) => (
+                        <li
+                          key={index}
+                          onClick={() => {
+                            setPoints(item)
+                            setIsOpen(false)
+                          }}
+                          className="cursor-pointer py-4 px-3 text-xl transition-colors text-black hover:bg-gray-200"
+                        >
+                          {item.title}
+                        </li>
+                      ))}
                   </ul>
                 )}
               </div>

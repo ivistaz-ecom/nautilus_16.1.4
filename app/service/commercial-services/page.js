@@ -5,7 +5,7 @@ export default function Page() {
   const seoField = {
     title: "Commercial Shipping Companies | Nautilus Shipping",
     description:
-      "Maximize fleet profitability with Nautilus Shipping’s commercial crewing and chartering services. We provide strategic chartering, operational support, and post-fixture management, ensuring optimized performance for shipowners.",
+      "Maximize fleet profitability with Nautilus Shipping’s chartering, crewing, operational support, and post-fixture management services.",
     path: "/service/commercial-services",
     metaImage: "/our-approach/img01.png",
     pageType: "WebSite",
