@@ -6,7 +6,7 @@ export default function Home() {
   const seoField = {
     title: "Nautilus Shipping | The Standard for Excellence in Ship Management",
     description:
-      "For 19+ years, Nautilus Shipping has delivered ship management excellence with 200+ ships manned and a network of 100,000+ seafarers worldwide.",
+      "For 19+ years, Nautilus Shipping has delivered ship management excellence with 250+ ships manned and a network of 100,000+ seafarers worldwide.",
     path: "/",
   }
 

@@ -28,7 +28,7 @@ const Heading = () => {
             priority
           />
           <p className="text-left md:mt-5 px-3 sm:px-7 text-base sm:text-lg font-light tracking-wide">
-            At Nautilus Shipping, we have successfully managed over 230 vessels
+            At Nautilus Shipping, we have successfully managed over 250+ vessels
             to date, delivering expert management and operational excellence
             across a diverse range of ships. Our fleet continues to expand as we
             take on new challenges and provide tailored solutions that ensure
