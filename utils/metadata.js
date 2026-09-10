@@ -90,7 +90,7 @@
 //     "/fleet": {
 //       title: "Fleet Management Shipping Company | Nautilus Shipping",
 //       description:
-//         "Nautilus Shipping has successfully manned 237 vessels and continues to expand its fleet. As a leading fleet management shipping company, we ensure efficiency, safety, and compliance for bulk carriers, tankers, and specialized vessels. Explore our fleet management solutions today.",
+//         "Nautilus Shipping has successfully manned 250+ vessels and continues to expand its fleet. As a leading fleet management shipping company, we ensure efficiency, safety, and compliance for bulk carriers, tankers, and specialized vessels. Explore our fleet management solutions today.",
 //       imageUrl: "/our-approach/img01.png",
 //       schema: {
 //         "@context": "https://schema.org",
@@ -279,7 +279,7 @@
 //   const { title, description, imageUrl, schema } = metadataMap[path] || {
 //     title: "Nautilus Shipping | The Standard for Excellence in Ship Management",
 //     description:
-//       "For over 17 years, Nautilus Shipping has provided reliable ship management services, including technical management, crew management, inspections, and commercial solutions. With 200+ ships manned and 100,000+ seafarers in our network, we deliver maritime excellence globally.",
+//       "For over 17 years, Nautilus Shipping has provided reliable ship management services, including technical management, crew management, inspections, and commercial solutions. With 250+ ships manned and 100,000+ seafarers in our network, we deliver maritime excellence globally.",
 //     imageUrl: "/our-approach/img01.png",
 //   }
 

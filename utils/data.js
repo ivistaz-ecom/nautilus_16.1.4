@@ -107,7 +107,7 @@ export const navMenu = [
 export const for17yearsData = [
   {
     icon: "/home-page/section-2/icon04.svg",
-    number: 200,
+    number: 250,
     title: "Ships manned",
   },
   {
