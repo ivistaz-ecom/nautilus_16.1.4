@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 
 const LatestNews = () => {
+  const marexCoverSlug =
+    "nautilus-shipping-featured-on-the-cover-of-marex-medias-maritime-matrix-today"
   const externalUrl =
     "https://new.marexmedia.com/2025/10/09/naavik-manthan-2025-anchors-dialogue-on-seafarers-technology-and-maritime-growth/"
   const slug =
@@ -17,6 +19,60 @@ const LatestNews = () => {
             Latest News
           </h1>
 
+          {/* Image & Content Block */}
+          <div className="bg-primary p-3 lg:pr-7 flex flex-col sm:flex-row gap-5 rounded-md w-full lg:w-auto">
+            {/* Image */}
+            <div className="w-full sm:w-[180px] lg:w-[375px] flex-shrink-0">
+              <Image
+                src="/latest-news/rewriting-vessel-management.webp"
+                width={375}
+                height={407}
+                alt="Nautilus: Rewriting Vessel Management"
+                className="w-full h-auto object-cover rounded-md"
+              />
+            </div>
+
+            {/* Text */}
+            <div className="flex flex-col gap-5 w-full sm:w-1/2 lg:w-full">
+              <p className="text-xl text-white">
+                Nautilus Shipping Featured on the Cover of Marex Media&apos;s
+                Maritime Matrix Today
+              </p>
+              <p className="text-white font-light">
+                Nautilus Shipping is the cover feature of Marex Media&apos;s
+                Maritime Matrix Today, September 2026 edition.</p>
+
+              <p className="text-white font-light">
+                In a piece titled &quot;Nautilus: Rewriting Vessel Management.&quot; Written by
+                Jagdamba Prasad Pandey, the article looks at how the company
+                grew from a small Chennai crewing office founded in 2007 into a
+                ship management business that has now handled more than 250
+                vessels.
+              </p>
+
+              {/* Read More Button */}
+              <div className="flex justify-between sm:mt-auto pb-3">
+                <span className="text-white text-sm font-light mt-auto">
+                  September 2026
+                </span>
+                <Link
+                  href={`/news-and-insights/${marexCoverSlug}`}
+                  passHref
+                  aria-label="Read Nautilus Shipping Maritime Matrix Today cover feature"
+                >
+                  <button className="flex items-center gap-3 mt-2 text-sm text-primary bg-white hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out rounded-md px-4 py-2 w-fit">
+                    Read Article
+                    <Image
+                      src="/dark-arrow.svg"
+                      width={20}
+                      height={20}
+                      alt="arrow"
+                    />
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
           {/* Image & Content Block */}
           <div className="bg-primary p-3 lg:pr-7 flex flex-col sm:flex-row gap-5 rounded-md w-full lg:w-auto">
             {/* Image */}
@@ -183,7 +239,7 @@ const LatestNews = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
       <hr className="border-gray-400 w-full" />
     </>

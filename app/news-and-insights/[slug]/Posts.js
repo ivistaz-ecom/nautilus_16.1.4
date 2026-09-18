@@ -166,9 +166,9 @@ const Posts = ({ slug, data }) => {
       />
 
       {/* Blog Header Section */}
-      <div className="pt-24 md:pt-28 pb-7 px-3 md:px-6 lg:px-4 max-w-screen-lg mx-auto">
-        <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10">
-          <div className="flex flex-col gap-3 w-full md:w-2/5">
+      <div className="pt-24 md:pt-36 pb-10 px-3 md:px-6 lg:px-4 max-w-screen-lg mx-auto">
+        <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8">
+          <div className="flex flex-col gap-3 w-full md:w-[50%] shrink-0">
             <h1
               className="text-2xl sm:text-3xl font-light text-primary"
               dangerouslySetInnerHTML={{ __html: post.title.rendered }}
@@ -179,13 +179,15 @@ const Posts = ({ slug, data }) => {
             <p className="text-xs sm:text-sm">{formattedDate}</p>
           </div>
 
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-[50%]">
             <Image
               src={metaImage}
-              width={570}
-              height={348}
+              width={720}
+              height={380}
               alt={post.title.rendered}
-              className="rounded-lg w-full h-auto md:h-[348px] object-cover"
+              className="rounded-lg w-full h-auto object-contain"
+              style={{ width: "100%", height: "auto" }}
+              priority
             />
           </div>
         </div>
