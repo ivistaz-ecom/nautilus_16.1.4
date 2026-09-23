@@ -109,7 +109,7 @@ const LatestNews = () => {
               {/* Read More Button */}
               <div className="flex justify-between sm:mt-auto pb-3">
                 <span className="text-white text-sm font-light mt-auto">
-                  October 9, 2025
+                  October 2025
                 </span>
                 <Link
                   href={externalUrl}
@@ -166,7 +166,7 @@ const LatestNews = () => {
               {/* Read More Button */}
               <div className="flex justify-between sm:mt-auto pb-3">
                 <span className="text-white text-sm font-light mt-auto">
-                  September 26, 2025
+                  September 2025
                 </span>
                 <Link
                   href={pdfUrl}
@@ -222,7 +222,7 @@ const LatestNews = () => {
               {/* Read More Button */}
               <div className="flex justify-between sm:mt-auto pb-3">
                 <span className="text-white text-sm font-light mt-auto">
-                  April 9, 2025
+                  April 2025
                 </span>
                 <Link href={`/news-and-insights/${slug}`} passHref aria-label="Read Nautilus Shipping TradeWinds feature on seafarer welfare">
                   <button className="flex items-center gap-3 mt-2 text-sm text-primary bg-white hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out rounded-md px-4 py-2 w-fit">
