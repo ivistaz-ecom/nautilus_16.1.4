@@ -59,6 +59,37 @@
   }
 }
 
+.blog-content ul,
+.blog-content ol {
+  list-style-position: outside;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content li {
+  display: list-item;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 15px !important;
+  font-weight: 400;
+  color: #00222f;
+}
+
+@media (max-width: 768px) {
+  .blog-content li {
+    font-size: 12px !important;
+  }
+}
+
 .blog-content img {
   width: 50%;
   border-radius: 10px;
