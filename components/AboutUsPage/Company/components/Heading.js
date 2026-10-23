@@ -40,7 +40,7 @@ const Heading = () => {
           </span>
         </h1>
 
-        <div
+        {/* <div
           className="max-w-screen-lg mx-auto relative mt-5 px-3"
           data-aos="zoom-in"
         >
@@ -63,7 +63,7 @@ const Heading = () => {
             />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div> */}
       </div>
     </div>
   )

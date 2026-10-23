@@ -1,7 +1,6 @@
 "use client";
 
 import { ParallaxProvider } from "react-scroll-parallax";
-import { useEffect } from "react";
 import FAQs from "../FAQs/FAQs";
 import Header from "../Header/Header";
 import OurLocations from "./components/OurLocations";
@@ -9,30 +8,6 @@ import Form from "./components/Form/Form";
 import OurLocationsNew from "./components/OurLocationsNew";
 
 const ContactPage = () => {
-  // Apollo Inbound script initialization
-  useEffect(() => {
-    const initApolloInbound = () => {
-      // Check if script is already loaded
-      if (document.querySelector('script[src*="apollo-inbound.js"]')) {
-        return;
-      }
-
-      const nocache = Math.random().toString(36).substring(7);
-      const script = document.createElement('script');
-      script.src = 'https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;
-      script.defer = true;
-      script.onload = function() {
-        if (window.ApolloInbound && window.ApolloInbound.formEnrichment) {
-          window.ApolloInbound.formEnrichment.init({
-            appId: '691bf6459c2dd60020818e63'
-          });
-        }
-      };
-      document.head.appendChild(script);
-    };
-
-    initApolloInbound();
-  }, []);
   const faqs = [
     {
       ques: "How can I get in touch with your team?",

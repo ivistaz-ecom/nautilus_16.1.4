@@ -54,6 +54,6 @@ export const eventsListB = [
   {
     title: "The TMS Awards 2024 – Celebrating Excellence in Maritime",
     desc: "As a proud sponsor of the Wine Table in The Maritime Standard Awards 2024, Nautilus Shipping joined industry leaders in recognizing outstanding achievements in global shipping. This prestigious event highlights innovation, sustainability, and leadership in maritime operations.",
-    imageUrl: "/resources/events/image02.png",
+    imageUrl: "",
   },
 ]

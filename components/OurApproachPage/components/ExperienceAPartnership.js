@@ -11,7 +11,7 @@ const ExperienceAPartnership = () => {
           Lasting Value
         </h2>
         <p className="text-base sm:text-xl font-light tracking-wide">
-          Our 4P framework offers more than routine management—it’s a
+          Our 4P framework offers more than routine management it’s a
           comprehensive partnership aimed at boosting operational efficiency,
           enhancing profitability, and aligning with your business vision.{" "}
           <br className="hidden md:block" /> We believe in creating value that

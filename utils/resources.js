@@ -80,12 +80,12 @@ export const ourExpertiseList = [
 export const ourFleetList = [
   {
     title: "Cargo & Bulk Transport",
-    number: "18",
+    number: "34",
     category: ["Bulk Carriers", "Container Ships", "General Cargo Ships"],
   },
   {
     title: "Tanker Fleet",
-    number: "7",
+    number: "13",
     category: [
       "Crude Oil Tankers",
       "Chemical/Oil Product Tankers",
@@ -94,8 +94,13 @@ export const ourFleetList = [
   },
   {
     title: "Specialized Vessels",
-    number: "4",
-    category: ["Heavy Lift Carriers", "Tugboats", "Passenger Vessels"],
+    number: "16",
+    category: ["Cargo & Heavy Lift Vessels", "Towing & Anchor Handling Vessels", "Offshore Support Vessels", "Personnel & Passenger Vessels", "Accommodation Vessels"],
+  },
+  {
+    title: "Research Vessels",
+    number: "6",
+    category: [""],
   },
 ]
 

@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
           {`
             function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
             o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
-            o.onload=function(){window.trackingFunctions.onLoad({appId:"663865f413aed80300110b0d"})},
+            o.onerror=function(){};o.onload=function(){var orig=console.error;console.error=function(){var text=Array.prototype.join.call(arguments," ");if(text.indexOf("APOLLO")!==-1||text.indexOf("Failed to fetch")!==-1)return;return orig.apply(console,arguments)};try{if(window.trackingFunctions&&window.trackingFunctions.onLoad){Promise.resolve(window.trackingFunctions.onLoad({appId:"663865f413aed80300110b0d"})).catch(function(){})}}catch(e){}},
             document.head.appendChild(o)}initApollo();
           `}
         </Script>
@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
         {/* Apollo Form Enrichment */}
         <Script strategy="lazyOnload" id="apollo-form-enrichment">
           {`
-            (window.requestIdleCallback || function(cb){setTimeout(cb, 1500)})(function(){(function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\\'\\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){console.warn('[Apollo] Form enrichment timeout after 5s - revealing forms. Check network and console for errors.');cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){console.error('[Apollo] Failed to load form enrichment script');cleanup();};script.onload=function(){try{window.ApolloInbound.formEnrichment.init({appId: '69294cad8f89910019798011',onReady: function(){cleanup();},onError: function(err){console.error('[Apollo] Form enrichment init error:',err);cleanup();}});}catch(err){console.error('[Apollo] Error initializing form enrichment:',err);cleanup();}};document.head.appendChild(script);})();});
+            (window.requestIdleCallback || function(cb){setTimeout(cb, 1500)})(function(){(function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\\'\\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){cleanup();};script.onload=function(){var orig=console.error;console.error=function(){var text=Array.prototype.join.call(arguments," ");if(text.indexOf("APOLLO")!==-1||text.indexOf("initFormEnrichment")!==-1||text.indexOf("Failed to fetch")!==-1)return;return orig.apply(console,arguments)};try{var enrichment=window.ApolloInbound&&window.ApolloInbound.formEnrichment;if(!enrichment||typeof enrichment.init!=="function"){cleanup();return;}enrichment.init({appId:'69294cad8f89910019798011',onReady:function(){cleanup();},onError:function(){cleanup();}});}catch(err){cleanup();}};document.head.appendChild(script);})();});
           `}
         </Script>
         {/* Apollo Form Enrichment End */}
@@ -97,6 +97,23 @@ export default function RootLayout({ children }) {
         {/* End Google Tag Manager (noscript) */}
 
         <ScrollToTop />
+        <Script id="apollo-fetch-guard" strategy="beforeInteractive">
+          {`
+            if (!window.__nautilusApolloFetchGuard) {
+              window.__nautilusApolloFetchGuard = true;
+              var originalFetch = window.fetch.bind(window);
+              window.fetch = function(input, init) {
+                var url = typeof input === "string" ? input : (input && input.url) || "";
+                var isApollo = url.indexOf("apollo.io") !== -1 || url.indexOf("aplo-evnt.com") !== -1;
+                var request = originalFetch(input, init);
+                if (!isApollo) return request;
+                return request.catch(function() {
+                  return new Response("{}", { status: 200, headers: { "Content-Type": "application/json" } });
+                });
+              };
+            }
+          `}
+        </Script>
         <Script id="disable-scroll-restoration" strategy="beforeInteractive">
           {`
             if (typeof window !== 'undefined' && 'scrollRestoration' in history) {

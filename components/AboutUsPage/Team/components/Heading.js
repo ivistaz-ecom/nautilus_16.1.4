@@ -27,10 +27,10 @@ const Heading = () => {
             people can thrive, innovate, and contribute meaningfully—not only to
             our business and clients but to the maritime industry as a whole.
           </p>
-          <div data-aos="flip-up">
-            <Committee data={executiveCommitteeDetails} />
+          <div className="w-full" data-aos="flip-up">
+            <Committee data={executiveCommitteeDetails} expandOnHover />
           </div>
-          <div className="mt-5 md:mt-10" data-aos="flip-up">
+          <div className="mt-5 md:mt-10 w-full" data-aos="flip-up">
             <Committee data={advisoryCommitteeDetails} />
           </div>
         </div>

@@ -9,19 +9,19 @@ export const executiveCommitteeList = [
   {
     name: "Ajay Krishnamani",
     post: "Co-Founder & Managing Director",
-    desc: "Ajay, the Founder Director, and CEO of Nautilus Shipping, established the company in 2005. With over 17 years of expertise in manning and ship management, he has sailed in various capacities within the merchant navy and worked with renowned organizations ashore. He is a certified internal auditor by Lloyd's, ensuring that Nautilus upholds the highest standards of compliance and efficiency. Throughout his career, Ajay has built a vast network in the shipping industry and is respected for his straightforward, ethical, and principled approach to leadership. He remains highly approachable and continues to mentor his team, ensuring that Nautilus stays at the forefront of maritime excellence.",
+    desc: "A mariner turned entrepreneur, Ajay founded Nautilus Shipping in 2007 and has led it for more than two decades. He began his career at sea after qualifying as a Second Mate from the National Institute of Port Management, and later served as Senior Marine Personnel with the Bernard Schulte Group (formerly Paramount Shipping and Eurasia Group), where he gained deep experience in ship manning and crew management. That foundation shapes how Nautilus recruits, manages and supports seafarers today. Ajay serves on the Managing Committee of the ICC Shipping Association (ICCSA).",
     imageUrl: "/about-us/member/Ajay.jpg",
   },
   {
     name: "Narayan Rajan",
     post: "Co-Founder & Managing Director",
-    desc: "Narayan Rajan, a passionate and dynamic first-generation entrepreneur, co-founded Nautilus Shipping in 2005. With over 17 years at the helm as CEO, he has been the driving force behind the company’s commercial operations, guiding its growth and establishing Nautilus as a trusted name in the maritime industry. Narayan is known for his forward-thinking approach, constantly staying ahead of business and technology trends to adapt and innovate. His leadership is defined by a relentless pursuit of excellence, a commitment to delivering value, and a keen eye for exploring new possibilities in a rapidly evolving market.",
+    desc: "As Co-Founder and Managing Director of Nautilus Shipping, Narayan is the driving force behind the company’s commercial operations. He brings over 30 years of entrepreneurial experience in the digital and technology sector, with a strong track record of helping businesses improve productivity and efficiency through technology. This blend of business acumen and digital expertise keeps Nautilus ahead of industry trends and enables it to deliver customised maritime solutions to its clients.",
     imageUrl: "/about-us/member/Narayanan.png",
   },
   {
     name: "Sridhar",
     post: "Director - UAE",
-    desc: "",
+    desc: "With his roots as a seafarer and nearly two decades ashore in marine operations, Sridhar leads Nautilus Shipping’s Middle East business from the UAE. He served as Superintendent with Mercator Lines for almost eight years before joining Inchcape Shipping Services in Dubai, where he spent close to eight years as Manager – Marine Logistics. Since joining Nautilus in 2024, he has drawn on this regional expertise to drive operational excellence and build strong client relationships across the Middle East.",
     imageUrl: "/about-us/member/sridhar-new.png",
   },
 ]
@@ -57,56 +57,13 @@ export const crewMemberList = [
   {
     department: "Technical & Purchase",
     members: [
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "Mayank",
-      //   post: "Director - Technical",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/ManojKumar.png",
-      //   name: "Manoj K",
-      //   post: "Technical Superintendent",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "F Ravat",
-      //   post: "Technical Superintendent",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "Gurmeet",
-      //   post: "General Manager - Operations (A&N)",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "Javed",
-      //   post: "Technical Manager (A&N)",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "Ravi",
-      //   post: "Technical Manager",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "Pankaj",
-      //   post: "Asst. Technical Manager",
-      // },
+
       {
         imageUrl: "/about-us/member/Parthiban.webp",
         name: "S Parthiban",
         post: "Technical Director",
       },
-      {
-        imageUrl: "/about-us/member/OP_Sheoran.webp",
-        name: "Cdr. O P Sheron",
-        post: "Technical Director Repairs & Refit",
-      },
-      {
-        imageUrl: "/about-us/member/RajinderKumar.webp",
-        name: "Capt. Rajinder",
-        post: "Director - Repairs & Refit",
-      },
+
       {
         imageUrl: "/about-us/member/abid-02.png",
         name: "Abid Ansari",
@@ -115,17 +72,12 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/Ravi.webp",
         name: "Ravi",
-        post: "Technical Manager",
-      },
-      {
-        imageUrl: "/about-us/member/karthick.webp",
-        name: "Karthik ",
-        post: "Asst. Technical Superintendent",
+        post: "Sr. Technical Superintendent",
       },
       {
         imageUrl: "/about-us/member/Arjun.png",
         name: "Arjun",
-        post: "Asst. Technical Superintendent",
+        post: "Technical Superintendent",
       },
       {
         imageUrl: "/about-us/member/Firoz-Hussain.webp",
@@ -137,27 +89,10 @@ export const crewMemberList = [
         name: "Edward",
         post: "Asst. Technical Superintendent",
       },
-
-      // {
-      //   imageUrl: "/about-us/member/Joe.png",
-      //   name: "Joe",
-      //   post: "Purchase Assistant",
-      // },
-
-      {
-        imageUrl: "/about-us/member/Javed_Hashmi.webp",
-        name: "Javed",
-        post: "Technical Manager - Port Blair",
-      },
-      {
-        imageUrl: "/about-us/member/Angesh.webp",
-        name: "Angesh",
-        post: "Assistant Manager - Admin & Purchase",
-      },
       {
         imageUrl: "/about-us/member/Sudha_Kumar.webp",
         name: "Sudha",
-        post: "Technical Assistant",
+        post: "Purchase Assistant",
       },
 
       {
@@ -192,40 +127,15 @@ export const crewMemberList = [
         name: "Capt. Monson",
         post: "GM - Operations (Kochi)",
       },
-      // {
-      //   imageUrl: "/about-us/member/Ananya.webp",
-      //   name: "Ananya",
-      //   post: "Marine Personnel Officer",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/Akash.png",
-      //   name: "Akash",
-      //   post: "Operations Executive",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/Hari.png",
-      //   name: "Hari",
-      //   post: "Operations Executive",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/Muthu.png",
-      //   name: "Muthu",
-      //   post: "Operations Executive",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/Jebins.png",
-      //   name: "Jebins",
-      //   post: "Marine Personnel Executive - Operations",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/Mithun.png",
-      //   name: "Mithun",
-      //   post: "Operations Executive",
-      // },
       {
         imageUrl: "/about-us/member/Swathi_.webp",
         name: "Swathi",
         post: "Asst. Manager - Crewing & Operations",
+      },
+      {
+        imageUrl: "/about-us/member/mujeeburahman.jpg",
+        name: "Mujeeburahman",
+        post: "Crewing & Operations officer",
       },
       {
         imageUrl: "/about-us/member/Lakshitha.png",
@@ -237,26 +147,16 @@ export const crewMemberList = [
         name: "Pornima",
         post: "Crewing Officer",
       },
-      // {
-      //   imageUrl: "/about-us/member/pp.svg",
-      //   name: "Sudip",
-      //   post: "Sr. Marine Personnel Executive",
-      // },
-      // {
-      //   imageUrl: "/about-us/member/Deepika.png",
-      //   name: "Deepika",
-      //   post: "Marine Personnel Executive",
-      // },
       {
         imageUrl: "/about-us/member/Sabitha.png",
         name: "Sabitha",
         post: "Crewing Officer",
       },
-      // {
-      //   imageUrl: "/about-us/member/Pradeepa.webp",
-      //   name: "Pradeepa",
-      //   post: "Marine Personnel Executive",
-      // },
+      {
+        imageUrl: "/about-us/member/Kahmira.jpg",
+        name: "Kashmira",
+        post: "Crewing Officer",
+      },
       {
         imageUrl: "/about-us/member/Sanika.webp",
         name: "Sanika",
@@ -280,8 +180,13 @@ export const crewMemberList = [
         post: "Crewing Executive",
       },
       {
-        imageUrl: "/about-us/member/Megha_Mohan_Khandagale.webp",
-        name: "Megha",
+        imageUrl: "/about-us/member/Prabjot.jpg",
+        name: "Prabjot",
+        post: "Crewing Executive",
+      },
+      {
+        imageUrl: "/about-us/member/priyanka.jpg",
+        name: "Priyanka",
         post: "Crewing Executive",
       },
     ],
@@ -314,11 +219,7 @@ export const crewMemberList = [
         name: "Akash",
         post: "Manager - Operations",
       },
-      {
-        imageUrl: "/about-us/member/Depinder.webp",
-        name: "Depinder",
-        post: "Manager - Naval Operations(Kochi)",
-      },
+
       // {
       //   imageUrl: "/about-us/member/Hari.png",
       //   name: "Hari",
@@ -327,7 +228,7 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/Muthu.png",
         name: "Muthu",
-        post: "Operations Executive",
+        post: "Operations Officer",
       },
       // {
       //   imageUrl: "/about-us/member/Jebins.png",
@@ -355,20 +256,15 @@ export const crewMemberList = [
         post: "Operations Executive",
       },
       {
-        imageUrl: "/about-us/member/Suhas.webp",
-        name: "Suhas",
-        post: "Operations Executive",
-      },
-      {
-        imageUrl: "/about-us/member/Manoj.webp",
+        imageUrl: "/about-us/member/Manoj-d.jpg",
         name: "Manoj D",
         post: "Operations Executive",
       },
-      // {
-      //   imageUrl: "/about-us/member/Swathi.png",
-      //   name: "Swathi",
-      //   post: "Marine Personnel Executive",
-      // },
+      {
+        imageUrl: "/about-us/member/kunal.jpg",
+        name: "Kunal",
+        post: "Operations Executive",
+      },
       // {
       //   imageUrl: "/about-us/member/Pornima.png",
       //   name: "Pornima",
@@ -403,7 +299,39 @@ export const crewMemberList = [
   },
 
   {
-    department: "Marine & HSEQ",
+    department: "Naval Operations",
+    members: [
+      {
+        imageUrl: "/about-us/member/RajinderKumar.webp",
+        name: "Capt. Rajinder",
+        post: "Director - Repairs & Refit",
+      },
+      {
+        imageUrl: "/about-us/member/OP_Sheoran.webp",
+        name: "Cdr. OP Sheoran",
+        post: "Technical Director Repairs & Refit",
+      },
+      {
+        imageUrl: "/about-us/member/Depinder.webp",
+        name: "Depinder",
+        post: "Manager - Naval Operations(Kochi)",
+      },
+      {
+        imageUrl: "/about-us/member/Javed_Hashmi.webp",
+        name: "Javed",
+        post: "Technical Manager - Port Blair",
+      },
+      {
+        imageUrl: "/about-us/member/Suhas.webp",
+        name: "Suhas",
+        post: "Operations Executive",
+      },
+
+    ],
+  },
+
+  {
+    department: "Marine, HSEQ & IT",
     members: [
       {
         imageUrl: "/about-us/member/Yaju.png",
@@ -420,13 +348,13 @@ export const crewMemberList = [
       //   name: "Santhosh",
       //   post: "Sr. Executive - HSEQ",
       // },
+      // {
+      //   imageUrl: "/about-us/member/Deepak_Choudhari.webp",
+      //   name: "Deepak",
+      //   post: "HSEQ Executive",
+      // },
       {
-        imageUrl: "/about-us/member/Deepak_Choudhari.webp",
-        name: "Deepak",
-        post: "HSEQ Executive",
-      },
-      {
-        imageUrl: "/about-us/member/Niranjani.webp",
+        imageUrl: "/about-us/member/Niranjani-v2.jpg",
         name: "Niranjani",
         post: "IT Support Executive",
       },
@@ -492,29 +420,29 @@ export const crewMemberList = [
         post: "CFO",
       },
       {
-        imageUrl: "/about-us/member/Selin.png",
-        name: "Selin",
-        post: "Accounts Executive",
-      },
-      {
         imageUrl: "/about-us/member/Manoj.png",
         name: "Manoj",
         post: "Asst. Manager - Accounts",
       },
       {
-        imageUrl: "/about-us/member/Akila.png",
-        name: "Akila",
-        post: "Accounts Executive",
+        imageUrl: "/about-us/member/Sathish.webp",
+        name: "Sathish",
+        post: "Asst. Manager - Accounts",
+      },
+      {
+        imageUrl: "/about-us/member/Selin.png",
+        name: "Selin",
+        post: "Accounts Officer",
       },
       {
         imageUrl: "/about-us/member/Revathy.png",
         name: "Revathy",
-        post: "Accounts Assistant",
+        post: "Accounts Officer",
       },
       {
-        imageUrl: "/about-us/member/Sathish.webp",
-        name: "Sathish",
-        post: "Asst. Manager - Accounts",
+        imageUrl: "/about-us/member/Akila.png",
+        name: "Akila",
+        post: "Accounts Officer",
       },
     ],
   },

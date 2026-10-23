@@ -1,4 +1,3 @@
-"use client"
 import React from "react"
 
 const SITE_URL = "https://www.nautilusshipping.com"
@@ -14,7 +13,20 @@ function NextSeo({
   // Always use SITE_URL for canonical to avoid conflicting www vs non-www.
   const domainName = SITE_URL
 
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    name: "Nautilus Shipping",
+    url: "https://www.nautilusshipping.com/",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `https://www.nautilusshipping.com${path}`,
+      "query-input": "required name=search_term_string",
+    },
+  })
+
   return (
+    <>
     <head>
       <meta charSet="utf-8" />
       <title>{title}</title>
@@ -49,24 +61,12 @@ function NextSeo({
       <meta property="og:image" content={metaImage} />
 
       <meta name="twitter:card" content="summary_large_image" />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org/",
-            "@type": "WebSite",
-            name: "Nautilus Shipping",
-            url: "https://www.nautilusshipping.com/",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: `https://www.nautilusshipping.com${path}`,
-              "query-input": "required name=search_term_string",
-            },
-          }),
-        }}
-      />
     </head>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: jsonLd }}
+    />
+    </>
   )
 }
 
