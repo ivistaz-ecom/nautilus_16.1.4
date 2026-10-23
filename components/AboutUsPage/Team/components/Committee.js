@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 
-const wideQuery = "(hover: hover) and (min-width: 1024px)"
+const wideQuery = "(hover: hover) and (pointer: fine) and (min-width: 1024px)"
 
 const canHoverWide = () =>
   typeof window !== "undefined" && window.matchMedia(wideQuery).matches
@@ -58,7 +58,7 @@ const Committee = ({ data, expandOnHover = false }) => {
   return (
     <div className="">
       <style>{`
-        @media (hover: hover) and (min-width: 1024px) {
+        @media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
           .exec-card {
             flex-grow: 0;
             flex-shrink: 0;
@@ -124,7 +124,7 @@ const Committee = ({ data, expandOnHover = false }) => {
                 tabIndex={0}
                 aria-expanded={isActive}
                 aria-label={item.name}
-                className={`exec-card group flex min-w-0 flex-col overflow-hidden rounded-lg border border-secondary bg-white shadow-[0_12px_28px_rgba(0,34,47,0.08)] outline-none focus-visible:ring-2 focus-visible:ring-secondary ${
+                className={`exec-card group flex min-w-0 cursor-pointer flex-col overflow-hidden rounded-lg border border-secondary bg-white shadow-[0_12px_28px_rgba(0,34,47,0.08)] outline-none focus-visible:ring-2 focus-visible:ring-secondary ${
                   isHidden
                     ? "pointer-events-none lg:border-0 lg:shadow-none"
                     : ""
@@ -155,7 +155,7 @@ const Committee = ({ data, expandOnHover = false }) => {
                         height={280}
                         alt={item.name}
                         className={`h-[280px] w-full object-cover object-[center_18%] transition duration-700 ease-out ${
-                          isActive ? "grayscale-0" : "grayscale group-hover:grayscale-0"
+                          isActive ? "grayscale-0" : "grayscale lg:group-hover:grayscale-0"
                         }`}
                       />
                     </div>
@@ -167,7 +167,11 @@ const Committee = ({ data, expandOnHover = false }) => {
                           dangerouslySetInnerHTML={{ __html: item.post }}
                         ></p>
                       </div>
-                      <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-secondary text-white transition-transform duration-700 ease-out group-hover:translate-x-1">
+                      <span
+                        className={`inline-flex shrink-0 text-white transition-transform duration-700 ease-out ${
+                          isActive ? "max-lg:rotate-90" : ""
+                        }`}
+                      >
                         <svg
                           viewBox="0 0 20 20"
                           className="h-4 w-4"
