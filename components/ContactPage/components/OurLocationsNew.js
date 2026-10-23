@@ -1,8 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import React, { useEffect, useState } from "react"
-import { initFlowbite } from "flowbite"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
@@ -73,10 +72,6 @@ const pinLocations = [
 const OurLocationsNew = () => {
   const [activePopover, setActivePopover] = useState(0)
 
-  useEffect(() => {
-    initFlowbite()
-  }, [])
-
   return (
     <div className="hidden">
       <div className="w-full mx-auto px-4 pt-7 md:pt-14">
@@ -109,7 +104,6 @@ const OurLocationsNew = () => {
                 onClick={() =>
                   setActivePopover((prev) => (prev === idx ? null : idx))
                 }
-                data-popover-target={`popover-${idx}`}
                 type="button"
                 className="absolute"
                 style={{
@@ -127,7 +121,6 @@ const OurLocationsNew = () => {
               </motion.button>
 
               <div
-                data-popover
                 id={`popover-${idx}`}
                 role="tooltip"
                 className={`absolute z-10 ${
@@ -173,7 +166,6 @@ const OurLocationsNew = () => {
                     <p className="text-xs sm:text-sm font-light">{pin.tel}</p>
                   </a>
                 </div>
-                <div data-popper-arrow></div>
               </div>
             </div>
           ))}

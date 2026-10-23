@@ -67,7 +67,7 @@ export default function SeafarerStories() {
             Stories
           </h2>
 
-          <div className="space-y-5 text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
+          <div className="space-y-5 text-base font-light leading-relaxed tracking-wide text-[#1f292d] sm:text-lg">
             <p>
               Life at sea is filled with moments that rarely make it ashore -
               long voyages, unexpected challenges, small celebrations onboard,

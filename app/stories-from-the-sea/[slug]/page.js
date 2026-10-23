@@ -68,7 +68,7 @@ export default async function IncidentDetailPage({ params }) {
           />
         </div>
 
-        <article className="mx-auto max-w-[960px] px-6 py-7 text-[15px] font-normal leading-relaxed tracking-wide text-black">
+        <article className="mx-auto max-w-[960px] px-6 py-7 text-base font-light leading-relaxed tracking-wide text-black sm:text-lg">
           <h2 className="mb-4 text-[24px] font-normal tracking-wide">
             Location: {incident.location}
           </h2>
@@ -80,7 +80,7 @@ export default async function IncidentDetailPage({ params }) {
                   {section.heading}
                 </h3>
                 {section.body?.map((paragraph) => (
-                  <p key={paragraph} className="my-2 text-[15px]">
+                  <p key={paragraph} className="my-2">
                     {paragraph}
                   </p>
                 ))}

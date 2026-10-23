@@ -15,6 +15,7 @@ import axios from "axios"
 import ReCAPTCHA from "react-google-recaptcha"
 
 const Form = () => {
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
   const [errors, setErrors] = useState({})
   const [showPopup, setShowPopup] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -145,7 +146,7 @@ const Form = () => {
         "INDoS Number must be exactly 8 characters and contain both letters and numbers."
     }
     if (!formData.file) newErrors.file = "CV/Resume is required."
-    if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA"
+    if (recaptchaSiteKey && !recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA"
 
     setErrors(newErrors)
 
@@ -535,11 +536,14 @@ const Form = () => {
   )
 
   
-  const renderRecaptchaField = () => (
+  const renderRecaptchaField = () => {
+    if (!recaptchaSiteKey) return null
+
+    return (
     <div className="flex flex-col gap-2 w-full">
       <div className="max-w-full overflow-x-auto">
         <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          sitekey={recaptchaSiteKey}
           onChange={(token) => {
             setRecaptchaToken(token || "")
             setErrors((prev) => {
@@ -557,7 +561,8 @@ const Form = () => {
         )}
       </div>
     </div>
-  )
+    )
+  }
   
 
   return (

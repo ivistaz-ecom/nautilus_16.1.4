@@ -2,13 +2,32 @@
 
 import React, { useEffect, useState } from "react"
 import Header from "@/components/Header/Header"
-import {
-  FacebookShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-} from "react-share"
-import { facebookIcon, linkedInIcon, xIcon, linkIcon } from "@/utils/icon"
+import Link from "next/link"
+import { instagramIcon, linkedInIcon, xIcon, youtubeIcon, linkIcon } from "@/utils/icon"
 import Image from "next/image"
+
+const socialLinks = [
+  {
+    href: "https://www.linkedin.com/company/nautilusshipping/",
+    label: "Visit our LinkedIn page",
+    icon: linkedInIcon,
+  },
+  {
+    href: "https://www.instagram.com/nautilusshipping",
+    label: "Visit our Instagram page",
+    icon: instagramIcon,
+  },
+  {
+    href: "https://x.com/Nautilushipping",
+    label: "Visit our X page",
+    icon: xIcon,
+  },
+  {
+    href: "https://www.youtube.com/@NautilusShippingIndia",
+    label: "Visit our YouTube channel",
+    icon: youtubeIcon,
+  },
+]
 
 const domainName = "https://www.nautilusshipping.com"
 
@@ -32,7 +51,7 @@ const Posts = ({ slug, data }) => {
   const metaImage =
     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
     `${domainName}/logo.png`
-  const blogUrl = `${domainName}/news-insights/${slug}`
+  const blogUrl = `${domainName}/news-and-insights/${slug}`
 
   // --- Detect YouTube video in content ---
   const videoUrlMatch = post.content.rendered.match(
@@ -44,76 +63,52 @@ const Posts = ({ slug, data }) => {
     ? `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
     : null
 
-  // --- Meta + JSON-LD Schema ---
-  const metaTags = (
-    <head>
-      <title>{metaTitle}</title>
-      <meta name="description" content={metaDescription} />
-      <meta name="robots" content="index,follow" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta property="article:modified_time" content={post.modified || ""} />
-      <link rel="canonical" href={canonical} />
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonical,
+    },
+    headline: metaTitle,
+    description: metaDescription,
+    image: [metaImage],
+    author: {
+      "@type": "Organization",
+      name: post.author_name || "Nautilus Shipping",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Nautilus Shipping",
+      logo: {
+        "@type": "ImageObject",
+        url: `${domainName}/logo.png`,
+      },
+    },
+    datePublished: post.date,
+    dateModified: post.modified,
+  }
 
-      {/* Blog JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": canonical,
-            },
-            headline: metaTitle,
-            description: metaDescription,
-            image: [metaImage],
-            author: {
-              "@type": "Organization",
-              name: post.author_name || "Nautilus Shipping",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "Nautilus Shipping",
-              logo: {
-                "@type": "ImageObject",
-                url: `${domainName}/logo.png`,
-              },
-            },
-            datePublished: post.date,
-            dateModified: post.modified,
-          }),
-        }}
-      />
-
-      {/* Video JSON-LD Schema (only if a YouTube video exists) */}
-      {videoEmbedUrl && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "VideoObject",
-              name: metaTitle,
-              description: metaDescription,
-              thumbnailUrl: videoThumbnail,
-              uploadDate: post.date,
-              embedUrl: videoEmbedUrl,
-              contentUrl: canonical,
-              publisher: {
-                "@type": "Organization",
-                name: "Nautilus Shipping",
-                logo: {
-                  "@type": "ImageObject",
-                  url: `${domainName}/logo.png`,
-                },
-              },
-            }),
-          }}
-        />
-      )}
-    </head>
-  )
+  const videoJsonLd = videoEmbedUrl
+    ? {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: metaTitle,
+        description: metaDescription,
+        thumbnailUrl: videoThumbnail,
+        uploadDate: post.date,
+        embedUrl: videoEmbedUrl,
+        contentUrl: canonical,
+        publisher: {
+          "@type": "Organization",
+          name: "Nautilus Shipping",
+          logo: {
+            "@type": "ImageObject",
+            url: `${domainName}/logo.png`,
+          },
+        },
+      }
+    : null
 
   // --- Scroll progress bar ---
   useEffect(() => {
@@ -149,7 +144,16 @@ const Posts = ({ slug, data }) => {
 
   return (
     <>
-      {metaTags}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
+      {videoJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
+        />
+      )}
 
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1.5 z-50">
@@ -195,46 +199,45 @@ const Posts = ({ slug, data }) => {
 
       <hr className="border-gray-400 w-full" />
 
-      {/* Blog Content + Share Buttons */}
-      <div className="flex flex-col md:flex-row justify-between relative overflow-hidden">
-        <div className="flex gap-3 absolute md:left-20 md:top-20 left-4 top-4 md:flex-col flex-row">
-          <LinkedinShareButton url={blogUrl} title={post.title.rendered}>
-            <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on LinkedIn">
-              {linkedInIcon}
-            </button>
-          </LinkedinShareButton>
-          <FacebookShareButton url={blogUrl} title={post.title.rendered}>
-            <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on Facebook">
-              {facebookIcon}
-            </button>
-          </FacebookShareButton>
-          <TwitterShareButton url={blogUrl} title={post.title.rendered}>
-            <button className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out" aria-label="Share on X (Twitter)">
-              {xIcon}
-            </button>
-          </TwitterShareButton>
-          <button
-            onClick={handleCopyLink}
-            className="p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
-            aria-label="Copy link"
-          >
-            {linkIcon}
-          </button>
-
-          {copySuccess && (
-            <span
-              className="ml-2 text-secondary fixed bottom-10 right-10 p-2 bg-white border border-primary rounded-md shadow-lg transition-opacity duration-1000 ease-in-out opacity-100"
-              style={{
-                animation: "fadeOut 1s forwards",
-                animationDelay: "2s",
-              }}
+      {/* Article matches the banner column. Social icons sit outside it. */}
+      <div className="mx-auto grid w-full grid-cols-1 py-7 min-[1120px]:grid-cols-[minmax(0,1fr)_minmax(0,1024px)_minmax(0,1fr)]">
+        <div className="flex items-start px-3 md:px-6 lg:px-4 min-[1120px]:justify-end min-[1120px]:px-0 min-[1120px]:pr-4">
+          <div className="z-30 mb-6 flex h-fit flex-row flex-wrap gap-3 self-start min-[1120px]:sticky min-[1120px]:top-6 min-[1120px]:mb-0 min-[1120px]:flex-col">
+            {socialLinks.map(({ href, label, icon }) => (
+              <Link
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="bg-white p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
+              >
+                {icon}
+              </Link>
+            ))}
+            <button
+              onClick={handleCopyLink}
+              className="bg-white p-1 rounded-lg border border-gray-500 hover:bg-secondary hover:text-white hover:scale-95 transition-all duration-300 ease-in-out"
+              aria-label="Copy link"
             >
-              Link copied!
-            </span>
-          )}
+              {linkIcon}
+            </button>
+
+            {copySuccess && (
+              <span
+                className="ml-2 text-secondary fixed bottom-10 right-10 p-2 bg-white border border-primary rounded-md shadow-lg transition-opacity duration-1000 ease-in-out opacity-100"
+                style={{
+                  animation: "fadeOut 1s forwards",
+                  animationDelay: "2s",
+                }}
+              >
+                Link copied!
+              </span>
+            )}
+          </div>
         </div>
 
-        <div className="py-7 max-w-screen-lg mx-auto flex flex-col gap-10 px-4 mt-5">
+        <div className="min-w-0 px-3 md:px-6 lg:px-4">
           <div
             className="text-lg text-gray-700 leading-relaxed blog-content"
             dangerouslySetInnerHTML={{
@@ -242,6 +245,7 @@ const Posts = ({ slug, data }) => {
             }}
           />
         </div>
+        <div className="hidden min-[1120px]:block" aria-hidden="true" />
       </div>
     </>
   )

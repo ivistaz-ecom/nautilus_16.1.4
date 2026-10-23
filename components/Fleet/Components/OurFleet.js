@@ -19,7 +19,10 @@ const OurFleet = () => {
       <div className="flex items-center">
         <div className="max-w-screen-lg bg-primary mx-auto w-full px-3 md:px-10">
           <ul className="max-w-screen-lg mx-auto flex flex-col gap-5 w-full py-10 sm:py-14">
-            {ourFleetList.map((item, index) => (
+            {ourFleetList.map((item, index) => {
+              const categories = item.category.filter((cat) => cat.trim())
+
+              return (
               <li key={index} className="border-b border-gray-400 pb-5">
                 <div
                   className="flex justify-between items-center text-white cursor-pointer"
@@ -52,15 +55,22 @@ const OurFleet = () => {
                     <span className="text-5xl sm:text-9xl text-white tracking-wide">
                       {item.number}
                     </span>
-                    <ul className="text-sm sm:text-xl tracking-wide text-white space-y-2 list-disc">
-                      {item.category.map((cat, i) => (
-                        <li key={i}>{cat}</li>
-                      ))}
-                    </ul>
+                    {categories.length > 1 ? (
+                      <ul className="text-sm sm:text-xl tracking-wide text-white space-y-2 list-disc">
+                        {categories.map((cat, i) => (
+                          <li key={i}>{cat}</li>
+                        ))}
+                      </ul>
+                    ) : categories.length === 1 ? (
+                      <p className="text-sm sm:text-xl tracking-wide text-white">
+                        {categories[0]}
+                      </p>
+                    ) : null}
                   </div>
                 </div>
               </li>
-            ))}
+              )
+            })}
           </ul>
         </div>
       </div>

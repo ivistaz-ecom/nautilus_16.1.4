@@ -11,7 +11,7 @@ const Explore = () => {
           </h2>
           <Link href="/contact-us">
             <button className="mb-2 py-1.5 px-6 rounded-lg text-white bg-secondary hover:bg-primary hover:scale-95 transition-all duration-300 ease-in-out">
-              Explore
+              Contact Us
             </button>
           </Link>
         </div>

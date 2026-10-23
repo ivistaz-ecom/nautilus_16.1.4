@@ -17,7 +17,7 @@ const Game = () => {
 
       <Link href="https://hiddencosts.nautilusshipping.com/?utm_source=website&utm_medium=game&utm_campaign=website" target="_blank">
         <button
-          className="group relative py-2 px-6 rounded-lg border border-white/20 bg-white text-primary font-medium shadow-lg hover:bg-secondary hover:text-white transition-all duration-300 ease-in-out hover:scale-95 focus:outline-none focus:ring-2 focus:ring-white"
+          className="group relative py-2 px-6 rounded-lg border border-white/20 bg-white text-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out hover:scale-95 disabled:opacity-50"
           aria-label="Play the Hidden Costs Game"
         >
           Play the Game Now
@@ -29,3 +29,4 @@ const Game = () => {
 }
 
 export default Game
+// py-1.5 px-4 text-sm bg-primary text-white rounded-lg hover:bg-secondary hover:scale-95 transition-all duration-300 ease-in-out disabled:opacity-50

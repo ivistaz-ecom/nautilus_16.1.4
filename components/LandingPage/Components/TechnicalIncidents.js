@@ -30,7 +30,7 @@ export default function TechnicalIncidents() {
               Incident
             </h2>
 
-            <div className="space-y-5 text-[16px] font-normal leading-relaxed tracking-wide text-[#1f292d]">
+            <div className="space-y-5 text-base font-light leading-relaxed tracking-wide text-[#1f292d] sm:text-lg">
               <p>
                 Every incident at sea carries a lesson. From operational challenges
                 and equipment failures to safety observations and onboard responses,
