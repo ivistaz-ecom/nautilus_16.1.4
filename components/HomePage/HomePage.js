@@ -1,17 +1,31 @@
-// import { useEffect } from "react"
-// import { ParallaxProvider } from "react-scroll-parallax"
-// import AOS from "aos"
-// import "aos/dist/aos.css"
+"use client"
 
+import dynamic from "next/dynamic"
 import HeroBanner from "./components/HeroBanner/HeroBanner"
-import For18Years from "./components/For18Years/For18Years"
-import NautilusPromise from "./components/NautilusPromise/NautilusPromise"
-import OurMarineServices from "./components/OurMarineServices/OurMarineServices"
-import Game from "../Game/Game"
-import Careers from "./components/Careers/Careers"
-import NewsAndInsights from "./components/NewsAndInsights/NewsAndInsights"
-import FAQs from "@/components/FAQs/FAQs"
-import HomePageModal from "./components/HomePageModal/HomePageModal"
+
+const For18Years = dynamic(
+  () => import("./components/For18Years/For18Years"),
+  { loading: () => null }
+)
+const NautilusPromise = dynamic(
+  () => import("./components/NautilusPromise/NautilusPromise"),
+  { loading: () => null }
+)
+const OurMarineServices = dynamic(
+  () => import("./components/OurMarineServices/OurMarineServices"),
+  { loading: () => null }
+)
+const Game = dynamic(() => import("../Game/Game"), { loading: () => null })
+const Careers = dynamic(() => import("./components/Careers/Careers"), {
+  loading: () => null,
+})
+const NewsAndInsights = dynamic(
+  () => import("./components/NewsAndInsights/NewsAndInsights"),
+  { loading: () => null }
+)
+const FAQs = dynamic(() => import("@/components/FAQs/FAQs"), {
+  loading: () => null,
+})
 
 const faqs = [
   {
@@ -29,17 +43,8 @@ const faqs = [
 ]
 
 const HomePage = () => {
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1000,
-  //     once: true, // run only once when scrolled into view
-  //     offset: 80, // reduce re-trigger sensitivity
-  //   })
-  // }, [])
-
   return (
     <main id="main-content" className="overflow-hidden">
-      {/* <HomePageModal /> */}
       <HeroBanner />
       <For18Years />
       <NautilusPromise />
