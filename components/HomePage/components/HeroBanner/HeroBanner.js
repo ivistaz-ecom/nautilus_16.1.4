@@ -4,29 +4,63 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import HeroHeader from "./HeroHeader"
 
-const POSTER_IMAGE =
-  "/Ocean.png"
+const POSTER_IMAGE = "/Ocean.jpg"
+
+const VIDEO_SOURCES = [
+  {
+    src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/nautilus_sea.webm",
+    type: "video/webm",
+  },
+  {
+    src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/nautilusshipping_sea_banner.mp4",
+    type: "video/mp4",
+  },
+  {
+    src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/nautilusshipping_sea.mp4",
+    type: "video/mp4",
+  },
+]
 
 const HeroBanner = () => {
   const videoRef = useRef(null)
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false)
   const [isVideoReady, setIsVideoReady] = useState(false)
 
+  // Keep the poster as LCP; start the heavy video only after the page is interactive.
   useEffect(() => {
+    let cancelled = false
+    let idleId
+    let timeoutId
+
+    const startVideo = () => {
+      if (cancelled) return
+      setShouldLoadVideo(true)
+    }
+
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(startVideo, { timeout: 2500 })
+    } else {
+      timeoutId = window.setTimeout(startVideo, 1800)
+    }
+
+    return () => {
+      cancelled = true
+      if (idleId && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId)
+      }
+      if (timeoutId) window.clearTimeout(timeoutId)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!shouldLoadVideo) return undefined
+
     const video = videoRef.current
     if (!video) return undefined
-
-    const isMobile = window.matchMedia("(max-width: 767px)").matches
 
     const showVideo = () => {
       setIsVideoReady(true)
       video.play().catch(() => {})
-    }
-
-    video.load()
-
-    if (!isMobile) {
-      video.play().catch(() => {})
-      return undefined
     }
 
     if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
@@ -35,50 +69,50 @@ const HeroBanner = () => {
     }
 
     video.addEventListener("loadeddata", showVideo, { once: true })
+    video.load()
+    video.play().catch(() => {})
 
     return () => {
       video.removeEventListener("loadeddata", showVideo)
     }
-  }, [])
+  }, [shouldLoadVideo])
 
   return (
-    <div className="relative h-screen flex flex-col justify-center items-center overflow-hidden">
+    <div className="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-primary">
+      {/* LCP element: static poster, always painted first */}
       <img
         src={POSTER_IMAGE}
         alt=""
         aria-hidden="true"
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ease-out md:hidden ${
+        width={414}
+        height={738}
+        decoding="async"
+        fetchPriority="high"
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-out ${
           isVideoReady ? "pointer-events-none opacity-0" : "opacity-100"
         }`}
-        fetchPriority="high"
       />
 
-      <video
-        ref={videoRef}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ease-out md:opacity-100 ${
-          isVideoReady ? "opacity-100" : "opacity-0"
-        }`}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        aria-label="Ocean waves background video"
-      >
-        <source
-          src="https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/nautilusshipping_sea_banner.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/nautilus_sea.webm"
-          type="video/webm"
-        />
-        <source
-          src="https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/nautilusshipping_sea.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+      {shouldLoadVideo && (
+        <video
+          ref={videoRef}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-out ${
+            isVideoReady ? "opacity-100" : "opacity-0"
+          }`}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          poster={POSTER_IMAGE}
+          aria-label="Ocean waves background video"
+        >
+          {VIDEO_SOURCES.map((source) => (
+            <source key={source.src} src={source.src} type={source.type} />
+          ))}
+          Your browser does not support the video tag.
+        </video>
+      )}
 
       <HeroHeader
         logo="/white-logo.png"

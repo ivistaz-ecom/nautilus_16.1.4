@@ -12,12 +12,13 @@ export default function Home() {
 
   return (
     <>
-      <NextSeo {...seoField} />
-      
+      <NextSeo {...seoField} preloadImage="/Ocean.jpg" />
+
       {/* Video Structured Data for Home Page */}
       <Script
         id="video-structured-data"
         type="application/ld+json"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -37,7 +38,7 @@ export default function Home() {
           })
         }}
       />
-      
+
       <HomePage />
     </>
   )

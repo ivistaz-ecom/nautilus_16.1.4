@@ -9,10 +9,10 @@ import Script from "next/script"
 //import "vanilla-cookieconsent/dist/cookieconsent.css"
 
 const merriweather = Merriweather({
-  weight: ["300", "400", "700", "900"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 })
 
 export const metadata = {
@@ -48,37 +48,28 @@ export default function RootLayout({ children }) {
         </Script>
         {/* End Google Tag Manager */}
 
-        {/* Google Analytics */}
-        <Script
-          strategy="lazyOnload"
-          src="https://www.googletagmanager.com/gtag/js?id=G-N3V27DPYSK"
-        />
-        <Script strategy="lazyOnload" id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'G-N3V27DPYSK');
-          `}
-        </Script>
+        {/* GA is loaded via GTM (GTM-MC9BP82) — avoid duplicate gtag.js on first load (hurts TBT). */}
 
-        {/* Apollo Tracking */}
+        {/* Apollo Tracking — deferred until idle so it does not compete with LCP */}
         <Script strategy="lazyOnload" id="apollo-tracking">
           {`
-            function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
-            o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
-            o.onerror=function(){};o.onload=function(){var orig=console.error;console.error=function(){var text=Array.prototype.join.call(arguments," ");if(text.indexOf("APOLLO")!==-1||text.indexOf("Failed to fetch")!==-1)return;return orig.apply(console,arguments)};try{if(window.trackingFunctions&&window.trackingFunctions.onLoad){Promise.resolve(window.trackingFunctions.onLoad({appId:"663865f413aed80300110b0d"})).catch(function(){})}}catch(e){}},
-            document.head.appendChild(o)}initApollo();
+            (window.requestIdleCallback || function(cb){setTimeout(cb, 4000)})(function(){
+              function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+              o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+              o.onerror=function(){};o.onload=function(){try{if(window.trackingFunctions&&window.trackingFunctions.onLoad){Promise.resolve(window.trackingFunctions.onLoad({appId:"663865f413aed80300110b0d"})).catch(function(){})}}catch(e){}},
+              document.head.appendChild(o)}initApollo();
+            }, {timeout: 5000});
           `}
         </Script>
         {/* Apollo Tracking End */}
 
-        {/* Apollo Form Enrichment */}
+        {/* Apollo Form Enrichment — only when a form is present; delayed to protect homepage TBT */}
         <Script strategy="lazyOnload" id="apollo-form-enrichment">
           {`
-            (window.requestIdleCallback || function(cb){setTimeout(cb, 1500)})(function(){(function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\\'\\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){cleanup();};script.onload=function(){var orig=console.error;console.error=function(){var text=Array.prototype.join.call(arguments," ");if(text.indexOf("APOLLO")!==-1||text.indexOf("initFormEnrichment")!==-1||text.indexOf("Failed to fetch")!==-1)return;return orig.apply(console,arguments)};try{var enrichment=window.ApolloInbound&&window.ApolloInbound.formEnrichment;if(!enrichment||typeof enrichment.init!=="function"){cleanup();return;}enrichment.init({appId:'69294cad8f89910019798011',onReady:function(){cleanup();},onError:function(){cleanup();}});}catch(err){cleanup();}};document.head.appendChild(script);})();});
+            (window.requestIdleCallback || function(cb){setTimeout(cb, 5000)})(function(){
+              if (!document.querySelector('form input[type="email" i], form input[name="email" i], .hs-form-iframe')) return;
+              (function initApolloInbound(){var TIMEOUT_MS=15000;var timeoutId;var style=document.createElement('style');style.id='apollo-form-prehide-css';style.textContent='form:has(input[type="email" i]),form:has(input[name="email" i]),.hs-form-iframe{position:relative!important}form:has(input[type="email" i])::before,form:has(input[name="email" i])::before,.hs-form-iframe::before{content:\\'\\';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;width:50px;height:50px;margin:auto;border:2.5px solid #e1e1e1;border-top:2.5px solid #9ea3a6;border-radius:50%;animation:spin 1s linear infinite;background-color:transparent;pointer-events:auto;z-index:999999;opacity:1}form:has(input[type="email" i]) *,form:has(input[name="email" i]) *,.hs-form-iframe *{opacity:0!important;user-select:none!important;pointer-events:none!important}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';(document.head || document.documentElement).appendChild(style);function cleanup(){var styleEl=document.getElementById('apollo-form-prehide-css');if(styleEl)styleEl.remove();if(timeoutId)clearTimeout(timeoutId);}timeoutId=setTimeout(function(){cleanup();},TIMEOUT_MS);var nocache=Math.random().toString(36).substring(7);var script=document.createElement('script');script.src='https://assets.apollo.io/js/apollo-inbound.js?nocache=' + nocache;script.defer=true;script.onerror=function(){cleanup();};script.onload=function(){try{var enrichment=window.ApolloInbound&&window.ApolloInbound.formEnrichment;if(!enrichment||typeof enrichment.init!=="function"){cleanup();return;}enrichment.init({appId:'69294cad8f89910019798011',onReady:function(){cleanup();},onError:function(){cleanup();}});}catch(err){cleanup();}};document.head.appendChild(script);})();
+            }, {timeout: 6000});
           `}
         </Script>
         {/* Apollo Form Enrichment End */}
@@ -97,24 +88,7 @@ export default function RootLayout({ children }) {
         {/* End Google Tag Manager (noscript) */}
 
         <ScrollToTop />
-        <Script id="apollo-fetch-guard" strategy="beforeInteractive">
-          {`
-            if (!window.__nautilusApolloFetchGuard) {
-              window.__nautilusApolloFetchGuard = true;
-              var originalFetch = window.fetch.bind(window);
-              window.fetch = function(input, init) {
-                var url = typeof input === "string" ? input : (input && input.url) || "";
-                var isApollo = url.indexOf("apollo.io") !== -1 || url.indexOf("aplo-evnt.com") !== -1;
-                var request = originalFetch(input, init);
-                if (!isApollo) return request;
-                return request.catch(function() {
-                  return new Response("{}", { status: 200, headers: { "Content-Type": "application/json" } });
-                });
-              };
-            }
-          `}
-        </Script>
-        <Script id="disable-scroll-restoration" strategy="beforeInteractive">
+        <Script id="disable-scroll-restoration" strategy="afterInteractive">
           {`
             if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
               history.scrollRestoration = 'manual';
