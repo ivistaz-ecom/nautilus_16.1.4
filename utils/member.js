@@ -309,7 +309,7 @@ export const crewMemberList = [
       {
         imageUrl: "/about-us/member/OP_Sheoran.webp",
         name: "Cdr. OP Sheoran",
-        post: "Technical Director Repairs & Refit",
+        post: "AVP - Repairs & Refit",
       },
       {
         imageUrl: "/about-us/member/Depinder.webp",
@@ -392,22 +392,7 @@ export const crewMemberList = [
         imageUrl: "/about-us/member/sumanth.png",
         name: "Sumanth",
         post: "Talent Acquisition Executive",
-      },
-      {
-        imageUrl: "/about-us/member/Geethasri.webp",
-        name: "Geethasri",
-        post: "Talent Acquisition Executive",
-      },
-      {
-        imageUrl: "/about-us/member/Haasini.webp",
-        name: "Haasini",
-        post: "Talent Acquisition Executive",
-      },
-      {
-        imageUrl: "/about-us/member/Pravalika.webp",
-        name: "Pravalika",
-        post: "Talent Acquisition Executive",
-      },
+      },      
 
     ],
   },
@@ -470,6 +455,11 @@ export const crewMemberList = [
         imageUrl: "/about-us/member/kevin_nautilus.webp",
         name: "Kevin",
         post: "Sr. Manager - Client Engagement & BD",
+      },
+      {
+        imageUrl: "/about-us/member/naveen.webp",
+        name: "Naveen",
+        post: "BD Manager - UAE",
       },
       {
         imageUrl: "/about-us/member/Architha.png",
