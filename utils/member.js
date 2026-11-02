@@ -457,7 +457,7 @@ export const crewMemberList = [
         post: "Sr. Manager - Client Engagement & BD",
       },
       {
-        imageUrl: "/about-us/member/naveen.webp",
+        imageUrl: "/about-us/member/Naveen.webp",
         name: "Naveen",
         post: "BD Manager - UAE",
       },
