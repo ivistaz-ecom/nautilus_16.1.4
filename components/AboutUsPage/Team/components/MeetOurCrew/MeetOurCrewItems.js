@@ -122,13 +122,13 @@ const MeetOurCrewItems = () => {
                             className="shrink-0 snap-start min-w-0 box-border px-1.5 w-[calc(100%/var(--slides))]"
                           >
                             <div className="border border-secondary rounded-lg group overflow-hidden cursor-pointer shadow flex flex-col h-full">
-                              <div className="overflow-hidden rounded-t-md shrink-0 leading-none">
+                              <div className="relative h-[270px] overflow-hidden rounded-t-md shrink-0 leading-none">
                                 <Image
                                   src={member.imageUrl}
-                                  width={250}
-                                  height={270}
                                   alt={member.name}
-                                  className="block w-full h-[270px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-transform duration-300 ease-in-out"
+                                  fill
+                                  sizes="(min-width: 1024px) 240px, (min-width: 768px) 33vw, 80vw"
+                                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-transform duration-300 ease-in-out"
                                 />
                               </div>
                               <div className="bg-primary rounded-b-md flex items-center px-2 h-[4.5rem] shrink-0">

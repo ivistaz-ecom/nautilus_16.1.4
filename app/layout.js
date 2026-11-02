@@ -63,7 +63,8 @@ export default function RootLayout({ children }) {
         </Script>
         {/* Apollo Tracking End */}
 
-        {/* Apollo Form Enrichment — only when a form is present; delayed to protect homepage TBT */}
+        {/* Apollo Form Enrichment — production only; their script logs a fetch error on localhost */}
+        {process.env.NODE_ENV === "production" && (
         <Script strategy="lazyOnload" id="apollo-form-enrichment">
           {`
             (window.requestIdleCallback || function(cb){setTimeout(cb, 5000)})(function(){
@@ -72,6 +73,7 @@ export default function RootLayout({ children }) {
             }, {timeout: 6000});
           `}
         </Script>
+        )}
         {/* Apollo Form Enrichment End */}
       </head>
 

@@ -126,7 +126,7 @@ const Committee = ({ data, expandOnHover = false }) => {
                 aria-label={item.name}
                 className={`exec-card group flex min-w-0 cursor-pointer flex-col overflow-hidden rounded-lg border border-secondary bg-white shadow-[0_12px_28px_rgba(0,34,47,0.08)] outline-none focus-visible:ring-2 focus-visible:ring-secondary ${
                   isHidden
-                    ? "pointer-events-none lg:border-0 lg:shadow-none"
+                    ? "lg:pointer-events-none lg:border-0 lg:shadow-none"
                     : ""
                 } ${isActive ? "is-active shadow-[0_22px_48px_rgba(0,34,47,0.16)]" : ""}`}
                 onMouseEnter={() => {
@@ -148,13 +148,13 @@ const Committee = ({ data, expandOnHover = false }) => {
               >
                 <div className="flex w-full flex-1 flex-col lg:flex-row">
                   <div className="flex w-full shrink-0 flex-col lg:w-[250px]">
-                    <div className="h-[280px] shrink-0 overflow-hidden">
+                    <div className="relative h-[280px] shrink-0 overflow-hidden">
                       <Image
                         src={item.imageUrl}
-                        width={250}
-                        height={280}
                         alt={item.name}
-                        className={`h-[280px] w-full object-cover object-[center_18%] transition duration-700 ease-out ${
+                        fill
+                        sizes="250px"
+                        className={`object-cover object-[center_18%] transition duration-700 ease-out ${
                           isActive ? "grayscale-0" : "grayscale lg:group-hover:grayscale-0"
                         }`}
                       />
