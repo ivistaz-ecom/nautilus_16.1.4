@@ -3,21 +3,24 @@ import Link from "next/link"
 
 const latestEditionData = [
   {
-    title: "The Future of Shipping Doesn't End at Sea",
-    date: "June 2026",
+    title: "Inside Ocean Research Fleet",
+    date: "September 2026",
     description: (
       <>
-        The June 2026 edition of the Nautilus Newsletter focuses on the evolving world of ship recycling and the growing importance of sustainability across the maritime industry. As the Hong Kong Convention comes into force, this edition explores how responsible recycling, environmental stewardship, and global standards are reshaping the way the industry approaches a vessel's final chapter.
-
-        <br />
-        <br />
-        From India's emergence as a global ship recycling leader to inspiring seafarer stories, industry developments, and Nautilus milestones, this edition brings together the insights, people, and progress defining the future of maritime excellence.
+        The September 2026 edition of the Nautilus Magazine explores India&apos;s
+        ocean research fleet and the people, vessels, and technology driving
+        ocean science. From deep-sea exploration and Arctic expeditions to the
+        contributions of India&apos;s research vessels, this edition highlights
+        the role of maritime expertise in advancing scientific discovery. It
+        also features industry perspectives, seafarer experiences, operational
+        insights, and stories from across the Nautilus fleet and shore teams,
+        bringing together the people and progress shaping the maritime
+        industry.
       </>
     ),
-    image: "/resources/june_newsletter.webp",
-    link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/June/Nautilus_Newsletter_June_2026.pdf",
+    image: "/resources/sept.webp",
+    link: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/NL/2026/Nov/Sep_Nautilus.pdf",
   },
-  
 ]
 
 const LatestEdition = () => {
