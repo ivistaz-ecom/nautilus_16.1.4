@@ -8,7 +8,7 @@ import FAQs from "@/components/FAQs/FAQs"
 const NavalServices = () => {
   const data = {
     title:
-      "End-to-End Naval Solutions, <span class='hide-br'><br></span> Engineered for Mission Readiness",
+      "End-to-End Naval Solutions, <span class='hide-br'><br></span> Engineered <span class='hide-br'><br></span> for Mission <span class='hide-br'><br></span> Readiness",
     imageUrl: "/service/img01.png",
     desc1:
       "Executing naval and defence projects requires a precise balance of engineering expertise, strict regulatory compliance, and rapid on-ground execution. At Nautilus Shipping, we bring decades of maritime excellence to the defence sector, supporting naval fleets, coast guards, and defence shipyards with a lean, execution-focused operational model.",
