@@ -28,6 +28,11 @@ export const navMenu = [
         type: "page",
         path: "/service/commercial-services",
       },
+      {
+        menu: "Naval Services",
+        type: "page",
+        path: "/service/naval-services",
+      },
     ],
   },
   {

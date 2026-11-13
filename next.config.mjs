@@ -84,6 +84,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/naval-services",
+        destination: "/service/naval-services",
+        permanent: true,
+      },
+      {
         source: "/team",
         destination: "/about-us/team",
         permanent: true,

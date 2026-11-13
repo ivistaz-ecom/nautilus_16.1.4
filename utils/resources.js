@@ -225,6 +225,7 @@ export const servicesList = [
   { name: "Crew Management", path: "/service/crew-management" },
   { name: "Inspection", path: "/service/inspection" },
   { name: "Commercial Services", path: "/service/commercial-services" },
+  { name: "Naval Services", path: "/service/naval-services" },
 ]
 
 export const ourMarineServicesList = [

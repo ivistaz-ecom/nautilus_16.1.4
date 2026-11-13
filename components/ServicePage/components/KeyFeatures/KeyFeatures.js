@@ -5,7 +5,7 @@ import KeyFeaturesItems from "./KeyFeaturesItems"
 import TailorSolutions from "../TailorSolutions/TailorSolutions"
 import Game from "@/components/Game/Game"
 
-const KeyFeatures = ({ data }) => {
+const KeyFeatures = ({ data, hideGame = false }) => {
   const [isVisible, setIsVisible] = useState(false)
 
   return (
@@ -34,7 +34,7 @@ const KeyFeatures = ({ data }) => {
         </div>
       </div>
       {isVisible && <TailorSolutions />}
-      <Game />
+      {!hideGame && <Game />}
     </>
   )
 }
