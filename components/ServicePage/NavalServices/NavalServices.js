@@ -9,7 +9,7 @@ const NavalServices = () => {
   const data = {
     title:
       "End-to-End Naval Solutions, <span class='hide-br'><br></span> Engineered <span class='hide-br'><br></span> for Mission <span class='hide-br'><br></span> Readiness",
-    imageUrl: "/service/img01.png",
+    imageUrl: "/service/image05.webp",
     desc1:
       "Executing naval and defence projects requires a precise balance of engineering expertise, strict regulatory compliance, and rapid on-ground execution. At Nautilus Shipping, we bring decades of maritime excellence to the defence sector, supporting naval fleets, coast guards, and defence shipyards with a lean, execution-focused operational model.",
     desc2:
