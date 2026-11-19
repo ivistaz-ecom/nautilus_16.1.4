@@ -21,7 +21,8 @@ export const seaServiceLetterBodyHtml = `
   <aside class="intro">
     <h2>Keep these ready</h2>
     <ul class="checklist">
-      <li><b>CDC</b><span>Number exactly as printed, like MUM 123456</span></li>
+      <li><b>CDC</b><span>Number exactly as printed, like MUM 123456, plus a scan for each vessel</span></li>
+      <li><b>Nemo ID</b><span>From your contract (if available)</span></li>
       <li><b>INDoS</b><span>Your 8-character INDoS number</span></li>
       <li><b>Passport</b><span>Current passport number</span></li>
       <li><b>Service dates</b><span>Sign-on and sign-off dates as stamped in your CDC</span></li>
@@ -49,34 +50,27 @@ export const seaServiceLetterBodyHtml = `
         <legend>About you</legend>
         <p class="legend-note">We'll send updates on your request to this email and phone.</p>
         <div class="grid">
-          <div class="field span-2">
-            <label for="name">Full name</label>
+          <div class="field">
+            <label class="req" for="name">Full name</label>
             <span class="hint">As it appears in your CDC</span>
             <input id="name" name="name" autocomplete="name" required>
             <span class="err" id="name-err"></span>
           </div>
           <div class="field">
-            <label for="email">Email</label>
+            <label class="req" for="nemoId">Nemo ID</label>
+            <span class="hint">Note: NEMO ID will be available in the contract</span>
+            <input id="nemoId" name="nemoId" autocomplete="off" required>
+            <span class="err" id="nemoId-err"></span>
+          </div>
+          <div class="field">
+            <label class="req" for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
             <span class="err" id="email-err"></span>
           </div>
           <div class="field">
-            <label for="phone">Mobile number</label>
-            <div class="phone-row">
-              <select id="phoneCode" name="phoneCode" aria-label="Country code" autocomplete="tel-country-code">
-                <option value="+91" selected>IN +91</option>
-                <option value="+63">PH +63</option>
-                <option value="+94">LK +94</option>
-                <option value="+880">BD +880</option>
-                <option value="+95">MM +95</option>
-                <option value="+62">ID +62</option>
-                <option value="+971">AE +971</option>
-                <option value="+65">SG +65</option>
-                <option value="+44">GB +44</option>
-                <option value="+1">US +1</option>
-              </select>
-              <input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="98765 43210" required>
-            </div>
+            <label class="req" for="phone">Mobile number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <input type="hidden" id="phoneE164" name="phoneE164" value="">
             <span class="err" id="phone-err"></span>
           </div>
         </div>
@@ -86,17 +80,17 @@ export const seaServiceLetterBodyHtml = `
         <legend>Your documents</legend>
         <div class="grid grid-3">
           <div class="field">
-            <label for="cdc">CDC number</label>
+            <label class="req" for="cdc">CDC number</label>
             <input id="cdc" name="cdc" class="upper" placeholder="MUM 123456" autocomplete="off" required>
             <span class="err" id="cdc-err"></span>
           </div>
           <div class="field">
-            <label for="indos">INDoS number</label>
+            <label class="req" for="indos">INDoS number</label>
             <input id="indos" name="indos" class="upper" placeholder="24GM1234" maxlength="9" autocomplete="off" required>
             <span class="err" id="indos-err"></span>
           </div>
           <div class="field">
-            <label for="passport">Passport number</label>
+            <label class="req" for="passport">Passport number</label>
             <input id="passport" name="passport" class="upper" placeholder="A1234567" maxlength="8" autocomplete="off" required>
             <span class="err" id="passport-err"></span>
           </div>
@@ -107,7 +101,7 @@ export const seaServiceLetterBodyHtml = `
         <legend>Sea service</legend>
         <p class="legend-note">Add each Nautilus vessel you served on. Use the dates stamped in your CDC.</p>
         <div class="field">
-          <label for="vesselCount" id="vesselCountLabel">Number of vessels</label>
+          <label class="req" for="vesselCount" id="vesselCountLabel">Number of vessels</label>
           <div class="stepper">
             <button type="button" id="vcMinus" aria-label="Remove a vessel">−</button>
             <input id="vesselCount" name="vesselCount" type="number" min="1" max="10" value="1" inputmode="numeric" aria-labelledby="vesselCountLabel">
@@ -125,9 +119,9 @@ export const seaServiceLetterBodyHtml = `
         </div>
       </fieldset>
 
-      <label class="declare" id="declareWrap">
-        <input type="checkbox" id="declare" name="declare">
-        <span>I confirm these details match my CDC and that Nautilus Shipping may verify them against its vessel records. I have read the <a href="/privacy-policy">Privacy Statement</a>.</span>
+      <label class="declare req-declare" id="declareWrap">
+        <input type="checkbox" id="declare" name="declare" required>
+        <span><span class="req-mark" aria-hidden="true">*</span> I confirm these details match my CDC and that Nautilus Shipping may verify them against its vessel records. I have read the <a href="/privacy-policy">Privacy Statement</a>.</span>
       </label>
 
       <div class="actions">

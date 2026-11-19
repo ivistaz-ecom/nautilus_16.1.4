@@ -142,50 +142,96 @@ body.menu-open{overflow:hidden}
 .ssl-page .intro .contact{font-size:14px;color:var(--ink-soft);margin-top:28px}
 .ssl-page .intro .contact a{white-space:nowrap}
 
-/* ---------- Form card ---------- */
-.ssl-page .form-card{position:relative;margin-top:-88px;background:var(--surface);border-radius:var(--radius-lg);padding:12px 40px 40px;box-shadow:0 24px 48px -24px rgba(7,44,61,.35),0 0 0 1px var(--rule)}
+/* ---------- Form card (white surface on dark page) ---------- */
+.ssl-page .form-card{
+  position:relative;margin-top:-88px;border-radius:var(--radius-lg);padding:12px 40px 40px;
+  background:#FFFFFF;color:#1D1D1E;color-scheme:light;
+  --ink:#1D1D1E;--ink-soft:#56636A;--surface:#FFFFFF;--mist:#E3F2F4;--rule:#D0DDE1;
+  --accent-text:#007A85;--error:#B3261E;--error-bg:#FBEDEC;--focus:#009EAB;
+  --brand:#072C3D;--brand-deep:#0B3F57;--charcoal:#06202D;
+  box-shadow:0 24px 48px -24px rgba(7,44,61,.35),0 0 0 1px rgba(208,221,225,.9)
+}
 .ssl-page .form-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-top:28px}
-.ssl-page .form-head h2{font-family:var(--font-display);font-weight:700;font-size:1.75rem;line-height:1.1;margin:0}
-.ssl-page .form-head p{margin:0;font-size:14px;color:var(--ink-soft)}
+.ssl-page .form-head h2{font-family:var(--font-display);font-weight:700;font-size:1.75rem;line-height:1.1;margin:0;color:#1D1D1E}
+.ssl-page .form-head p{margin:0;font-size:14px;color:#56636A}
 .ssl-page fieldset{border:0;padding:0;margin:0;padding-top:28px}
-.ssl-page fieldset + fieldset{border-top:1px solid var(--rule);margin-top:32px}
-.ssl-page .form-head + .error-summary + fieldset, .ssl-page .form-head + fieldset{border-top:1px solid var(--rule);margin-top:24px}
-.ssl-page legend{float:left;width:100%;font-family:var(--font-display);font-weight:600;font-size:1.3rem;padding:0;margin:0 0 6px}
+.ssl-page fieldset + fieldset{border-top:1px solid #D0DDE1;margin-top:32px}
+.ssl-page .form-head + .error-summary + fieldset, .ssl-page .form-head + fieldset{border-top:1px solid #D0DDE1;margin-top:24px}
+.ssl-page legend{float:left;width:100%;font-family:var(--font-display);font-weight:600;font-size:1.3rem;padding:0;margin:0 0 6px;color:#1D1D1E}
 .ssl-page fieldset > :not(legend){clear:both}
-.ssl-page .legend-note{color:var(--ink-soft);font-size:14px;margin:0 0 18px}
+.ssl-page .legend-note{color:#56636A;font-size:14px;margin:0 0 18px}
 .ssl-page .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .ssl-page .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .ssl-page .span-2{grid-column:span 2}
-.ssl-page .field label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
-.ssl-page .field .hint{display:block;font-weight:400;color:var(--ink-soft);font-size:13px;margin-top:-2px;margin-bottom:6px}
-.ssl-page .field input, .ssl-page .field select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1.5px solid var(--rule);border-radius:var(--radius-sm);padding:11px 12px;min-height:48px}
+.ssl-page .field label{display:block;font-weight:600;font-size:14px;margin-bottom:6px;color:#1D1D1E}
+.ssl-page .field label.req::after{content:" *";color:#E53935;font-weight:700}
+.ssl-page .form-card .req-mark{color:#E53935;font-weight:700;margin-right:2px}
+.ssl-page .field .hint{display:block;font-weight:400;color:#56636A;font-size:13px;margin-top:-2px;margin-bottom:6px}
+.ssl-page .field input, .ssl-page .field select{
+  width:100%;font:inherit;font-size:16px;color:#1D1D1E;background:#FFFFFF;
+  border:1.5px solid #D0DDE1;border-radius:var(--radius-sm);padding:11px 12px;min-height:48px;
+  color-scheme:light
+}
 .ssl-page .field select{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer;
-  background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);
+  background-color:#FFFFFF;
+  background-image:linear-gradient(45deg,transparent 50%,#56636A 50%),linear-gradient(135deg,#56636A 50%,transparent 50%);
   background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat}
-.ssl-page .field input:hover, .ssl-page .field select:hover{border-color:var(--ink-soft)}
-.ssl-page .field input:focus, .ssl-page .field select:focus{border-color:var(--focus);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--focus) 28%,transparent)}
+.ssl-page .field input:hover, .ssl-page .field select:hover{border-color:#56636A}
+.ssl-page .field input:focus, .ssl-page .field select:focus{border-color:#009EAB;outline:none;box-shadow:0 0 0 3px rgba(0,158,171,.28)}
 .ssl-page .field input.upper{text-transform:uppercase}
-.ssl-page .field input::placeholder{color:var(--ink-soft);opacity:.7;text-transform:none}
-.ssl-page .field.invalid input, .ssl-page .field.invalid select{border-color:var(--error)}
-.ssl-page .field .err{display:none;color:var(--error);font-size:13px;margin-top:6px}
+.ssl-page .field input::placeholder{color:#8A9AA2;opacity:1;text-transform:none}
+.ssl-page .field input:-webkit-autofill,
+.ssl-page .field input:-webkit-autofill:hover,
+.ssl-page .field input:-webkit-autofill:focus,
+.ssl-page .field select:-webkit-autofill{
+  -webkit-text-fill-color:#1D1D1E;
+  caret-color:#1D1D1E;
+  box-shadow:0 0 0 1000px #FFFFFF inset;
+  -webkit-box-shadow:0 0 0 1000px #FFFFFF inset;
+  transition:background-color 99999s ease-out 0s
+}
+.ssl-page .field.invalid input, .ssl-page .field.invalid select{border-color:#B3261E}
+.ssl-page .field .err{display:none;color:#B3261E;font-size:13px;margin-top:6px}
 .ssl-page .field.invalid .err{display:block}
 .ssl-page .phone-row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px}
+.ssl-page .field .iti{width:100%}
+.ssl-page .field .iti__tel-input{
+  width:100%;font:inherit;font-size:16px;color:#1D1D1E;background:#FFFFFF;
+  border:1.5px solid #D0DDE1;border-radius:var(--radius-sm);padding:11px 12px;min-height:48px
+}
+.ssl-page .field .iti__country-container{color:#1D1D1E}
+.ssl-page .field.invalid .iti__tel-input{border-color:#B3261E}
+.ssl-page .vessel .cdc-attach{
+  margin-top:16px;padding:16px;border:1.5px dashed #009EAB;border-radius:var(--radius-sm);
+  background:#FFFFFF
+}
+.ssl-page .field input[type="file"],
+.ssl-page .cdc-attach input[type="file"]{
+  display:block;width:100%;padding:10px 12px;font-size:14px;line-height:1.4;cursor:pointer;
+  background:#FFFFFF;color:#1D1D1E;border:1.5px solid #D0DDE1;border-radius:var(--radius-sm);min-height:48px
+}
+.ssl-page .field input[type="file"]::file-selector-button,
+.ssl-page .cdc-attach input[type="file"]::file-selector-button{
+  font:inherit;font-size:13px;font-weight:600;margin-right:12px;padding:8px 14px;
+  border:1.5px solid #D0DDE1;border-radius:var(--radius-sm);background:#E3F2F4;color:#072C3D;cursor:pointer
+}
+.ssl-page .field .file-name,
+.ssl-page .cdc-attach .file-name{display:block;font-size:13px;color:#56636A;margin-top:8px}
 
 /* vessel count stepper */
-.ssl-page .stepper{display:inline-flex;align-items:stretch;border:1.5px solid var(--rule);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
-.ssl-page .stepper button{font:inherit;font-size:20px;width:48px;border:0;background:var(--mist);color:var(--ink);cursor:pointer}
-.ssl-page .stepper button:hover{background:color-mix(in srgb,var(--teal) 22%,var(--mist))}
+.ssl-page .stepper{display:inline-flex;align-items:stretch;border:1.5px solid #D0DDE1;border-radius:var(--radius-sm);overflow:hidden;background:#FFFFFF}
+.ssl-page .stepper button{font:inherit;font-size:20px;width:48px;border:0;background:#E3F2F4;color:#1D1D1E;cursor:pointer}
+.ssl-page .stepper button:hover{background:color-mix(in srgb,var(--teal) 22%,#E3F2F4)}
 .ssl-page .stepper button:disabled{opacity:.4;cursor:not-allowed}
-.ssl-page .stepper input{width:64px;text-align:center;border:0;border-left:1.5px solid var(--rule);border-right:1.5px solid var(--rule);border-radius:0;font-weight:600;min-height:48px;-moz-appearance:textfield}
+.ssl-page .stepper input{width:64px;text-align:center;border:0;border-left:1.5px solid #D0DDE1;border-right:1.5px solid #D0DDE1;border-radius:0;font-weight:600;min-height:48px;color:#1D1D1E;background:#FFFFFF;-moz-appearance:textfield}
 .ssl-page .stepper input::-webkit-outer-spin-button, .ssl-page .stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 
 .ssl-page .vessels{display:flex;flex-direction:column;gap:16px;margin-top:22px}
-.ssl-page .vessel{border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:var(--radius-sm);padding:18px 20px 20px;background:color-mix(in srgb,var(--mist) 45%,var(--surface))}
+.ssl-page .vessel{border:1px solid #D0DDE1;border-left:4px solid var(--teal);border-radius:var(--radius-sm);padding:18px 20px 20px;background:#F3F7F8}
 .ssl-page .vessel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
-.ssl-page .vessel-head h3{font-family:var(--font-display);font-weight:600;font-size:1.1rem;margin:0}
-.ssl-page .vessel-head .days{font-size:13px;color:var(--ink-soft);margin-left:auto}
-.ssl-page .link-btn{font:inherit;font-size:13px;background:none;border:0;color:var(--accent-text);text-decoration:underline;cursor:pointer;padding:4px}
-
+.ssl-page .vessel-head h3{font-family:var(--font-display);font-weight:600;font-size:1.1rem;margin:0;color:#1D1D1E}
+.ssl-page .vessel-head .days{font-size:13px;color:#56636A;margin-left:auto}
+.ssl-page .link-btn{font:inherit;font-size:13px;background:none;border:0;color:#007A85;text-decoration:underline;cursor:pointer;padding:4px}
 /* Sea-time strip: the one bold element in the form */
 .ssl-page .seatime{margin-top:24px;padding:20px 22px 22px;border-radius:var(--radius-sm);background:var(--charcoal);color:#fff}
 .ssl-page .seatime-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
@@ -199,27 +245,29 @@ body.menu-open{overflow:hidden}
 .ssl-page .seatime .warn{margin:12px 0 0;font-size:13px;color:#FFD9A0}
 .ssl-page .seatime-empty{font-size:14px;opacity:.75;margin-top:10px}
 
-.ssl-page .declare{display:flex;gap:12px;align-items:flex-start;margin-top:32px;font-size:15px}
-.ssl-page .declare input{width:20px;height:20px;margin-top:2px;accent-color:var(--teal);flex:none}
-.ssl-page .declare.invalid{color:var(--error)}
+.ssl-page .form-card .declare{display:flex;gap:12px;align-items:flex-start;margin-top:32px;font-size:15px;color:#1D1D1E}
+.ssl-page .form-card .declare a{color:#007A85}
+.ssl-page .form-card .declare input{width:20px;height:20px;margin-top:2px;accent-color:var(--teal);flex:none}
+.ssl-page .form-card .declare.invalid{color:#B3261E}
 .ssl-page .actions{margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.ssl-page .btn{font-family:var(--font-display);font-weight:600;font-size:1.1rem;letter-spacing:.01em;background:var(--brand);color:#fff;border:0;border-radius:999px;padding:14px 36px;cursor:pointer;min-height:52px}
-.ssl-page .btn:hover{background:var(--brand-deep)}
-.ssl-page .btn:disabled{opacity:.6;cursor:progress}
-.ssl-page .btn-quiet{background:transparent;color:var(--accent-text);border:1.5px solid currentColor}
-.ssl-page .btn-quiet:hover{background:var(--mist)}
+.ssl-page .form-card .btn{font-family:var(--font-display);font-weight:600;font-size:1.1rem;letter-spacing:.01em;background:#072C3D;color:#fff;border:0;border-radius:999px;padding:14px 36px;cursor:pointer;min-height:52px}
+.ssl-page .form-card .btn:hover{background:#0B3F57}
+.ssl-page .form-card .btn:disabled{opacity:.6;cursor:progress}
+.ssl-page .form-card .btn-quiet{background:transparent;color:#007A85;border:1.5px solid currentColor}
+.ssl-page .form-card .btn-quiet:hover{background:#E3F2F4}
 
-.ssl-page .error-summary{display:none;border:1.5px solid var(--error);background:var(--error-bg);color:var(--ink);border-radius:var(--radius-sm);padding:14px 16px;margin-top:24px}
-.ssl-page .error-summary.show{display:block}
-.ssl-page .error-summary strong{color:var(--error)}
-.ssl-page .error-summary ul{margin:6px 0 0;padding-left:20px}
+.ssl-page .form-card .error-summary{display:none;border:1.5px solid #B3261E;background:#FBEDEC;color:#1D1D1E;border-radius:var(--radius-sm);padding:14px 16px;margin-top:24px}
+.ssl-page .form-card .error-summary.show{display:block}
+.ssl-page .form-card .error-summary strong{color:#B3261E}
+.ssl-page .form-card .error-summary ul{margin:6px 0 0;padding-left:20px}
+.ssl-page .form-card .error-summary a{color:#007A85}
 
 /* confirmation */
-.ssl-page .done{display:none;padding:40px 8px 16px}
-.ssl-page .done.show{display:block}
-.ssl-page .done h2{font-family:var(--font-display);font-size:2.25rem;margin:0 0 8px}
-.ssl-page .done p{color:var(--ink-soft);max-width:52ch}
-.ssl-page .ref-chip{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:1.25rem;background:var(--mist);color:var(--accent-text);padding:8px 14px;border-radius:var(--radius-sm);margin:8px 0 20px}
+.ssl-page .form-card .done{display:none;padding:40px 8px 16px}
+.ssl-page .form-card .done.show{display:block}
+.ssl-page .form-card .done h2{font-family:var(--font-display);font-size:2.25rem;margin:0 0 8px;color:#1D1D1E}
+.ssl-page .form-card .done p{color:#56636A;max-width:52ch}
+.ssl-page .form-card .ref-chip{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:1.25rem;background:#E3F2F4;color:#007A85;padding:8px 14px;border-radius:var(--radius-sm);margin:8px 0 20px}
 
 /* ---------- FAQ — same dark as the strip behind the white footer card ---------- */
 .ssl-page .faq{background:#0B1A22;border-top:1px solid var(--rule);padding:72px 0 96px}
@@ -344,7 +392,7 @@ body:has(.ssl-page) #main-content{position:relative;z-index:1}
   .ssl-page .site-nav .pill{padding:8px 14px;font-size:14px}
   .ssl-page .form-card{padding:4px 20px 28px;margin-top:-72px}
   .ssl-page .grid, .ssl-page .grid-3{grid-template-columns:1fr}
-  .ssl-page .span-2{grid-column:auto}
+  .ssl-page .span-2{grid-column:1 / -1}
   .ssl-page .foot-top{grid-template-columns:1fr 1fr}
 }
 

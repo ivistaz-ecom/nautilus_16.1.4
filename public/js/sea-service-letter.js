@@ -56,16 +56,64 @@ const norm = s => s.trim().replace(/\s+/g," ");
 const RULES = {
   name:     v => v.length >= 3 && /^[A-Za-z .'-]+$/.test(v) || "Enter your full name as in your CDC (letters only).",
   email:    v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) || "Enter a valid email, like name@example.com.",
-  phone:    v => /^\d{6,12}$/.test(v.replace(/[\s-]/g,"")) || "Enter your mobile number without the country code, like 98765 43210.",
+  phone:    v => /^\+[1-9]\d{6,14}$/.test(v.replace(/[\s-]/g,"")) || "Enter a valid mobile number with country code.",
   cdc:      v => /^[A-Z]{2,4} ?\d{4,8}$/.test(v) || "Enter your CDC number, like MUM 123456.",
   indos:    v => /^\d{2}[A-Z]{2}\d{4,5}$/.test(v) || "INDoS is 2 digits, 2 letters, then 4 digits, like 24GM1234.",
-  passport: v => /^[A-Z]\d{7}$/.test(v) || "Passport number is 1 letter followed by 7 digits, like A1234567."
+  passport: v => /^[A-Z]\d{7}$/.test(v) || "Passport number is 1 letter followed by 7 digits, like A1234567.",
+  nemoId:   v => /^[A-Za-z0-9][A-Za-z0-9\-_/ ]{1,39}$/.test(v) || "Enter your Nemo ID from your contract."
 };
+
+/* International telephone input (flag + dial code), same pattern as careers/contact */
+let phoneIti = null;
+function initPhoneInput(){
+  const phoneInput = $("#phone");
+  if(!phoneInput || !window.intlTelInput) return;
+  if(window.__sslPhoneIti){
+    try{ window.__sslPhoneIti.destroy(); }catch(_){}
+    window.__sslPhoneIti = null;
+  }
+  phoneIti = window.intlTelInput(phoneInput, {
+    initialCountry: "in",
+    separateDialCode: true,
+    nationalMode: true,
+    autoPlaceholder: "aggressive",
+    formatOnDisplay: true,
+    countrySearch: true,
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/js/utils.js"
+  });
+  window.__sslPhoneIti = phoneIti;
+  phoneInput.addEventListener("countrychange", ()=>{
+    phoneInput.closest(".field")?.classList.remove("invalid");
+  });
+  phoneInput.addEventListener("input", ()=>{
+    phoneInput.closest(".field")?.classList.remove("invalid");
+  });
+}
+function getPhoneE164(){
+  if(phoneIti){
+    try{
+      return phoneIti.getNumber() || "";
+    }catch(_){}
+  }
+  return norm($("#phone")?.value || "");
+}
+function isPhoneValid(){
+  if(!phoneIti) return false;
+  try{
+    if(typeof phoneIti.isValidNumber === "function" && phoneIti.isValidNumber()) return true;
+    if(typeof phoneIti.isValidNumberPrecise === "function" && phoneIti.isValidNumberPrecise()) return true;
+    const n = phoneIti.getNumber();
+    return /^\+[1-9]\d{6,14}$/.test(n || "");
+  }catch(_){
+    return false;
+  }
+}
 
 /* =========================================================
    Vessel rows
    ========================================================= */
-let vessels = [{ name:"", rank:"", from:"", to:"" }];
+const emptyVessel = () => ({ name:"", rank:"", from:"", to:"", cdcFile:null });
+let vessels = [emptyVessel()];
 const vesselList = $("#vessels");
 
 function buildDatalists(){
@@ -85,25 +133,32 @@ function renderVessels(){
       </div>
       <div class="grid">
         <div class="field">
-          <label for="v${i}-name">Vessel name</label>
+          <label class="req" for="v${i}-name">Vessel name</label>
           <input id="v${i}-name" data-k="name" class="upper" list="vesselNames" value="${esc(v.name)}" placeholder="As written in your CDC" autocomplete="off">
           <span class="err" id="v${i}-name-err"></span>
         </div>
         <div class="field">
-          <label for="v${i}-rank">Rank on board</label>
+          <label class="req" for="v${i}-rank">Rank on board</label>
           <select id="v${i}-rank" data-k="rank"><option value="">Select rank</option>${RANKS.map(r=>`<option${r===v.rank?" selected":""}>${esc(r)}</option>`).join("")}</select>
           <span class="err" id="v${i}-rank-err"></span>
         </div>
         <div class="field">
-          <label for="v${i}-from">Sailed from</label>
+          <label class="req" for="v${i}-from">Sign On Date</label>
           <input id="v${i}-from" data-k="from" type="date" max="${max}" value="${esc(v.from)}">
           <span class="err" id="v${i}-from-err"></span>
         </div>
         <div class="field">
-          <label for="v${i}-to">Signed off on</label>
+          <label class="req" for="v${i}-to">Sign Off Date</label>
           <input id="v${i}-to" data-k="to" type="date" max="${max}" value="${esc(v.to)}">
           <span class="err" id="v${i}-to-err"></span>
         </div>
+      </div>
+      <div class="field cdc-attach">
+        <label class="req" for="v${i}-cdcFile">Attachment of CDC</label>
+        <span class="hint">PDF, JPG or PNG · max 5 MB · required for this vessel</span>
+        <input id="v${i}-cdcFile" data-k="cdcFile" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required>
+        <span class="file-name" id="v${i}-cdcFile-name">${v.cdcFile ? `Selected: ${esc(v.cdcFile.name)}` : "No file chosen"}</span>
+        <span class="err" id="v${i}-cdcFile-err"></span>
       </div>
     </div>`).join("");
   $("#vesselCount").value = vessels.length;
@@ -114,7 +169,7 @@ function renderVessels(){
 
 function setVesselCount(n){
   n = Math.max(1, Math.min(10, parseInt(n,10)||1));
-  while(vessels.length<n) vessels.push({ name:"", rank:"", from:"", to:"" });
+  while(vessels.length<n) vessels.push(emptyVessel());
   vessels = vessels.slice(0,n);
   renderVessels();
 }
@@ -122,9 +177,27 @@ function setVesselCount(n){
 vesselList.addEventListener("input", e=>{
   const card = e.target.closest(".vessel"); if(!card) return;
   const i = +card.dataset.i, k = e.target.dataset.k;
+  if(!k || k==="cdcFile") return;
   vessels[i][k] = e.target.value;
   e.target.closest(".field").classList.remove("invalid");
   if(k==="from"||k==="to") updateSeaTime();
+});
+vesselList.addEventListener("change", e=>{
+  const card = e.target.closest(".vessel"); if(!card) return;
+  const i = +card.dataset.i, k = e.target.dataset.k;
+  if(k!=="cdcFile") return;
+  const file = e.target.files && e.target.files[0] ? e.target.files[0] : null;
+  const nameEl = document.getElementById(`v${i}-cdcFile-name`);
+  if(file && file.size > 5 * 1024 * 1024){
+    vessels[i].cdcFile = null;
+    e.target.value = "";
+    if(nameEl) nameEl.textContent = "";
+    setErr(`v${i}-cdcFile`, `Vessel ${i+1}: CDC attachment must be 5 MB or smaller.`);
+    return;
+  }
+  vessels[i].cdcFile = file;
+  if(nameEl) nameEl.textContent = file ? `Selected: ${file.name}` : "";
+  e.target.closest(".field").classList.remove("invalid");
 });
 vesselList.addEventListener("click", e=>{
   const r = e.target.closest("[data-remove]"); if(!r) return;
@@ -178,14 +251,27 @@ document.querySelectorAll(".field input").forEach(i=>i.addEventListener("input",
 
 function collect(){
   const up = id => norm($("#"+id).value).toUpperCase();
+  const phoneE164 = getPhoneE164();
+  const phoneHidden = $("#phoneE164");
+  if(phoneHidden) phoneHidden.value = phoneE164;
+  const dial = phoneIti ? `+${phoneIti.getSelectedCountryData().dialCode}` : "";
   return {
     name: norm($("#name").value),
+    nemoId: norm($("#nemoId").value),
     email: norm($("#email").value),
-    phoneCode: $("#phoneCode").value,
-    phone: norm($("#phone").value),
+    phoneCode: dial,
+    phone: phoneE164,
+    phoneNational: norm($("#phone").value),
     cdc: up("cdc"), indos: up("indos").replace(/\s/g,""), passport: up("passport").replace(/\s/g,""),
     vesselCount: vessels.length,
-    vessels: vessels.map(v=>({ name: norm(v.name).toUpperCase(), rank: norm(v.rank), from: v.from, to: v.to })),
+    vessels: vessels.map(v=>({
+      name: norm(v.name).toUpperCase(),
+      rank: norm(v.rank),
+      from: v.from,
+      to: v.to,
+      cdcFile: v.cdcFile || null,
+      cdcFileName: v.cdcFile ? v.cdcFile.name : ""
+    })),
     declaration: $("#declare").checked,
     submittedAt: new Date().toISOString()
   };
@@ -193,21 +279,34 @@ function collect(){
 
 function validate(d){
   const errs = [];
-  for(const k of ["name","email","phone","cdc","indos","passport"]){
-    const r = d[k] ? RULES[k](d[k]) : "This field is required.";
-    if(r!==true) errs.push([k, r===undefined||r===false ? "Check this field." : (d[k]?r:`${$("label[for="+k+"]").textContent} is required.`)]);
+  for(const k of ["name","nemoId","email","phone","cdc","indos","passport"]){
+    let r;
+    if(k==="phone"){
+      r = isPhoneValid() ? true : (d.phone ? "Enter a valid mobile number with country code." : "Mobile number is required.");
+    }else{
+      r = d[k] ? RULES[k](d[k]) : "This field is required.";
+    }
+    if(r!==true){
+      const label = $("label[for="+k+"]");
+      const labelText = label ? label.textContent.replace(/\*/g,"").trim() : k;
+      errs.push([k, r===undefined||r===false ? "Check this field." : (d[k]?r:`${labelText} is required.`)]);
+    }
   }
   const today = parseISO(todayISO());
+  const allowedCdcTypes = ["application/pdf","image/jpeg","image/png"];
   d.vessels.forEach((v,i)=>{
     const n=i+1;
     if(!v.name) errs.push([`v${i}-name`,`Vessel ${n}: enter the vessel name.`]);
     if(!v.rank) errs.push([`v${i}-rank`,`Vessel ${n}: select your rank on board.`]);
     const a=parseISO(v.from), b=parseISO(v.to);
-    if(!a) errs.push([`v${i}-from`,`Vessel ${n}: enter the sign-on date.`]);
-    else if(a>today) errs.push([`v${i}-from`,`Vessel ${n}: sign-on date can’t be in the future.`]);
-    if(!b) errs.push([`v${i}-to`,`Vessel ${n}: enter the sign-off date.`]);
-    else if(b>today) errs.push([`v${i}-to`,`Vessel ${n}: sign-off date can’t be in the future.`]);
-    else if(a && b<a) errs.push([`v${i}-to`,`Vessel ${n}: sign-off date must be on or after the sign-on date.`]);
+    if(!a) errs.push([`v${i}-from`,`Vessel ${n}: enter the Sign On Date.`]);
+    else if(a>today) errs.push([`v${i}-from`,`Vessel ${n}: Sign On Date can’t be in the future.`]);
+    if(!b) errs.push([`v${i}-to`,`Vessel ${n}: enter the Sign Off Date.`]);
+    else if(b>today) errs.push([`v${i}-to`,`Vessel ${n}: Sign Off Date can’t be in the future.`]);
+    else if(a && b<a) errs.push([`v${i}-to`,`Vessel ${n}: Sign Off Date must be on or after the Sign On Date.`]);
+    if(!v.cdcFile) errs.push([`v${i}-cdcFile`,`Vessel ${n}: attach your CDC for this vessel.`]);
+    else if(v.cdcFile.size > 5 * 1024 * 1024) errs.push([`v${i}-cdcFile`,`Vessel ${n}: CDC attachment must be 5 MB or smaller.`]);
+    else if(v.cdcFile.type && !allowedCdcTypes.includes(v.cdcFile.type)) errs.push([`v${i}-cdcFile`,`Vessel ${n}: CDC attachment must be a PDF, JPG or PNG.`]);
   });
   return errs;
 }
@@ -246,7 +345,16 @@ $("#ssForm").addEventListener("submit", async e=>{
 /* Backend hook. Replace with your API. Should return the issued reference number. */
 async function submitApplication(payload){
   if(CONFIG.submitEndpoint){
-    const res = await fetch(CONFIG.submitEndpoint,{ method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(payload) });
+    const fd = new FormData();
+    const meta = {
+      ...payload,
+      vessels: payload.vessels.map(({ cdcFile, ...rest }) => rest)
+    };
+    fd.append("payload", JSON.stringify(meta));
+    payload.vessels.forEach((v, i) => {
+      if (v.cdcFile) fd.append(`cdcAttachment_${i}`, v.cdcFile, v.cdcFile.name);
+    });
+    const res = await fetch(CONFIG.submitEndpoint, { method: "POST", body: fd });
     if(!res.ok) throw new Error("Submit failed: "+res.status);
     const json = await res.json();
     return json.ref;
@@ -264,9 +372,10 @@ function showDone(d){
   const done = $("#done"); done.classList.add("show"); done.focus();
 }
 $("#newRequest").onclick = ()=>{
-  $("#ssForm").reset(); vessels=[{name:"",rank:"",from:"",to:""}]; renderVessels();
+  $("#ssForm").reset(); vessels=[emptyVessel()]; renderVessels();
   $("#ssForm").style.display = ""; $("#done").classList.remove("show");
-  $("#internal").classList.remove("show"); $("#letterMount").innerHTML="";
+  const internal = $("#internal"); if(internal) internal.classList.remove("show");
+  const letterMount = $("#letterMount"); if(letterMount) letterMount.innerHTML="";
   window.scrollTo({top:0}); $("#name").focus();
 };
 
@@ -349,6 +458,7 @@ const printBtn=$("#printBtn"); if(printBtn) printBtn.onclick = ()=>window.print(
 
 $("#declare").addEventListener("change",()=>$("#declareWrap").classList.remove("invalid"));
 /* init */
+initPhoneInput();
 buildDatalists();
 renderVessels();
 
