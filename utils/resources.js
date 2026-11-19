@@ -214,6 +214,7 @@ export const informationList = [
 export const helpfulLinksList = [
   { name: "Contact Us", path: "/contact-us" },
   { name: "Careers", path: "/careers" },
+  { name: "Sea Service Letter", path: "/sea-service-letter-request" },
   { name: "News & Insights", path: "/news-and-insights" },
   { name: "Stories From The Sea", path: "/stories-from-the-sea" },
   { name: "Newsletter", path: "/newsletter" },
