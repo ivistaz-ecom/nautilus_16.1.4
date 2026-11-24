@@ -17,9 +17,9 @@ const featuredVideos = [
   {
     src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/Naavik%20Manthan.mp4",
     ariaLabel: "Naavik Manthan 2026, 4th edition",
-    title: "Naavik Manthan 2026 – 4th Edition",
+    title: "Naavik Manthan 2026",
     subtitle:
-      "Bringing the Maritime Community Together Through Knowledge, Collaboration and Recognition",
+      "",
     description: [
       "The 4th edition of Naavik Manthan, in collaboration with JSW Shipping & Logistics, brought together seafarers, industry leaders, maritime professionals and partners for a day of knowledge-sharing, meaningful conversations and recognition.",
       "The event featured discussions on JSW MBC operations, technical developments, dry-docking experiences and the latest updates in coastal shipping. It also provided a platform to engage with seafarers, exchange industry perspectives and highlight the importance of collaboration between onboard and shore-based teams.",
