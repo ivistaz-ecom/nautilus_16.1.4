@@ -4,6 +4,29 @@ import { useEffect, useRef } from "react"
 
 const featuredVideos = [
   {
+    src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/Best%20Container%20Ship%20Award.mp4",
+    ariaLabel:
+      "Nautilus Shipping wins Best Employer for Container Fleet at the Seajob Indian Anchor Awards 2026",
+    title:
+      "Nautilus Shipping Wins Best Employer for Container Fleet at the Seajob Indian Anchor Awards 2026",
+    description: [
+      "Nautilus Shipping has been recognized as Best Employer for Container Fleet at the Seajob Indian Anchor Awards 2026, held in Mumbai on 14 November and presented by the Sea Line Group.",
+      "The recognition reflects our continued commitment to our seafarers and the people behind the safe and efficient operations of our container fleet. It is a proud moment for our team and a testament to the dedication and hard work of everyone who makes it possible.",
+    ],
+  },
+  {
+    src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/Naavik%20Manthan.mp4",
+    ariaLabel: "Naavik Manthan 2026, 4th edition",
+    title: "Naavik Manthan 2026 – 4th Edition",
+    subtitle:
+      "Bringing the Maritime Community Together Through Knowledge, Collaboration and Recognition",
+    description: [
+      "The 4th edition of Naavik Manthan, in collaboration with JSW Shipping & Logistics, brought together seafarers, industry leaders, maritime professionals and partners for a day of knowledge-sharing, meaningful conversations and recognition.",
+      "The event featured discussions on JSW MBC operations, technical developments, dry-docking experiences and the latest updates in coastal shipping. It also provided a platform to engage with seafarers, exchange industry perspectives and highlight the importance of collaboration between onboard and shore-based teams.",
+      "A key highlight was SHIPMATES: The Onboard Team Challenge, an engaging session focused on teamwork, communication and collaboration. The day also recognised the dedication and contributions of individuals supporting the JSW fleet through the JSW Fleet Awards & Recognition.",
+    ],
+  },
+  {
     src: "https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/Nautilus-Website/nautilus-video.mp4",
     ariaLabel: "Narayan Rajan interview at TradeWinds TV Studio",
     title: "Narayan Rajan at the TradeWinds TV Studio",
@@ -37,7 +60,7 @@ const Heading = () => {
               if (videoEl.readyState === 0) {
                 videoEl.load()
               }
-              videoEl.play().catch(() => {})
+              videoEl.play().catch(() => { })
             } else {
               videoEl.pause()
             }

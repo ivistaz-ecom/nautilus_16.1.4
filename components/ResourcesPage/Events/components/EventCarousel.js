@@ -101,8 +101,8 @@ const EventCarousel = ({ title, description, slides, video }) => {
                       src={currentData.image}
                       alt={currentData.alt}
                       width={475}
-                      height={400}
-                      className="w-full h-auto max-w-[475px] lg:w-auto"
+                      height={475}
+                      className="h-auto w-full max-w-[475px] lg:w-auto"
                     />
                   </motion.div>
                 </AnimatePresence>

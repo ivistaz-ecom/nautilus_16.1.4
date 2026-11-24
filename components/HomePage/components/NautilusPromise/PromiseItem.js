@@ -103,6 +103,7 @@ const PromiseItem = () => {
                     alt="Icon"
                     width={70}
                     height={70}
+                    style={{ width: 70, height: 70 }}
                   />
                 </div>
               </motion.div>
@@ -139,12 +140,14 @@ const PromiseItem = () => {
                   </p>
                   <p className="text-xs font-light">{selectedPromise.desc}</p>
                 </div>
-                <div className="p-4">
+                <div className="shrink-0 p-4">
                   <Image
                     src={selectedPromise.icon}
                     alt="Icon"
                     width={50}
                     height={50}
+                    className="max-w-none"
+                    style={{ width: 50, height: 50 }}
                   />
                 </div>
               </div>

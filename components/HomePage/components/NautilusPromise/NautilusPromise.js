@@ -29,6 +29,8 @@ const NautilusPromise = () => {
               width={30}
               height={30}
               alt="call"
+              className="shrink-0"
+              style={{ width: 30, height: 30 }}
             />
             <span className="text-primary text-base sm:text-xl font-semibold tracking-wide">
               +91 44 4684 9999
@@ -46,6 +48,8 @@ const NautilusPromise = () => {
               width={30}
               height={30}
               alt="mail"
+              className="shrink-0"
+              style={{ width: 30, height: 30 }}
             />
             <span className="text-primary text-base sm:text-xl font-semibold tracking-wide">
               hello@nautilusshipping.com

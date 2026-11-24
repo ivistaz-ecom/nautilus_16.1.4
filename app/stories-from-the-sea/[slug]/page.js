@@ -10,6 +10,35 @@ export function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const incident = getIncidentBySlug(slug);
+
+  if (!incident) {
+    return {
+      title: "Story Not Found | Nautilus Shipping",
+      description: "The requested story could not be found.",
+    };
+  }
+
+  const title = incident.metaTitle || incident.title;
+  const description = incident.metaDescription || incident.subtitle || incident.title;
+  const path = `/stories-from-the-sea/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      title,
+      description,
+      url: path,
+      siteName: "Nautilus Shipping",
+      images: incident.image ? [{ url: incident.image }] : undefined,
+    },
+  };
+}
+
 export default async function IncidentDetailPage({ params }) {
   const { slug } = await params;
   const incident = getIncidentBySlug(slug);

@@ -27,31 +27,19 @@ function NextSeo({
 
   return (
     <>
-    <head>
-      <meta charSet="utf-8" />
       <title>{title}</title>
-
       <meta name="description" content={description} />
-
-      {/* Robots Meta */}
       <meta name="robots" content={robots || "index, follow"} />
-
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-
       <link rel="icon" href="/images/favicon-150x150.png" />
-
-      {/* Preload LCP image for faster rendering */}
-      {preloadImage && (
+      {preloadImage ? (
         <link
           rel="preload"
           as="image"
           href={preloadImage}
           fetchPriority="high"
         />
-      )}
-
+      ) : null}
       <link rel="canonical" href={`${domainName}${path}`} />
-
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
@@ -59,13 +47,11 @@ function NextSeo({
       <meta property="og:url" content={`${domainName}${path}`} />
       <meta property="og:site_name" content={title} />
       <meta property="og:image" content={metaImage} />
-
       <meta name="twitter:card" content="summary_large_image" />
-    </head>
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: jsonLd }}
-    />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
+      />
     </>
   )
 }
