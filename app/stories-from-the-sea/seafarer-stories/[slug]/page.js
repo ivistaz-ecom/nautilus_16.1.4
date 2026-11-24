@@ -11,6 +11,35 @@ export function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const story = getStoryBySlug(slug);
+
+  if (!story) {
+    return {
+      title: "Story Not Found | Nautilus Shipping",
+      description: "The requested seafarer story could not be found.",
+    };
+  }
+
+  const title = story.metaTitle || story.title;
+  const description = story.metaDescription || story.heroSubtitle || story.title;
+  const path = `/stories-from-the-sea/seafarer-stories/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      title,
+      description,
+      url: path,
+      siteName: "Nautilus Shipping",
+      images: story.image ? [{ url: story.image }] : undefined,
+    },
+  };
+}
+
 export default async function SeafarerStoryDetailPage({ params }) {
   const { slug } = await params;
   const story = getStoryBySlug(slug);

@@ -22,7 +22,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/:all*(svg|jpg|jpeg|png|webp|avif|woff2|css|js)",
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|woff2)",
         headers: [
           {
             key: "Cache-Control",
@@ -81,6 +81,11 @@ const nextConfig = {
       {
         source: "/inspection",
         destination: "/service/inspection",
+        permanent: true,
+      },
+      {
+        source: "/naval-services",
+        destination: "/service/naval-services",
         permanent: true,
       },
       {

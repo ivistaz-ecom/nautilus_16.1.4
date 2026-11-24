@@ -2,6 +2,9 @@ export const incidents = [
   {
     id: 1,
     slug: "near-miss-report",
+    metaTitle: "Near-Miss Report: Lessons for New Maritime Careers in India",
+    metaDescription:
+      "Starting a career in the maritime industry in India? This near-miss report from Nautilus Shipping shows why safety awareness matters from day one.",
     title: "NEAR MISS REPORT",
     subtitle: "Engine Room Safety: Lessons from a Near Miss",
     image:
@@ -55,6 +58,9 @@ export const incidents = [
   {
     id: 2,
     slug: "provision-crane-incident",
+    metaTitle: "Provision Crane Incident: Safe & Compliant Operations",
+    metaDescription:
+      "Lessons from a provision crane incident onboard, and how Nautilus Shipping builds safe, environmentally compliant operations across its fleet.",
     title: "Provision Crane Incident",
     subtitle: "A Lesson in Maintenance",
     image: "/landing-page/technical-incidents/Provision_CraneI.webp",
@@ -108,6 +114,9 @@ export const incidents = [
   {
     id: 3,
     slug: "tangled-anchors-jaigarh-june-2024",
+    metaTitle: "Tangled Anchors at Jaigarh: A Cargo Recovery Case Study",
+    metaDescription:
+      "How the crew handled tangled anchors at Jaigarh in June 2024. Key takeaways for marine salvage and cargo recovery operations from Nautilus Shipping.",
     title: "The Tangled Anchors at Jaigarh",
     subtitle: "A Monsoon Seamanship Lesson",
     image:
@@ -164,6 +173,9 @@ export const incidents = [
   {
     id: 4,
     slug: "unsafe-position-during-mooring-operations",
+    metaTitle: "Unsafe Position During Mooring Operations: Key Lessons",
+    metaDescription:
+      "An unsafe position during mooring operations, and the lessons learned. See how fleet inspection services for safety help prevent incidents onboard.",
     title: "Incident Report: Unsafe Position During Mooring Operations",
     subtitle: "Snap-Back Zone Awareness at Forward Station",
     image:
@@ -218,6 +230,9 @@ export const incidents = [
   {
     id: 5,
     slug: "why-every-tiny-detail-is-important",
+    metaTitle: "Why Every Tiny Detail Matters in Marine Salvage Operations",
+    metaDescription:
+      "In marine salvage and cargo recovery operations, small oversights carry big risks. A Nautilus Shipping story on why every detail counts at sea.",
     title: "Why Is Every Tiny Detail Important?",
     subtitle: "MV Sea Ruby Cargo Water Ingress Case",
     image:

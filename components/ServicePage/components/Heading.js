@@ -25,6 +25,7 @@ const Heading = ({ data }) => {
                 src={data.imageUrl}
                 width={500}
                 height={425}
+                className="rounded-[18px]"
                 alt="Ship Management"
               />
             </div>
@@ -45,6 +46,7 @@ const Heading = ({ data }) => {
               src={data.imageUrl}
               width={500}
               height={425}
+              className="rounded-[18px]"
               alt="Ship Management"
             />
           </div>

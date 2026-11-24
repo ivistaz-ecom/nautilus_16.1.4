@@ -3,35 +3,72 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 import NavMenu from "./components/NavMenu/NavMenu"
 import SearchMenu from "./components/SearchMenu/SearchMenu"
 
 const Header = ({ logo, hamburger, search }) => {
   const [openMenu, setOpenMenu] = useState(false)
   const [openSearchMenu, setOpenSearchMenu] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const menuRef = useRef(null)
+  const logoRef = useRef(null)
+  const lineRef = useRef(null)
+  const pillRef = useRef(null)
 
   useEffect(() => {
-    let ticking = false
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    let frame = 0
+    let current = 0
+    let target = 0
 
-    const handleScroll = () => {
-      if (ticking) return
+    const paint = (p) => {
+      const logoEl = logoRef.current
+      const lineEl = lineRef.current
+      const pillEl = pillRef.current
 
-      ticking = true
-      window.requestAnimationFrame(() => {
-        setScrolled((current) => {
-          const next = window.scrollY > 0
-          return current === next ? current : next
+      if (logoEl) {
+        logoEl.style.opacity = String(1 - p)
+        logoEl.style.transform = `translateY(${(-8 * p).toFixed(2)}px)`
+        logoEl.style.pointerEvents = p > 0.6 ? "none" : "auto"
+      }
+
+      if (lineEl) {
+        lineEl.style.opacity = String(1 - p)
+      }
+
+      if (pillEl) {
+        pillEl.style.backgroundColor = `rgba(245, 245, 245, ${p})`
+        pillEl.style.borderRadius = `${12 * p}px`
+        pillEl.style.padding = `${8 * p}px ${20 * p}px`
+        pillEl.style.margin = `${-8 * p}px ${-20 * p}px`
+        pillEl.style.boxShadow = `0 ${8 * p}px ${18 * p}px rgba(0, 0, 0, ${0.1 * p})`
+        pillEl.querySelectorAll("[data-tone='page']").forEach((icon) => {
+          icon.style.opacity = String(1 - p)
         })
-        ticking = false
-      })
+        pillEl.querySelectorAll("[data-tone='dark']").forEach((icon) => {
+          icon.style.opacity = String(p)
+        })
+      }
     }
 
-    handleScroll()
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
+    const tick = () => {
+      current += (target - current) * (reduce ? 1 : 0.14)
+      if (Math.abs(target - current) < 0.004) current = target
+      paint(current)
+      frame = current === target ? 0 : window.requestAnimationFrame(tick)
+    }
+
+    const onScroll = () => {
+      target = Math.min(1, Math.max(0, (window.scrollY - 8) / 140))
+      if (!frame) frame = window.requestAnimationFrame(tick)
+    }
+
+    paint(0)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
   }, [])
 
   useEffect(() => {
@@ -64,15 +101,14 @@ const Header = ({ logo, hamburger, search }) => {
 
   return (
     <>
-      {/* Sticky NavBar */}
-      <nav
-        className={`border-b border-gray-400 fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-          scrolled ? "hidden" : "block"
-        }`}
-      >
-        <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
-          {/* Logo */}
-          <Link href="/" aria-label="Nautilus Shipping - Go to homepage">
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        <div className="relative max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
+          <Link
+            ref={logoRef}
+            href="/"
+            aria-label="Nautilus Shipping - Go to homepage"
+            className="will-change-[opacity,transform]"
+          >
             <Image
               src={logo}
               width={126}
@@ -82,62 +118,60 @@ const Header = ({ logo, hamburger, search }) => {
             />
           </Link>
 
-          {/* Menu + Search */}
-          <div className="flex items-center gap-3 md:gap-5">
-            <button onClick={toggleSearch} className="w-7 md:w-[29px]">
-              <Image
-                src={search}
-                width={29}
-                height={29}
-                alt="search"
-                className="w-full h-auto"
-              />
+          <div
+            ref={pillRef}
+            className="flex items-center gap-3 md:gap-5 will-change-[background-color,box-shadow]"
+          >
+            <button onClick={toggleSearch} className="relative h-7 w-7 md:h-[29px] md:w-[29px]">
+              <span data-tone="page" className="absolute inset-0">
+                <Image
+                  src={search}
+                  width={29}
+                  height={29}
+                  alt="search"
+                  className="h-full w-full"
+                />
+              </span>
+              <span data-tone="dark" className="absolute inset-0 opacity-0">
+                <Image
+                  src="/search-dark.svg"
+                  width={29}
+                  height={29}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-full w-full"
+                />
+              </span>
             </button>
-            <button onClick={toggleMenu} className="w-8 md:w-[33px]">
-              <Image
-                src={hamburger}
-                width={33}
-                height={25}
-                alt="hamburger-menu"
-                className="w-full h-auto"
-              />
+            <button onClick={toggleMenu} className="relative h-[25px] w-8 md:w-[33px]">
+              <span data-tone="page" className="absolute inset-0">
+                <Image
+                  src={hamburger}
+                  width={33}
+                  height={25}
+                  alt="hamburger-menu"
+                  className="h-full w-full"
+                />
+              </span>
+              <span data-tone="dark" className="absolute inset-0 opacity-0">
+                <Image
+                  src="/hamburger-dark.svg"
+                  width={33}
+                  height={25}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-full w-full"
+                />
+              </span>
             </button>
           </div>
+
+          <div
+            ref={lineRef}
+            className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gray-400"
+          />
         </div>
       </nav>
-
-      {/* Floating Menu (when scrolled) */}
-      <AnimatePresence>
-        {scrolled && (
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="bg-[#F5F5F5] inline-flex justify-center items-center py-2 px-4 md:px-6 
-              rounded-lg shadow-md fixed top-5 right-5 md:right-20 z-50 gap-3 md:gap-5"
-          >
-            <button onClick={toggleSearch} className="w-7 md:w-[29px]">
-              <Image
-                src="/search-dark.svg"
-                width={29}
-                height={29}
-                alt="search"
-                className="w-full h-auto"
-              />
-            </button>
-            <button onClick={toggleMenu} className="w-8 md:w-[33px]">
-              <Image
-                src="/hamburger-dark.svg"
-                width={33}
-                height={25}
-                alt="hamburger-menu"
-                className="w-full h-auto"
-              />
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Menus */}
       {openMenu && <NavMenu menuRef={menuRef} handleMenu={toggleMenu} />}

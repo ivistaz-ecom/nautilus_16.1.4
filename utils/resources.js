@@ -214,6 +214,7 @@ export const informationList = [
 export const helpfulLinksList = [
   { name: "Contact Us", path: "/contact-us" },
   { name: "Careers", path: "/careers" },
+  { name: "Sea Service Letter", path: "/sea-service-letter-request" },
   { name: "News & Insights", path: "/news-and-insights" },
   { name: "Stories From The Sea", path: "/stories-from-the-sea" },
   { name: "Newsletter", path: "/newsletter" },
@@ -225,6 +226,7 @@ export const servicesList = [
   { name: "Crew Management", path: "/service/crew-management" },
   { name: "Inspection", path: "/service/inspection" },
   { name: "Commercial Services", path: "/service/commercial-services" },
+  { name: "Naval Services", path: "/service/naval-services" },
 ]
 
 export const ourMarineServicesList = [

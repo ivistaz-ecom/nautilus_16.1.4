@@ -125,6 +125,7 @@ const For18Years = () => {
                   width={70}
                   height={70}
                   alt={item.title}
+                  style={{ width: 70, height: 70 }}
                 />
                 <div className="space-y-2 md:space-y-3">
                   <p className="text-white text-2xl md:text-4xl text-center font-semibold tracking-wide">

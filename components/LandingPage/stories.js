@@ -5,6 +5,9 @@ export const stories = [
     heroSubtitle: "A Journey of Growth, Resilience, and Leadership",
     title:
       "From Deck Cadet to Chief Officer: A Journey of Growth, Resilience, and Leadership",
+    metaTitle: "Deck Officer Jobs: From Cadet to Chief Officer | Nautilus",
+    metaDescription:
+      "Read how Pavneet Singh Narula rose from deck cadet to chief officer at Nautilus Shipping, and what it takes to grow in deck officer jobs at sea.",
     author: "Pavneet Singh Narula, Chief Officer",
     image: "/landing-page/stories/Singh.webp",
     sections: [
@@ -47,6 +50,9 @@ export const stories = [
     heroSubtitle: "My Journey as a Deck Cadet",
     title:
       "From a Classroom Dream to the Open Sea: My Journey as a Deck Cadet",
+    metaTitle: "Gagan Sankar: From Classroom to Heavy-Lift Cargo Operations",
+    metaDescription:
+      "Gagan Sankar's journey from a classroom dream to the open sea, gaining hands-on experience in heavy-lift cargo operations with Nautilus Shipping.",
     author: "Gagan Sankar, Deck Cadet",
     image: "/landing-page/stories/Gagan.webp",
     sections: [
@@ -97,6 +103,9 @@ export const stories = [
     heroSubtitle: "VN Surendran's Journey Through Coastal and Foreign Shipping",
     title:
       "A Life at Sea: VN Surendran’s Journey Through Coastal and Foreign Shipping",
+    metaTitle: "VN Surendran's International Shipping Career | Nautilus",
+    metaDescription:
+      "Follow VN Surendran's journey through an international shipping career, the lessons learned at sea, and the milestones that shaped his life onboard.",
     author: "VN Surendran, Chief Engineer",
     image: "/landing-page/stories/VN_Surendran.png",
     paragraphs: [
@@ -117,6 +126,9 @@ export const stories = [
     heroTitle: "My Maritime Journey:",
     heroSubtitle: "From Tin-Can Bridge to Blue Economy Resilience",
     title: "My Maritime Journey: From Tin-Can Bridge to Blue Economy Resilience",
+    metaTitle: "Blue Economy & Marine Industry Career Opportunities in India",
+    metaDescription:
+      "From a tin can bridge to the blue economy: a seafarer's story that reveals the growing marine industry career opportunities in India.",
     author: "Chukwuemeka Geoffery Chika, Marine Engineer",
     image: "/landing-page/stories/Chukwuemeka_Geoffery_Chika.png",
     paragraphs: [
@@ -133,6 +145,9 @@ export const stories = [
     heroTitle: "The Sound",
     heroSubtitle: "That Keeps Me Going",
     title: "The Sound That Keeps Me Going",
+    metaTitle: "The Sound That Keeps Me Going | Marine Safety Checks",
+    metaDescription:
+      "A seafarer's story about the sounds of life onboard, and how routine marine safety and compliance checks keep crews and vessels secure at sea.",
     author: "By Rajat Khattri, 2/E (Marine Engineer)",
     image: "/landing-page/stories/Rajat_Khattri.png",
     paragraphs: [
@@ -149,6 +164,9 @@ export const stories = [
     heroTitle: "Four Decades at Sea:",
     heroSubtitle: "What the Ocean Has Taught Me",
     title: "Four Decades at Sea: What the Ocean Has Taught Me",
+    metaTitle: "Four Decades at Sea: Life in Merchant Vessel Engine Rooms",
+    metaDescription:
+      "A seafarer looks back on forty years at sea. Get insight into engine room careers and job vacancies in merchant vessels with Nautilus Shipping.",
     author: "Capt. Balajee Jayaraman",
     image: "/landing-page/stories/Balajee_Jayaraman.png",
     sections: [

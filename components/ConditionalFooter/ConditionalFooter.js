@@ -18,5 +18,13 @@ export default function ConditionalFooter() {
 
   if (hide) return null
 
-  return <Footer />
+  const footerReveal = pathname.startsWith("/sea-service-letter-request")
+
+  return footerReveal ? (
+    <div className="ssl-footer-reveal">
+      <Footer />
+    </div>
+  ) : (
+    <Footer />
+  )
 }
