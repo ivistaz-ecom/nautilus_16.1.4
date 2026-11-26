@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 
 const featuredVideos = [
   {
-    src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/Best%20Container%20Ship%20Award.mp4",
+    src: "https://nautilusshipping.blr1.cdn.digitaloceanspaces.com/FinalmBest%20Employer%20for%20Container%20Fleet%20award.mp4",
     ariaLabel:
       "Nautilus Shipping wins Best Employer for Container Fleet at the Seajob Indian Anchor Awards 2026",
     title:
