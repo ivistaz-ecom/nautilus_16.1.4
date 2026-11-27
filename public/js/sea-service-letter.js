@@ -335,34 +335,44 @@ $("#ssForm").addEventListener("submit", async e=>{
     showDone(data);
     if(CONFIG.showInternalPreview) renderInternal(data);
   }catch(err){
-    list.innerHTML = `<li>We couldn’t send your request. Check your connection and try again. If it keeps failing, email ${esc(CONFIG.company.emails[0])}.</li>`;
+    const msg = err?.message
+      ? esc(err.message)
+      : `We couldn’t send your request. Check your connection and try again. If it keeps failing, email ${esc(CONFIG.company.emails[0])}.`;
+    list.innerHTML = `<li>${msg}</li>`;
     box.classList.add("show"); box.focus();
   }finally{
     btn.disabled = false; btn.textContent = "Send request";
   }
 });
 
-/* Backend hook. Replace with your API. Should return the issued reference number. */
+/* Posts to /api/sea-service-letter, which forwards to the Nemo API. */
 async function submitApplication(payload){
-  if(CONFIG.submitEndpoint){
-    const fd = new FormData();
-    const meta = {
-      ...payload,
-      vessels: payload.vessels.map(({ cdcFile, ...rest }) => rest)
-    };
-    fd.append("payload", JSON.stringify(meta));
-    payload.vessels.forEach((v, i) => {
-      if (v.cdcFile) fd.append(`cdcAttachment_${i}`, v.cdcFile, v.cdcFile.name);
-    });
-    const res = await fetch(CONFIG.submitEndpoint, { method: "POST", body: fd });
-    if(!res.ok) throw new Error("Submit failed: "+res.status);
-    const json = await res.json();
-    return json.ref;
+  if(!CONFIG.submitEndpoint){
+    const d = new Date();
+    const serial = String(Math.floor(100+Math.random()*900));
+    return `${CONFIG.refPrefix}/${d.getFullYear()}/${pad(d.getMonth()+1)}/${serial}/${CONFIG.refSuffix}`;
   }
-  // Demo mode: the server should issue the running serial number in production.
-  const d = new Date();
-  const serial = String(Math.floor(100+Math.random()*900));
-  return `${CONFIG.refPrefix}/${d.getFullYear()}/${pad(d.getMonth()+1)}/${serial}/${CONFIG.refSuffix}`;
+
+  const fd = new FormData();
+  const meta = {
+    ...payload,
+    vessels: payload.vessels.map(({ cdcFile, ...rest }) => rest)
+  };
+  fd.append("payload", JSON.stringify(meta));
+  payload.vessels.forEach((v, i) => {
+    if (v.cdcFile) fd.append(`cdcAttachment_${i}`, v.cdcFile, v.cdcFile.name);
+  });
+
+  const res = await fetch(CONFIG.submitEndpoint, { method: "POST", body: fd });
+  let json = null;
+  try { json = await res.json(); } catch (_) { json = null; }
+
+  if(!res.ok){
+    const apiMsg = json?.error || json?.message || `Submit failed (${res.status})`;
+    throw new Error(apiMsg);
+  }
+
+  return json?.ref || `${CONFIG.refPrefix}/${new Date().getFullYear()}/${pad(new Date().getMonth()+1)}/000/${CONFIG.refSuffix}`;
 }
 
 function showDone(d){

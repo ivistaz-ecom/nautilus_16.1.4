@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import LandingHeader from "./LandingHeader"
 import { seaServiceLetterBodyHtml } from "./bodyHtml"
 
-const SSL_JS_VERSION = "20261119b"
+const SSL_JS_VERSION = "20261127a"
 const INTL_TEL_CSS =
   "https://cdn.jsdelivr.net/npm/intl-tel-input@24.6.0/build/css/intlTelInput.min.css"
 const INTL_TEL_JS =
